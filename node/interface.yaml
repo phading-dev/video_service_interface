@@ -1,0 +1,512 @@
+- message:
+    name: CreateVideoContainerRequestBody
+    fields:
+      - name: showId
+        type: string
+        index: 1
+      - name: containerId
+        type: string
+        index: 2
+- message:
+    name: CreateVideoContainerResponse
+- message:
+    name: DeleteVideoContainerRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+- message:
+    name: DeleteVideoContainerResponse
+- message:
+    name: GetVideoContainerRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+- message:
+    name: GetVideoContainerResponse
+    fields:
+      - name: videoContainer
+        type: VideoContainer
+        import: ./node/video_container
+        index: 1
+- message:
+    name: CommitVideoContainerStagingDataRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+- enum:
+    name: ValidationError
+    values:
+      - name: NO_VIDEO_TRACK
+        value: 1
+      - name: MORE_THAN_ONE_VIDEO_TRACKS
+        value: 2
+      - name: TOO_MANY_AUDIO_TRACKS
+        value: 3
+      - name: NO_DEFAULT_AUDIO_TRACK
+        value: 4
+      - name: MORE_THAN_ONE_DEFAULT_AUDIO_TRACKS
+        value: 5
+      - name: TOO_MANY_SUBTITLE_TRACKS
+        value: 6
+      - name: NO_DEFAULT_SUBTITLE_TRACK
+        value: 7
+      - name: MORE_THAN_ONE_DEFAULT_SUBTITLE_TRACKS
+        value: 8
+- message:
+    name: CommitVideoContainerStagingDataResponse
+    fields:
+      - name: success
+        type: boolean
+        index: 1
+      - name: error
+        type: ValidationError
+        index: 2
+- message:
+    name: ProcessVideoContainerWritingToFileTaskRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+      - name: version
+        type: number
+        index: 2
+- message:
+    name: ProcessVideoContainerWritingToFileTaskResponse
+- message:
+    name: GetVideoContainerWritingToFileTasksRequestBody
+- message:
+    name: GetVideoContainerWritingToFileTasksResponse
+    fields:
+      - name: tasks
+        type: ProcessVideoContainerWritingToFileTaskRequestBody
+        isArray: true
+        index: 1
+- message:
+    name: ProcessVideoContainerSyncingTaskRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+      - name: version
+        type: number
+        index: 2
+- message:
+    name: ProcessVideoContainerSyncingTaskResponse
+- message:
+    name: GetVideoContainerSyncingTasksRequestBody
+- message:
+    name: GetVideoContainerSyncingTasksResponse
+    fields:
+      - name: tasks
+        type: ProcessVideoContainerSyncingTaskRequestBody
+        isArray: true
+        index: 1
+- message:
+    name: StartMediaUploadingRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+      - name: contentLength
+        type: number
+        index: 2
+      - name: fileType
+        type: string
+        index: 3
+- message:
+    name: StartMediaUploadingResponse
+    fields:
+      - name: uploadSessionUrl
+        type: string
+        index: 1
+      - name: byteOffset
+        type: number
+        index: 2
+- message:
+    name: CompleteMediaUploadingRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+      - name: uploadSessionUrl
+        type: string
+        index: 2
+- message:
+    name: CompleteMediaUploadingResponse
+- message:
+    name: CancelMediaUploadingRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+- message:
+    name: CancelMediaUploadingResponse
+- message:
+    name: StartSubtitleUploadingRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+      - name: contentLength
+        type: number
+        index: 2
+      - name: fileType
+        type: string
+        index: 3
+- message:
+    name: StartSubtitleUploadingResponse
+    fields:
+      - name: uploadSessionUrl
+        type: string
+        index: 1
+      - name: byteOffset
+        type: number
+        index: 2
+- message:
+    name: CompleteSubtitleUploadingRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+      - name: uploadSessionUrl
+        type: string
+        index: 2
+- message:
+    name: CompleteSubtitleUploadingResponse
+- message:
+    name: CancelSubtitleUploadingRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+- message:
+    name: CancelSubtitleUploadingResponse
+- message:
+    name: ProcessMediaFormattingTaskRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+      - name: gcsFilename
+        type: string
+        index: 2
+- message:
+    name: ProcessMediaFormattingTaskResponse
+- message:
+    name: GetMediaFormattingTasksRequestBody
+- message:
+    name: GetMediaFormattingTasksResponse
+    fields:
+      - name: tasks
+        type: ProcessMediaFormattingTaskRequestBody
+        isArray: true
+        index: 1
+- message:
+    name: CancelMediaFormattingRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+- message:
+    name: CancelMediaFormattingResponse
+- message:
+    name: ProcessSubtitleFormattingTaskRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+      - name: gcsFilename
+        type: string
+        index: 2
+- message:
+    name: ProcessSubtitleFormattingTaskResponse
+- message:
+    name: GetSubtitleFormattingTasksRequestBody
+- message:
+    name: GetSubtitleFormattingTasksResponse
+    fields:
+      - name: tasks
+        type: ProcessSubtitleFormattingTaskRequestBody
+        isArray: true
+        index: 1
+- message:
+    name: CancelSubtitleFormattingRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+- message:
+    name: CancelSubtitleFormattingResponse
+- message:
+    name: DeleteVideoTrackRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+      - name: r2TrackDirname
+        type: string
+        index: 2
+- message:
+    name: DeleteVideoTrackResponse
+- message:
+    name: DropVideoTrackStagingDataRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+      - name: r2TrackDirname
+        type: string
+        index: 2
+- message:
+    name: DropVideoTrackStagingDataResponse
+- message:
+    name: UpdateAudioTrackRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+      - name: r2TrackDirname
+        type: string
+        index: 2
+      - name: name
+        type: string
+        index: 3
+      - name: isDefault
+        type: boolean
+        index: 4
+- message:
+    name: UpdateAudioTrackResponse
+- message:
+    name: DeleteAudioTrackRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+      - name: r2TrackDirname
+        type: string
+        index: 2
+- message:
+    name: DeleteAudioTrackResponse
+- message:
+    name: DropAudioTrackStagingDataRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+      - name: r2TrackDirname
+        type: string
+        index: 2
+- message:
+    name: DropAudioTrackStagingDataResponse
+- message:
+    name: UpdateSubtitleTrackRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+      - name: r2TrackDirname
+        type: string
+        index: 2
+      - name: name
+        type: string
+        index: 3
+      - name: isDefault
+        type: boolean
+        index: 4
+- message:
+    name: UpdateSubtitleTrackResponse
+- message:
+    name: DeleteSubtitleTrackRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+      - name: r2TrackDirname
+        type: string
+        index: 2
+- message:
+    name: DeleteSubtitleTrackResponse
+- message:
+    name: DropSubtitleTrackStagingDataRequestBody
+    fields:
+      - name: containerId
+        type: string
+        index: 1
+      - name: r2TrackDirname
+        type: string
+        index: 2
+- message:
+    name: DropSubtitleTrackStagingDataResponse
+- message:
+    name: ProcessGcsFileDeleteTaskRequestBody
+    fields:
+      - name: gcsFilename
+        type: string
+        index: 1
+      - name: uploadSessionUrl
+        type: string
+        index: 2
+- message:
+    name: ProcessGcsFileDeleteTaskResponse
+- message:
+    name: GetGcsFileDeleteTasksRequestBody
+- message:
+    name: GetGcsFileDeleteTasksResponse
+    fields:
+      - name: tasks
+        type: ProcessGcsFileDeleteTaskRequestBody
+        isArray: true
+        index: 1
+- message:
+    name: ProcessR2KeyDeleteTaskRequestBody
+    fields:
+      - name: key
+        type: string
+        index: 1
+- message:
+    name: ProcessR2KeyDeleteTaskResponse
+- message:
+    name: GetR2KeyDeleteTasksRequestBody
+- message:
+    name: GetR2KeyDeleteTasksResponse
+    fields:
+      - name: tasks
+        type: ProcessR2KeyDeleteTaskRequestBody
+        isArray: true
+        index: 1
+- webService:
+    name: VideoFrontendService
+    remoteCalls:
+      - name: CreateVideoContainer
+        path: /CreateVideoContainer
+        body: CreateVideoContainerRequestBody
+        response: CreateVideoContainerResponse
+      - name: DeleteVideoContainer
+        path: /DeleteVideoContainer
+        body: DeleteVideoContainerRequestBody
+        response: DeleteVideoContainerResponse
+      - name: GetVideoContainer
+        path: /GetVideoContainer
+        body: GetVideoContainerRequestBody
+        response: GetVideoContainerResponse
+      - name: CommitVideoContainerStagingData
+        path: /CommitVideoContainerStagingData
+        body: CommitVideoContainerStagingDataRequestBody
+        response: CommitVideoContainerStagingDataResponse
+      - name: ProcessVideoContainerWritingToFileTask
+        path: /ProcessVideoContainerWritingToFileTask
+        body: ProcessVideoContainerWritingToFileTaskRequestBody
+        response: ProcessVideoContainerWritingToFileTaskResponse
+      - name: GetVideoContainerWritingToFileTasks
+        path: /GetVideoContainerWritingToFileTasks
+        body: GetVideoContainerWritingToFileTasksRequestBody
+        response: GetVideoContainerWritingToFileTasksResponse
+      - name: ProcessVideoContainerSyncingTask
+        path: /ProcessVideoContainerSyncingTask
+        body: ProcessVideoContainerSyncingTaskRequestBody
+        response: ProcessVideoContainerSyncingTaskResponse
+      - name: GetVideoContainerSyncingTasks
+        path: /GetVideoContainerSyncingTasks
+        body: GetVideoContainerSyncingTasksRequestBody
+        response: GetVideoContainerSyncingTasksResponse
+      - name: StartMediaUploading
+        path: /StartMediaUploading
+        body: StartMediaUploadingRequestBody
+        response: StartMediaUploadingResponse
+      - name: CompleteMediaUploading
+        path: /CompleteMediaUploading
+        body: CompleteMediaUploadingRequestBody
+        response: CompleteMediaUploadingResponse
+      - name: CancelMediaUploading
+        path: /CancelMediaUploading
+        body: CancelMediaUploadingRequestBody
+        response: CancelMediaUploadingResponse
+      - name: StartSubtitleUploading
+        path: /StartSubtitleUploading
+        body: StartSubtitleUploadingRequestBody
+        response: StartSubtitleUploadingResponse
+      - name: CompleteSubtitleUploading
+        path: /CompleteSubtitleUploading
+        body: CompleteSubtitleUploadingRequestBody
+        response: CompleteSubtitleUploadingResponse
+      - name: CancelSubtitleUploading
+        path: /CancelSubtitleUploading
+        body: CancelSubtitleUploadingRequestBody
+        response: CancelSubtitleUploadingResponse
+      - name: ProcessMediaFormattingTask
+        path: /ProcessMediaFormattingTask
+        body: ProcessMediaFormattingTaskRequestBody
+        response: ProcessMediaFormattingTaskResponse
+      - name: GetMediaFormattingTasks
+        path: /GetMediaFormattingTasks
+        body: GetMediaFormattingTasksRequestBody
+        response: GetMediaFormattingTasksResponse
+      - name: CancelMediaFormatting
+        path: /CancelMediaFormatting
+        body: CancelMediaFormattingRequestBody
+        response: CancelMediaFormattingResponse
+      - name: ProcessSubtitleFormattingTask
+        path: /ProcessSubtitleFormattingTask
+        body: ProcessSubtitleFormattingTaskRequestBody
+        response: ProcessSubtitleFormattingTaskResponse
+      - name: GetSubtitleFormattingTasks
+        path: /GetSubtitleFormattingTasks
+        body: GetSubtitleFormattingTasksRequestBody
+        response: GetSubtitleFormattingTasksResponse
+      - name: CancelSubtitleFormatting
+        path: /CancelSubtitleFormatting
+        body: CancelSubtitleFormattingRequestBody
+        response: CancelSubtitleFormattingResponse
+      - name: DeleteVideoTrack
+        path: /DeleteVideoTrack
+        body: DeleteVideoTrackRequestBody
+        response: DeleteVideoTrackResponse
+      - name: DropVideoTrackStagingData
+        path: /DropVideoTrackStagingData
+        body: DropVideoTrackStagingDataRequestBody
+        response: DropVideoTrackStagingDataResponse
+      - name: UpdateAudioTrack
+        path: /UpdateAudioTrack
+        body: UpdateAudioTrackRequestBody
+        response: UpdateAudioTrackResponse
+      - name: DeleteAudioTrack
+        path: /DeleteAudioTrack
+        body: DeleteAudioTrackRequestBody
+        response: DeleteAudioTrackResponse
+      - name: DropAudioTrackStagingData
+        path: /DropAudioTrackStagingData
+        body: DropAudioTrackStagingDataRequestBody
+        response: DropAudioTrackStagingDataResponse
+      - name: UpdateSubtitleTrack
+        path: /UpdateSubtitleTrack
+        body: UpdateSubtitleTrackRequestBody
+        response: UpdateSubtitleTrackResponse
+      - name: DeleteSubtitleTrack
+        path: /DeleteSubtitleTrack
+        body: DeleteSubtitleTrackRequestBody
+        response: DeleteSubtitleTrackResponse
+      - name: DropSubtitleTrackStagingData
+        path: /DropSubtitleTrackStagingData
+        body: DropSubtitleTrackStagingDataRequestBody
+        response: DropSubtitleTrackStagingDataResponse
+      - name: ProcessGcsFileDeleteTask
+        path: /ProcessGcsFileDeleteTask
+        body: ProcessGcsFileDeleteTaskRequestBody
+        response: ProcessGcsFileDeleteTaskResponse
+      - name: GetGcsFileDeleteTasks
+        path: /GetGcsFileDeleteTasks
+        body: GetGcsFileDeleteTasksRequestBody
+        response: GetGcsFileDeleteTasksResponse
+      - name: ProcessR2KeyDeleteTask
+        path: /ProcessR2KeyDeleteTask
+        body: ProcessR2KeyDeleteTaskRequestBody
+        response: ProcessR2KeyDeleteTaskResponse
+      - name: GetR2KeyDeleteTasks
+        path: /GetR2KeyDeleteTasks
+        body: GetR2KeyDeleteTasksRequestBody
+        response: GetR2KeyDeleteTasksResponse
+    outputClient: ./node/client
+    outputHandler: ./node/handler

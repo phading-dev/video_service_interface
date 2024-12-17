@@ -1,0 +1,30 @@
+{
+  "name": "@phading/video_service_interface",
+  "version": "0.1.0",
+  "description": "The web and backend interfaces of VideoService.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phading-dev/video_service_interface.git"
+  },
+  "author": "Yuxuan Xie <teststaybaka@gmail.com> (http://www.yuxuanxie.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phading-dev/video_service_interface/issues"
+  },
+  "homepage": "https://github.com/phading-dev/video_service_interface#readme",
+  "files": [
+    "**/*.d.ts",
+    "**/*.js",
+    "**/*.yaml"
+  ],
+  "devDependencies": {
+    "@selfage/generator_cli": "^3.2.4",
+    "@selfage/tsconfig": "^1.1.0",
+    "@types/node": "^22.5.4",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@selfage/message": "^3.5.6",
+    "@selfage/service_descriptor": "^4.3.1"
+  }
+}
