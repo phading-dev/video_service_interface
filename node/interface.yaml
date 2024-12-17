@@ -1,12 +1,15 @@
 - message:
     name: CreateVideoContainerRequestBody
     fields:
-      - name: showId
+      - name: seasonId
         type: string
         index: 1
-      - name: containerId
+      - name: episodeId
         type: string
         index: 2
+      - name: containerId
+        type: string
+        index: 3
 - message:
     name: CreateVideoContainerResponse
 - message:
