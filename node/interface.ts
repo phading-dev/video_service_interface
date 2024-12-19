@@ -1,6 +1,6 @@
 import { PrimitiveType, MessageDescriptor, EnumDescriptor } from '@selfage/message/descriptor';
 import { VideoContainer, VIDEO_CONTAINER } from './video_container';
-import { WebRemoteCallDescriptor } from '@selfage/service_descriptor';
+import { NodeRemoteCallDescriptor } from '@selfage/service_descriptor';
 
 export interface CreateVideoContainerRequestBody {
   seasonId?: string,
@@ -880,7 +880,7 @@ export let LIST_R2_KEY_DELETE_TASKS_RESPONSE: MessageDescriptor<ListR2KeyDeleteT
   }],
 };
 
-export let CREATE_VIDEO_CONTAINER: WebRemoteCallDescriptor = {
+export let CREATE_VIDEO_CONTAINER: NodeRemoteCallDescriptor = {
   name: "CreateVideoContainer",
   path: "/CreateVideoContainer",
   body: {
@@ -891,7 +891,7 @@ export let CREATE_VIDEO_CONTAINER: WebRemoteCallDescriptor = {
   },
 }
 
-export let DELETE_VIDEO_CONTAINER: WebRemoteCallDescriptor = {
+export let DELETE_VIDEO_CONTAINER: NodeRemoteCallDescriptor = {
   name: "DeleteVideoContainer",
   path: "/DeleteVideoContainer",
   body: {
@@ -902,7 +902,7 @@ export let DELETE_VIDEO_CONTAINER: WebRemoteCallDescriptor = {
   },
 }
 
-export let GET_VIDEO_CONTAINER: WebRemoteCallDescriptor = {
+export let GET_VIDEO_CONTAINER: NodeRemoteCallDescriptor = {
   name: "GetVideoContainer",
   path: "/GetVideoContainer",
   body: {
@@ -913,7 +913,7 @@ export let GET_VIDEO_CONTAINER: WebRemoteCallDescriptor = {
   },
 }
 
-export let COMMIT_VIDEO_CONTAINER_STAGING_DATA: WebRemoteCallDescriptor = {
+export let COMMIT_VIDEO_CONTAINER_STAGING_DATA: NodeRemoteCallDescriptor = {
   name: "CommitVideoContainerStagingData",
   path: "/CommitVideoContainerStagingData",
   body: {
@@ -924,7 +924,7 @@ export let COMMIT_VIDEO_CONTAINER_STAGING_DATA: WebRemoteCallDescriptor = {
   },
 }
 
-export let PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK: WebRemoteCallDescriptor = {
+export let PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK: NodeRemoteCallDescriptor = {
   name: "ProcessVideoContainerWritingToFileTask",
   path: "/ProcessVideoContainerWritingToFileTask",
   body: {
@@ -935,7 +935,7 @@ export let PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK: WebRemoteCallDescriptor
   },
 }
 
-export let LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS: WebRemoteCallDescriptor = {
+export let LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS: NodeRemoteCallDescriptor = {
   name: "ListVideoContainerWritingToFileTasks",
   path: "/ListVideoContainerWritingToFileTasks",
   body: {
@@ -946,7 +946,7 @@ export let LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS: WebRemoteCallDescriptor =
   },
 }
 
-export let PROCESS_VIDEO_CONTAINER_SYNCING_TASK: WebRemoteCallDescriptor = {
+export let PROCESS_VIDEO_CONTAINER_SYNCING_TASK: NodeRemoteCallDescriptor = {
   name: "ProcessVideoContainerSyncingTask",
   path: "/ProcessVideoContainerSyncingTask",
   body: {
@@ -957,7 +957,7 @@ export let PROCESS_VIDEO_CONTAINER_SYNCING_TASK: WebRemoteCallDescriptor = {
   },
 }
 
-export let LIST_VIDEO_CONTAINER_SYNCING_TASKS: WebRemoteCallDescriptor = {
+export let LIST_VIDEO_CONTAINER_SYNCING_TASKS: NodeRemoteCallDescriptor = {
   name: "ListVideoContainerSyncingTasks",
   path: "/ListVideoContainerSyncingTasks",
   body: {
@@ -968,7 +968,7 @@ export let LIST_VIDEO_CONTAINER_SYNCING_TASKS: WebRemoteCallDescriptor = {
   },
 }
 
-export let START_MEDIA_UPLOADING: WebRemoteCallDescriptor = {
+export let START_MEDIA_UPLOADING: NodeRemoteCallDescriptor = {
   name: "StartMediaUploading",
   path: "/StartMediaUploading",
   body: {
@@ -979,7 +979,7 @@ export let START_MEDIA_UPLOADING: WebRemoteCallDescriptor = {
   },
 }
 
-export let COMPLETE_MEDIA_UPLOADING: WebRemoteCallDescriptor = {
+export let COMPLETE_MEDIA_UPLOADING: NodeRemoteCallDescriptor = {
   name: "CompleteMediaUploading",
   path: "/CompleteMediaUploading",
   body: {
@@ -990,7 +990,7 @@ export let COMPLETE_MEDIA_UPLOADING: WebRemoteCallDescriptor = {
   },
 }
 
-export let CANCEL_MEDIA_UPLOADING: WebRemoteCallDescriptor = {
+export let CANCEL_MEDIA_UPLOADING: NodeRemoteCallDescriptor = {
   name: "CancelMediaUploading",
   path: "/CancelMediaUploading",
   body: {
@@ -1001,7 +1001,7 @@ export let CANCEL_MEDIA_UPLOADING: WebRemoteCallDescriptor = {
   },
 }
 
-export let START_SUBTITLE_UPLOADING: WebRemoteCallDescriptor = {
+export let START_SUBTITLE_UPLOADING: NodeRemoteCallDescriptor = {
   name: "StartSubtitleUploading",
   path: "/StartSubtitleUploading",
   body: {
@@ -1012,7 +1012,7 @@ export let START_SUBTITLE_UPLOADING: WebRemoteCallDescriptor = {
   },
 }
 
-export let COMPLETE_SUBTITLE_UPLOADING: WebRemoteCallDescriptor = {
+export let COMPLETE_SUBTITLE_UPLOADING: NodeRemoteCallDescriptor = {
   name: "CompleteSubtitleUploading",
   path: "/CompleteSubtitleUploading",
   body: {
@@ -1023,7 +1023,7 @@ export let COMPLETE_SUBTITLE_UPLOADING: WebRemoteCallDescriptor = {
   },
 }
 
-export let CANCEL_SUBTITLE_UPLOADING: WebRemoteCallDescriptor = {
+export let CANCEL_SUBTITLE_UPLOADING: NodeRemoteCallDescriptor = {
   name: "CancelSubtitleUploading",
   path: "/CancelSubtitleUploading",
   body: {
@@ -1034,7 +1034,7 @@ export let CANCEL_SUBTITLE_UPLOADING: WebRemoteCallDescriptor = {
   },
 }
 
-export let PROCESS_MEDIA_FORMATTING_TASK: WebRemoteCallDescriptor = {
+export let PROCESS_MEDIA_FORMATTING_TASK: NodeRemoteCallDescriptor = {
   name: "ProcessMediaFormattingTask",
   path: "/ProcessMediaFormattingTask",
   body: {
@@ -1045,7 +1045,7 @@ export let PROCESS_MEDIA_FORMATTING_TASK: WebRemoteCallDescriptor = {
   },
 }
 
-export let LIST_MEDIA_FORMATTING_TASKS: WebRemoteCallDescriptor = {
+export let LIST_MEDIA_FORMATTING_TASKS: NodeRemoteCallDescriptor = {
   name: "ListMediaFormattingTasks",
   path: "/ListMediaFormattingTasks",
   body: {
@@ -1056,7 +1056,7 @@ export let LIST_MEDIA_FORMATTING_TASKS: WebRemoteCallDescriptor = {
   },
 }
 
-export let CANCEL_MEDIA_FORMATTING: WebRemoteCallDescriptor = {
+export let CANCEL_MEDIA_FORMATTING: NodeRemoteCallDescriptor = {
   name: "CancelMediaFormatting",
   path: "/CancelMediaFormatting",
   body: {
@@ -1067,7 +1067,7 @@ export let CANCEL_MEDIA_FORMATTING: WebRemoteCallDescriptor = {
   },
 }
 
-export let PROCESS_SUBTITLE_FORMATTING_TASK: WebRemoteCallDescriptor = {
+export let PROCESS_SUBTITLE_FORMATTING_TASK: NodeRemoteCallDescriptor = {
   name: "ProcessSubtitleFormattingTask",
   path: "/ProcessSubtitleFormattingTask",
   body: {
@@ -1078,7 +1078,7 @@ export let PROCESS_SUBTITLE_FORMATTING_TASK: WebRemoteCallDescriptor = {
   },
 }
 
-export let LIST_SUBTITLE_FORMATTING_TASKS: WebRemoteCallDescriptor = {
+export let LIST_SUBTITLE_FORMATTING_TASKS: NodeRemoteCallDescriptor = {
   name: "ListSubtitleFormattingTasks",
   path: "/ListSubtitleFormattingTasks",
   body: {
@@ -1089,7 +1089,7 @@ export let LIST_SUBTITLE_FORMATTING_TASKS: WebRemoteCallDescriptor = {
   },
 }
 
-export let CANCEL_SUBTITLE_FORMATTING: WebRemoteCallDescriptor = {
+export let CANCEL_SUBTITLE_FORMATTING: NodeRemoteCallDescriptor = {
   name: "CancelSubtitleFormatting",
   path: "/CancelSubtitleFormatting",
   body: {
@@ -1100,7 +1100,7 @@ export let CANCEL_SUBTITLE_FORMATTING: WebRemoteCallDescriptor = {
   },
 }
 
-export let DELETE_VIDEO_TRACK: WebRemoteCallDescriptor = {
+export let DELETE_VIDEO_TRACK: NodeRemoteCallDescriptor = {
   name: "DeleteVideoTrack",
   path: "/DeleteVideoTrack",
   body: {
@@ -1111,7 +1111,7 @@ export let DELETE_VIDEO_TRACK: WebRemoteCallDescriptor = {
   },
 }
 
-export let DROP_VIDEO_TRACK_STAGING_DATA: WebRemoteCallDescriptor = {
+export let DROP_VIDEO_TRACK_STAGING_DATA: NodeRemoteCallDescriptor = {
   name: "DropVideoTrackStagingData",
   path: "/DropVideoTrackStagingData",
   body: {
@@ -1122,7 +1122,7 @@ export let DROP_VIDEO_TRACK_STAGING_DATA: WebRemoteCallDescriptor = {
   },
 }
 
-export let UPDATE_AUDIO_TRACK: WebRemoteCallDescriptor = {
+export let UPDATE_AUDIO_TRACK: NodeRemoteCallDescriptor = {
   name: "UpdateAudioTrack",
   path: "/UpdateAudioTrack",
   body: {
@@ -1133,7 +1133,7 @@ export let UPDATE_AUDIO_TRACK: WebRemoteCallDescriptor = {
   },
 }
 
-export let DELETE_AUDIO_TRACK: WebRemoteCallDescriptor = {
+export let DELETE_AUDIO_TRACK: NodeRemoteCallDescriptor = {
   name: "DeleteAudioTrack",
   path: "/DeleteAudioTrack",
   body: {
@@ -1144,7 +1144,7 @@ export let DELETE_AUDIO_TRACK: WebRemoteCallDescriptor = {
   },
 }
 
-export let DROP_AUDIO_TRACK_STAGING_DATA: WebRemoteCallDescriptor = {
+export let DROP_AUDIO_TRACK_STAGING_DATA: NodeRemoteCallDescriptor = {
   name: "DropAudioTrackStagingData",
   path: "/DropAudioTrackStagingData",
   body: {
@@ -1155,7 +1155,7 @@ export let DROP_AUDIO_TRACK_STAGING_DATA: WebRemoteCallDescriptor = {
   },
 }
 
-export let UPDATE_SUBTITLE_TRACK: WebRemoteCallDescriptor = {
+export let UPDATE_SUBTITLE_TRACK: NodeRemoteCallDescriptor = {
   name: "UpdateSubtitleTrack",
   path: "/UpdateSubtitleTrack",
   body: {
@@ -1166,7 +1166,7 @@ export let UPDATE_SUBTITLE_TRACK: WebRemoteCallDescriptor = {
   },
 }
 
-export let DELETE_SUBTITLE_TRACK: WebRemoteCallDescriptor = {
+export let DELETE_SUBTITLE_TRACK: NodeRemoteCallDescriptor = {
   name: "DeleteSubtitleTrack",
   path: "/DeleteSubtitleTrack",
   body: {
@@ -1177,7 +1177,7 @@ export let DELETE_SUBTITLE_TRACK: WebRemoteCallDescriptor = {
   },
 }
 
-export let DROP_SUBTITLE_TRACK_STAGING_DATA: WebRemoteCallDescriptor = {
+export let DROP_SUBTITLE_TRACK_STAGING_DATA: NodeRemoteCallDescriptor = {
   name: "DropSubtitleTrackStagingData",
   path: "/DropSubtitleTrackStagingData",
   body: {
@@ -1188,7 +1188,7 @@ export let DROP_SUBTITLE_TRACK_STAGING_DATA: WebRemoteCallDescriptor = {
   },
 }
 
-export let PROCESS_GCS_FILE_DELETE_TASK: WebRemoteCallDescriptor = {
+export let PROCESS_GCS_FILE_DELETE_TASK: NodeRemoteCallDescriptor = {
   name: "ProcessGcsFileDeleteTask",
   path: "/ProcessGcsFileDeleteTask",
   body: {
@@ -1199,7 +1199,7 @@ export let PROCESS_GCS_FILE_DELETE_TASK: WebRemoteCallDescriptor = {
   },
 }
 
-export let LIST_GCS_FILE_DELETE_TASKS: WebRemoteCallDescriptor = {
+export let LIST_GCS_FILE_DELETE_TASKS: NodeRemoteCallDescriptor = {
   name: "ListGcsFileDeleteTasks",
   path: "/ListGcsFileDeleteTasks",
   body: {
@@ -1210,7 +1210,7 @@ export let LIST_GCS_FILE_DELETE_TASKS: WebRemoteCallDescriptor = {
   },
 }
 
-export let PROCESS_R2_KEY_DELETE_TASK: WebRemoteCallDescriptor = {
+export let PROCESS_R2_KEY_DELETE_TASK: NodeRemoteCallDescriptor = {
   name: "ProcessR2KeyDeleteTask",
   path: "/ProcessR2KeyDeleteTask",
   body: {
@@ -1221,7 +1221,7 @@ export let PROCESS_R2_KEY_DELETE_TASK: WebRemoteCallDescriptor = {
   },
 }
 
-export let LIST_R2_KEY_DELETE_TASKS: WebRemoteCallDescriptor = {
+export let LIST_R2_KEY_DELETE_TASKS: NodeRemoteCallDescriptor = {
   name: "ListR2KeyDeleteTasks",
   path: "/ListR2KeyDeleteTasks",
   body: {

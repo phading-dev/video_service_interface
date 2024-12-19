@@ -1,10 +1,10 @@
 import { CreateVideoContainerRequestBody, CreateVideoContainerResponse, CREATE_VIDEO_CONTAINER, DeleteVideoContainerRequestBody, DeleteVideoContainerResponse, DELETE_VIDEO_CONTAINER, GetVideoContainerRequestBody, GetVideoContainerResponse, GET_VIDEO_CONTAINER, CommitVideoContainerStagingDataRequestBody, CommitVideoContainerStagingDataResponse, COMMIT_VIDEO_CONTAINER_STAGING_DATA, ProcessVideoContainerWritingToFileTaskRequestBody, ProcessVideoContainerWritingToFileTaskResponse, PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK, ListVideoContainerWritingToFileTasksRequestBody, ListVideoContainerWritingToFileTasksResponse, LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS, ProcessVideoContainerSyncingTaskRequestBody, ProcessVideoContainerSyncingTaskResponse, PROCESS_VIDEO_CONTAINER_SYNCING_TASK, ListVideoContainerSyncingTasksRequestBody, ListVideoContainerSyncingTasksResponse, LIST_VIDEO_CONTAINER_SYNCING_TASKS, StartMediaUploadingRequestBody, StartMediaUploadingResponse, START_MEDIA_UPLOADING, CompleteMediaUploadingRequestBody, CompleteMediaUploadingResponse, COMPLETE_MEDIA_UPLOADING, CancelMediaUploadingRequestBody, CancelMediaUploadingResponse, CANCEL_MEDIA_UPLOADING, StartSubtitleUploadingRequestBody, StartSubtitleUploadingResponse, START_SUBTITLE_UPLOADING, CompleteSubtitleUploadingRequestBody, CompleteSubtitleUploadingResponse, COMPLETE_SUBTITLE_UPLOADING, CancelSubtitleUploadingRequestBody, CancelSubtitleUploadingResponse, CANCEL_SUBTITLE_UPLOADING, ProcessMediaFormattingTaskRequestBody, ProcessMediaFormattingTaskResponse, PROCESS_MEDIA_FORMATTING_TASK, ListMediaFormattingTasksRequestBody, ListMediaFormattingTasksResponse, LIST_MEDIA_FORMATTING_TASKS, CancelMediaFormattingRequestBody, CancelMediaFormattingResponse, CANCEL_MEDIA_FORMATTING, ProcessSubtitleFormattingTaskRequestBody, ProcessSubtitleFormattingTaskResponse, PROCESS_SUBTITLE_FORMATTING_TASK, ListSubtitleFormattingTasksRequestBody, ListSubtitleFormattingTasksResponse, LIST_SUBTITLE_FORMATTING_TASKS, CancelSubtitleFormattingRequestBody, CancelSubtitleFormattingResponse, CANCEL_SUBTITLE_FORMATTING, DeleteVideoTrackRequestBody, DeleteVideoTrackResponse, DELETE_VIDEO_TRACK, DropVideoTrackStagingDataRequestBody, DropVideoTrackStagingDataResponse, DROP_VIDEO_TRACK_STAGING_DATA, UpdateAudioTrackRequestBody, UpdateAudioTrackResponse, UPDATE_AUDIO_TRACK, DeleteAudioTrackRequestBody, DeleteAudioTrackResponse, DELETE_AUDIO_TRACK, DropAudioTrackStagingDataRequestBody, DropAudioTrackStagingDataResponse, DROP_AUDIO_TRACK_STAGING_DATA, UpdateSubtitleTrackRequestBody, UpdateSubtitleTrackResponse, UPDATE_SUBTITLE_TRACK, DeleteSubtitleTrackRequestBody, DeleteSubtitleTrackResponse, DELETE_SUBTITLE_TRACK, DropSubtitleTrackStagingDataRequestBody, DropSubtitleTrackStagingDataResponse, DROP_SUBTITLE_TRACK_STAGING_DATA, ProcessGcsFileDeleteTaskRequestBody, ProcessGcsFileDeleteTaskResponse, PROCESS_GCS_FILE_DELETE_TASK, ListGcsFileDeleteTasksRequestBody, ListGcsFileDeleteTasksResponse, LIST_GCS_FILE_DELETE_TASKS, ProcessR2KeyDeleteTaskRequestBody, ProcessR2KeyDeleteTaskResponse, PROCESS_R2_KEY_DELETE_TASK, ListR2KeyDeleteTasksRequestBody, ListR2KeyDeleteTasksResponse, LIST_R2_KEY_DELETE_TASKS } from './interface';
-import { WebClientInterface, WebClientOptions } from '@selfage/service_descriptor/client_interface';
+import { NodeClientInterface, NodeClientOptions } from '@selfage/service_descriptor/client_interface';
 
 export function createVideoContainer(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: CreateVideoContainerRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<CreateVideoContainerResponse> {
   return client.send(
     {
@@ -16,9 +16,9 @@ export function createVideoContainer(
 }
 
 export function deleteVideoContainer(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: DeleteVideoContainerRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<DeleteVideoContainerResponse> {
   return client.send(
     {
@@ -30,9 +30,9 @@ export function deleteVideoContainer(
 }
 
 export function getVideoContainer(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: GetVideoContainerRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<GetVideoContainerResponse> {
   return client.send(
     {
@@ -44,9 +44,9 @@ export function getVideoContainer(
 }
 
 export function commitVideoContainerStagingData(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: CommitVideoContainerStagingDataRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<CommitVideoContainerStagingDataResponse> {
   return client.send(
     {
@@ -58,9 +58,9 @@ export function commitVideoContainerStagingData(
 }
 
 export function processVideoContainerWritingToFileTask(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: ProcessVideoContainerWritingToFileTaskRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<ProcessVideoContainerWritingToFileTaskResponse> {
   return client.send(
     {
@@ -72,9 +72,9 @@ export function processVideoContainerWritingToFileTask(
 }
 
 export function listVideoContainerWritingToFileTasks(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: ListVideoContainerWritingToFileTasksRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<ListVideoContainerWritingToFileTasksResponse> {
   return client.send(
     {
@@ -86,9 +86,9 @@ export function listVideoContainerWritingToFileTasks(
 }
 
 export function processVideoContainerSyncingTask(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: ProcessVideoContainerSyncingTaskRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<ProcessVideoContainerSyncingTaskResponse> {
   return client.send(
     {
@@ -100,9 +100,9 @@ export function processVideoContainerSyncingTask(
 }
 
 export function listVideoContainerSyncingTasks(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: ListVideoContainerSyncingTasksRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<ListVideoContainerSyncingTasksResponse> {
   return client.send(
     {
@@ -114,9 +114,9 @@ export function listVideoContainerSyncingTasks(
 }
 
 export function startMediaUploading(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: StartMediaUploadingRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<StartMediaUploadingResponse> {
   return client.send(
     {
@@ -128,9 +128,9 @@ export function startMediaUploading(
 }
 
 export function completeMediaUploading(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: CompleteMediaUploadingRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<CompleteMediaUploadingResponse> {
   return client.send(
     {
@@ -142,9 +142,9 @@ export function completeMediaUploading(
 }
 
 export function cancelMediaUploading(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: CancelMediaUploadingRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<CancelMediaUploadingResponse> {
   return client.send(
     {
@@ -156,9 +156,9 @@ export function cancelMediaUploading(
 }
 
 export function startSubtitleUploading(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: StartSubtitleUploadingRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<StartSubtitleUploadingResponse> {
   return client.send(
     {
@@ -170,9 +170,9 @@ export function startSubtitleUploading(
 }
 
 export function completeSubtitleUploading(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: CompleteSubtitleUploadingRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<CompleteSubtitleUploadingResponse> {
   return client.send(
     {
@@ -184,9 +184,9 @@ export function completeSubtitleUploading(
 }
 
 export function cancelSubtitleUploading(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: CancelSubtitleUploadingRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<CancelSubtitleUploadingResponse> {
   return client.send(
     {
@@ -198,9 +198,9 @@ export function cancelSubtitleUploading(
 }
 
 export function processMediaFormattingTask(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: ProcessMediaFormattingTaskRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<ProcessMediaFormattingTaskResponse> {
   return client.send(
     {
@@ -212,9 +212,9 @@ export function processMediaFormattingTask(
 }
 
 export function listMediaFormattingTasks(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: ListMediaFormattingTasksRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<ListMediaFormattingTasksResponse> {
   return client.send(
     {
@@ -226,9 +226,9 @@ export function listMediaFormattingTasks(
 }
 
 export function cancelMediaFormatting(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: CancelMediaFormattingRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<CancelMediaFormattingResponse> {
   return client.send(
     {
@@ -240,9 +240,9 @@ export function cancelMediaFormatting(
 }
 
 export function processSubtitleFormattingTask(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: ProcessSubtitleFormattingTaskRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<ProcessSubtitleFormattingTaskResponse> {
   return client.send(
     {
@@ -254,9 +254,9 @@ export function processSubtitleFormattingTask(
 }
 
 export function listSubtitleFormattingTasks(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: ListSubtitleFormattingTasksRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<ListSubtitleFormattingTasksResponse> {
   return client.send(
     {
@@ -268,9 +268,9 @@ export function listSubtitleFormattingTasks(
 }
 
 export function cancelSubtitleFormatting(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: CancelSubtitleFormattingRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<CancelSubtitleFormattingResponse> {
   return client.send(
     {
@@ -282,9 +282,9 @@ export function cancelSubtitleFormatting(
 }
 
 export function deleteVideoTrack(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: DeleteVideoTrackRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<DeleteVideoTrackResponse> {
   return client.send(
     {
@@ -296,9 +296,9 @@ export function deleteVideoTrack(
 }
 
 export function dropVideoTrackStagingData(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: DropVideoTrackStagingDataRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<DropVideoTrackStagingDataResponse> {
   return client.send(
     {
@@ -310,9 +310,9 @@ export function dropVideoTrackStagingData(
 }
 
 export function updateAudioTrack(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: UpdateAudioTrackRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<UpdateAudioTrackResponse> {
   return client.send(
     {
@@ -324,9 +324,9 @@ export function updateAudioTrack(
 }
 
 export function deleteAudioTrack(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: DeleteAudioTrackRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<DeleteAudioTrackResponse> {
   return client.send(
     {
@@ -338,9 +338,9 @@ export function deleteAudioTrack(
 }
 
 export function dropAudioTrackStagingData(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: DropAudioTrackStagingDataRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<DropAudioTrackStagingDataResponse> {
   return client.send(
     {
@@ -352,9 +352,9 @@ export function dropAudioTrackStagingData(
 }
 
 export function updateSubtitleTrack(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: UpdateSubtitleTrackRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<UpdateSubtitleTrackResponse> {
   return client.send(
     {
@@ -366,9 +366,9 @@ export function updateSubtitleTrack(
 }
 
 export function deleteSubtitleTrack(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: DeleteSubtitleTrackRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<DeleteSubtitleTrackResponse> {
   return client.send(
     {
@@ -380,9 +380,9 @@ export function deleteSubtitleTrack(
 }
 
 export function dropSubtitleTrackStagingData(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: DropSubtitleTrackStagingDataRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<DropSubtitleTrackStagingDataResponse> {
   return client.send(
     {
@@ -394,9 +394,9 @@ export function dropSubtitleTrackStagingData(
 }
 
 export function processGcsFileDeleteTask(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: ProcessGcsFileDeleteTaskRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<ProcessGcsFileDeleteTaskResponse> {
   return client.send(
     {
@@ -408,9 +408,9 @@ export function processGcsFileDeleteTask(
 }
 
 export function listGcsFileDeleteTasks(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: ListGcsFileDeleteTasksRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<ListGcsFileDeleteTasksResponse> {
   return client.send(
     {
@@ -422,9 +422,9 @@ export function listGcsFileDeleteTasks(
 }
 
 export function processR2KeyDeleteTask(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: ProcessR2KeyDeleteTaskRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<ProcessR2KeyDeleteTaskResponse> {
   return client.send(
     {
@@ -436,9 +436,9 @@ export function processR2KeyDeleteTask(
 }
 
 export function listR2KeyDeleteTasks(
-  client: WebClientInterface,
+  client: NodeClientInterface,
   body: ListR2KeyDeleteTasksRequestBody,
-  options?: WebClientOptions,
+  options?: NodeClientOptions,
 ): Promise<ListR2KeyDeleteTasksResponse> {
   return client.send(
     {

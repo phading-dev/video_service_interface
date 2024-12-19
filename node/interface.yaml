@@ -380,7 +380,7 @@
         type: ProcessR2KeyDeleteTaskRequestBody
         isArray: true
         index: 1
-- webService:
+- nodeService:
     name: VideoFrontendService
     remoteCalls:
       - name: CreateVideoContainer

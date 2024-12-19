@@ -1,7 +1,7 @@
 import { CreateVideoContainerRequestBody, CREATE_VIDEO_CONTAINER, CreateVideoContainerResponse, DeleteVideoContainerRequestBody, DELETE_VIDEO_CONTAINER, DeleteVideoContainerResponse, GetVideoContainerRequestBody, GET_VIDEO_CONTAINER, GetVideoContainerResponse, CommitVideoContainerStagingDataRequestBody, COMMIT_VIDEO_CONTAINER_STAGING_DATA, CommitVideoContainerStagingDataResponse, ProcessVideoContainerWritingToFileTaskRequestBody, PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK, ProcessVideoContainerWritingToFileTaskResponse, ListVideoContainerWritingToFileTasksRequestBody, LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS, ListVideoContainerWritingToFileTasksResponse, ProcessVideoContainerSyncingTaskRequestBody, PROCESS_VIDEO_CONTAINER_SYNCING_TASK, ProcessVideoContainerSyncingTaskResponse, ListVideoContainerSyncingTasksRequestBody, LIST_VIDEO_CONTAINER_SYNCING_TASKS, ListVideoContainerSyncingTasksResponse, StartMediaUploadingRequestBody, START_MEDIA_UPLOADING, StartMediaUploadingResponse, CompleteMediaUploadingRequestBody, COMPLETE_MEDIA_UPLOADING, CompleteMediaUploadingResponse, CancelMediaUploadingRequestBody, CANCEL_MEDIA_UPLOADING, CancelMediaUploadingResponse, StartSubtitleUploadingRequestBody, START_SUBTITLE_UPLOADING, StartSubtitleUploadingResponse, CompleteSubtitleUploadingRequestBody, COMPLETE_SUBTITLE_UPLOADING, CompleteSubtitleUploadingResponse, CancelSubtitleUploadingRequestBody, CANCEL_SUBTITLE_UPLOADING, CancelSubtitleUploadingResponse, ProcessMediaFormattingTaskRequestBody, PROCESS_MEDIA_FORMATTING_TASK, ProcessMediaFormattingTaskResponse, ListMediaFormattingTasksRequestBody, LIST_MEDIA_FORMATTING_TASKS, ListMediaFormattingTasksResponse, CancelMediaFormattingRequestBody, CANCEL_MEDIA_FORMATTING, CancelMediaFormattingResponse, ProcessSubtitleFormattingTaskRequestBody, PROCESS_SUBTITLE_FORMATTING_TASK, ProcessSubtitleFormattingTaskResponse, ListSubtitleFormattingTasksRequestBody, LIST_SUBTITLE_FORMATTING_TASKS, ListSubtitleFormattingTasksResponse, CancelSubtitleFormattingRequestBody, CANCEL_SUBTITLE_FORMATTING, CancelSubtitleFormattingResponse, DeleteVideoTrackRequestBody, DELETE_VIDEO_TRACK, DeleteVideoTrackResponse, DropVideoTrackStagingDataRequestBody, DROP_VIDEO_TRACK_STAGING_DATA, DropVideoTrackStagingDataResponse, UpdateAudioTrackRequestBody, UPDATE_AUDIO_TRACK, UpdateAudioTrackResponse, DeleteAudioTrackRequestBody, DELETE_AUDIO_TRACK, DeleteAudioTrackResponse, DropAudioTrackStagingDataRequestBody, DROP_AUDIO_TRACK_STAGING_DATA, DropAudioTrackStagingDataResponse, UpdateSubtitleTrackRequestBody, UPDATE_SUBTITLE_TRACK, UpdateSubtitleTrackResponse, DeleteSubtitleTrackRequestBody, DELETE_SUBTITLE_TRACK, DeleteSubtitleTrackResponse, DropSubtitleTrackStagingDataRequestBody, DROP_SUBTITLE_TRACK_STAGING_DATA, DropSubtitleTrackStagingDataResponse, ProcessGcsFileDeleteTaskRequestBody, PROCESS_GCS_FILE_DELETE_TASK, ProcessGcsFileDeleteTaskResponse, ListGcsFileDeleteTasksRequestBody, LIST_GCS_FILE_DELETE_TASKS, ListGcsFileDeleteTasksResponse, ProcessR2KeyDeleteTaskRequestBody, PROCESS_R2_KEY_DELETE_TASK, ProcessR2KeyDeleteTaskResponse, ListR2KeyDeleteTasksRequestBody, LIST_R2_KEY_DELETE_TASKS, ListR2KeyDeleteTasksResponse } from './interface';
-import { WebHandlerInterface } from '@selfage/service_descriptor/handler_interface';
+import { NodeHandlerInterface } from '@selfage/service_descriptor/handler_interface';
 
-export abstract class CreateVideoContainerHandlerInterface implements WebHandlerInterface {
+export abstract class CreateVideoContainerHandlerInterface implements NodeHandlerInterface {
   public descriptor = CREATE_VIDEO_CONTAINER;
   public abstract handle(
     loggingPrefix: string,
@@ -9,7 +9,7 @@ export abstract class CreateVideoContainerHandlerInterface implements WebHandler
   ): Promise<CreateVideoContainerResponse>;
 }
 
-export abstract class DeleteVideoContainerHandlerInterface implements WebHandlerInterface {
+export abstract class DeleteVideoContainerHandlerInterface implements NodeHandlerInterface {
   public descriptor = DELETE_VIDEO_CONTAINER;
   public abstract handle(
     loggingPrefix: string,
@@ -17,7 +17,7 @@ export abstract class DeleteVideoContainerHandlerInterface implements WebHandler
   ): Promise<DeleteVideoContainerResponse>;
 }
 
-export abstract class GetVideoContainerHandlerInterface implements WebHandlerInterface {
+export abstract class GetVideoContainerHandlerInterface implements NodeHandlerInterface {
   public descriptor = GET_VIDEO_CONTAINER;
   public abstract handle(
     loggingPrefix: string,
@@ -25,7 +25,7 @@ export abstract class GetVideoContainerHandlerInterface implements WebHandlerInt
   ): Promise<GetVideoContainerResponse>;
 }
 
-export abstract class CommitVideoContainerStagingDataHandlerInterface implements WebHandlerInterface {
+export abstract class CommitVideoContainerStagingDataHandlerInterface implements NodeHandlerInterface {
   public descriptor = COMMIT_VIDEO_CONTAINER_STAGING_DATA;
   public abstract handle(
     loggingPrefix: string,
@@ -33,7 +33,7 @@ export abstract class CommitVideoContainerStagingDataHandlerInterface implements
   ): Promise<CommitVideoContainerStagingDataResponse>;
 }
 
-export abstract class ProcessVideoContainerWritingToFileTaskHandlerInterface implements WebHandlerInterface {
+export abstract class ProcessVideoContainerWritingToFileTaskHandlerInterface implements NodeHandlerInterface {
   public descriptor = PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK;
   public abstract handle(
     loggingPrefix: string,
@@ -41,7 +41,7 @@ export abstract class ProcessVideoContainerWritingToFileTaskHandlerInterface imp
   ): Promise<ProcessVideoContainerWritingToFileTaskResponse>;
 }
 
-export abstract class ListVideoContainerWritingToFileTasksHandlerInterface implements WebHandlerInterface {
+export abstract class ListVideoContainerWritingToFileTasksHandlerInterface implements NodeHandlerInterface {
   public descriptor = LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS;
   public abstract handle(
     loggingPrefix: string,
@@ -49,7 +49,7 @@ export abstract class ListVideoContainerWritingToFileTasksHandlerInterface imple
   ): Promise<ListVideoContainerWritingToFileTasksResponse>;
 }
 
-export abstract class ProcessVideoContainerSyncingTaskHandlerInterface implements WebHandlerInterface {
+export abstract class ProcessVideoContainerSyncingTaskHandlerInterface implements NodeHandlerInterface {
   public descriptor = PROCESS_VIDEO_CONTAINER_SYNCING_TASK;
   public abstract handle(
     loggingPrefix: string,
@@ -57,7 +57,7 @@ export abstract class ProcessVideoContainerSyncingTaskHandlerInterface implement
   ): Promise<ProcessVideoContainerSyncingTaskResponse>;
 }
 
-export abstract class ListVideoContainerSyncingTasksHandlerInterface implements WebHandlerInterface {
+export abstract class ListVideoContainerSyncingTasksHandlerInterface implements NodeHandlerInterface {
   public descriptor = LIST_VIDEO_CONTAINER_SYNCING_TASKS;
   public abstract handle(
     loggingPrefix: string,
@@ -65,7 +65,7 @@ export abstract class ListVideoContainerSyncingTasksHandlerInterface implements 
   ): Promise<ListVideoContainerSyncingTasksResponse>;
 }
 
-export abstract class StartMediaUploadingHandlerInterface implements WebHandlerInterface {
+export abstract class StartMediaUploadingHandlerInterface implements NodeHandlerInterface {
   public descriptor = START_MEDIA_UPLOADING;
   public abstract handle(
     loggingPrefix: string,
@@ -73,7 +73,7 @@ export abstract class StartMediaUploadingHandlerInterface implements WebHandlerI
   ): Promise<StartMediaUploadingResponse>;
 }
 
-export abstract class CompleteMediaUploadingHandlerInterface implements WebHandlerInterface {
+export abstract class CompleteMediaUploadingHandlerInterface implements NodeHandlerInterface {
   public descriptor = COMPLETE_MEDIA_UPLOADING;
   public abstract handle(
     loggingPrefix: string,
@@ -81,7 +81,7 @@ export abstract class CompleteMediaUploadingHandlerInterface implements WebHandl
   ): Promise<CompleteMediaUploadingResponse>;
 }
 
-export abstract class CancelMediaUploadingHandlerInterface implements WebHandlerInterface {
+export abstract class CancelMediaUploadingHandlerInterface implements NodeHandlerInterface {
   public descriptor = CANCEL_MEDIA_UPLOADING;
   public abstract handle(
     loggingPrefix: string,
@@ -89,7 +89,7 @@ export abstract class CancelMediaUploadingHandlerInterface implements WebHandler
   ): Promise<CancelMediaUploadingResponse>;
 }
 
-export abstract class StartSubtitleUploadingHandlerInterface implements WebHandlerInterface {
+export abstract class StartSubtitleUploadingHandlerInterface implements NodeHandlerInterface {
   public descriptor = START_SUBTITLE_UPLOADING;
   public abstract handle(
     loggingPrefix: string,
@@ -97,7 +97,7 @@ export abstract class StartSubtitleUploadingHandlerInterface implements WebHandl
   ): Promise<StartSubtitleUploadingResponse>;
 }
 
-export abstract class CompleteSubtitleUploadingHandlerInterface implements WebHandlerInterface {
+export abstract class CompleteSubtitleUploadingHandlerInterface implements NodeHandlerInterface {
   public descriptor = COMPLETE_SUBTITLE_UPLOADING;
   public abstract handle(
     loggingPrefix: string,
@@ -105,7 +105,7 @@ export abstract class CompleteSubtitleUploadingHandlerInterface implements WebHa
   ): Promise<CompleteSubtitleUploadingResponse>;
 }
 
-export abstract class CancelSubtitleUploadingHandlerInterface implements WebHandlerInterface {
+export abstract class CancelSubtitleUploadingHandlerInterface implements NodeHandlerInterface {
   public descriptor = CANCEL_SUBTITLE_UPLOADING;
   public abstract handle(
     loggingPrefix: string,
@@ -113,7 +113,7 @@ export abstract class CancelSubtitleUploadingHandlerInterface implements WebHand
   ): Promise<CancelSubtitleUploadingResponse>;
 }
 
-export abstract class ProcessMediaFormattingTaskHandlerInterface implements WebHandlerInterface {
+export abstract class ProcessMediaFormattingTaskHandlerInterface implements NodeHandlerInterface {
   public descriptor = PROCESS_MEDIA_FORMATTING_TASK;
   public abstract handle(
     loggingPrefix: string,
@@ -121,7 +121,7 @@ export abstract class ProcessMediaFormattingTaskHandlerInterface implements WebH
   ): Promise<ProcessMediaFormattingTaskResponse>;
 }
 
-export abstract class ListMediaFormattingTasksHandlerInterface implements WebHandlerInterface {
+export abstract class ListMediaFormattingTasksHandlerInterface implements NodeHandlerInterface {
   public descriptor = LIST_MEDIA_FORMATTING_TASKS;
   public abstract handle(
     loggingPrefix: string,
@@ -129,7 +129,7 @@ export abstract class ListMediaFormattingTasksHandlerInterface implements WebHan
   ): Promise<ListMediaFormattingTasksResponse>;
 }
 
-export abstract class CancelMediaFormattingHandlerInterface implements WebHandlerInterface {
+export abstract class CancelMediaFormattingHandlerInterface implements NodeHandlerInterface {
   public descriptor = CANCEL_MEDIA_FORMATTING;
   public abstract handle(
     loggingPrefix: string,
@@ -137,7 +137,7 @@ export abstract class CancelMediaFormattingHandlerInterface implements WebHandle
   ): Promise<CancelMediaFormattingResponse>;
 }
 
-export abstract class ProcessSubtitleFormattingTaskHandlerInterface implements WebHandlerInterface {
+export abstract class ProcessSubtitleFormattingTaskHandlerInterface implements NodeHandlerInterface {
   public descriptor = PROCESS_SUBTITLE_FORMATTING_TASK;
   public abstract handle(
     loggingPrefix: string,
@@ -145,7 +145,7 @@ export abstract class ProcessSubtitleFormattingTaskHandlerInterface implements W
   ): Promise<ProcessSubtitleFormattingTaskResponse>;
 }
 
-export abstract class ListSubtitleFormattingTasksHandlerInterface implements WebHandlerInterface {
+export abstract class ListSubtitleFormattingTasksHandlerInterface implements NodeHandlerInterface {
   public descriptor = LIST_SUBTITLE_FORMATTING_TASKS;
   public abstract handle(
     loggingPrefix: string,
@@ -153,7 +153,7 @@ export abstract class ListSubtitleFormattingTasksHandlerInterface implements Web
   ): Promise<ListSubtitleFormattingTasksResponse>;
 }
 
-export abstract class CancelSubtitleFormattingHandlerInterface implements WebHandlerInterface {
+export abstract class CancelSubtitleFormattingHandlerInterface implements NodeHandlerInterface {
   public descriptor = CANCEL_SUBTITLE_FORMATTING;
   public abstract handle(
     loggingPrefix: string,
@@ -161,7 +161,7 @@ export abstract class CancelSubtitleFormattingHandlerInterface implements WebHan
   ): Promise<CancelSubtitleFormattingResponse>;
 }
 
-export abstract class DeleteVideoTrackHandlerInterface implements WebHandlerInterface {
+export abstract class DeleteVideoTrackHandlerInterface implements NodeHandlerInterface {
   public descriptor = DELETE_VIDEO_TRACK;
   public abstract handle(
     loggingPrefix: string,
@@ -169,7 +169,7 @@ export abstract class DeleteVideoTrackHandlerInterface implements WebHandlerInte
   ): Promise<DeleteVideoTrackResponse>;
 }
 
-export abstract class DropVideoTrackStagingDataHandlerInterface implements WebHandlerInterface {
+export abstract class DropVideoTrackStagingDataHandlerInterface implements NodeHandlerInterface {
   public descriptor = DROP_VIDEO_TRACK_STAGING_DATA;
   public abstract handle(
     loggingPrefix: string,
@@ -177,7 +177,7 @@ export abstract class DropVideoTrackStagingDataHandlerInterface implements WebHa
   ): Promise<DropVideoTrackStagingDataResponse>;
 }
 
-export abstract class UpdateAudioTrackHandlerInterface implements WebHandlerInterface {
+export abstract class UpdateAudioTrackHandlerInterface implements NodeHandlerInterface {
   public descriptor = UPDATE_AUDIO_TRACK;
   public abstract handle(
     loggingPrefix: string,
@@ -185,7 +185,7 @@ export abstract class UpdateAudioTrackHandlerInterface implements WebHandlerInte
   ): Promise<UpdateAudioTrackResponse>;
 }
 
-export abstract class DeleteAudioTrackHandlerInterface implements WebHandlerInterface {
+export abstract class DeleteAudioTrackHandlerInterface implements NodeHandlerInterface {
   public descriptor = DELETE_AUDIO_TRACK;
   public abstract handle(
     loggingPrefix: string,
@@ -193,7 +193,7 @@ export abstract class DeleteAudioTrackHandlerInterface implements WebHandlerInte
   ): Promise<DeleteAudioTrackResponse>;
 }
 
-export abstract class DropAudioTrackStagingDataHandlerInterface implements WebHandlerInterface {
+export abstract class DropAudioTrackStagingDataHandlerInterface implements NodeHandlerInterface {
   public descriptor = DROP_AUDIO_TRACK_STAGING_DATA;
   public abstract handle(
     loggingPrefix: string,
@@ -201,7 +201,7 @@ export abstract class DropAudioTrackStagingDataHandlerInterface implements WebHa
   ): Promise<DropAudioTrackStagingDataResponse>;
 }
 
-export abstract class UpdateSubtitleTrackHandlerInterface implements WebHandlerInterface {
+export abstract class UpdateSubtitleTrackHandlerInterface implements NodeHandlerInterface {
   public descriptor = UPDATE_SUBTITLE_TRACK;
   public abstract handle(
     loggingPrefix: string,
@@ -209,7 +209,7 @@ export abstract class UpdateSubtitleTrackHandlerInterface implements WebHandlerI
   ): Promise<UpdateSubtitleTrackResponse>;
 }
 
-export abstract class DeleteSubtitleTrackHandlerInterface implements WebHandlerInterface {
+export abstract class DeleteSubtitleTrackHandlerInterface implements NodeHandlerInterface {
   public descriptor = DELETE_SUBTITLE_TRACK;
   public abstract handle(
     loggingPrefix: string,
@@ -217,7 +217,7 @@ export abstract class DeleteSubtitleTrackHandlerInterface implements WebHandlerI
   ): Promise<DeleteSubtitleTrackResponse>;
 }
 
-export abstract class DropSubtitleTrackStagingDataHandlerInterface implements WebHandlerInterface {
+export abstract class DropSubtitleTrackStagingDataHandlerInterface implements NodeHandlerInterface {
   public descriptor = DROP_SUBTITLE_TRACK_STAGING_DATA;
   public abstract handle(
     loggingPrefix: string,
@@ -225,7 +225,7 @@ export abstract class DropSubtitleTrackStagingDataHandlerInterface implements We
   ): Promise<DropSubtitleTrackStagingDataResponse>;
 }
 
-export abstract class ProcessGcsFileDeleteTaskHandlerInterface implements WebHandlerInterface {
+export abstract class ProcessGcsFileDeleteTaskHandlerInterface implements NodeHandlerInterface {
   public descriptor = PROCESS_GCS_FILE_DELETE_TASK;
   public abstract handle(
     loggingPrefix: string,
@@ -233,7 +233,7 @@ export abstract class ProcessGcsFileDeleteTaskHandlerInterface implements WebHan
   ): Promise<ProcessGcsFileDeleteTaskResponse>;
 }
 
-export abstract class ListGcsFileDeleteTasksHandlerInterface implements WebHandlerInterface {
+export abstract class ListGcsFileDeleteTasksHandlerInterface implements NodeHandlerInterface {
   public descriptor = LIST_GCS_FILE_DELETE_TASKS;
   public abstract handle(
     loggingPrefix: string,
@@ -241,7 +241,7 @@ export abstract class ListGcsFileDeleteTasksHandlerInterface implements WebHandl
   ): Promise<ListGcsFileDeleteTasksResponse>;
 }
 
-export abstract class ProcessR2KeyDeleteTaskHandlerInterface implements WebHandlerInterface {
+export abstract class ProcessR2KeyDeleteTaskHandlerInterface implements NodeHandlerInterface {
   public descriptor = PROCESS_R2_KEY_DELETE_TASK;
   public abstract handle(
     loggingPrefix: string,
@@ -249,7 +249,7 @@ export abstract class ProcessR2KeyDeleteTaskHandlerInterface implements WebHandl
   ): Promise<ProcessR2KeyDeleteTaskResponse>;
 }
 
-export abstract class ListR2KeyDeleteTasksHandlerInterface implements WebHandlerInterface {
+export abstract class ListR2KeyDeleteTasksHandlerInterface implements NodeHandlerInterface {
   public descriptor = LIST_R2_KEY_DELETE_TASKS;
   public abstract handle(
     loggingPrefix: string,
