@@ -1,4 +1,4 @@
-import { CreateVideoContainerRequestBody, CreateVideoContainerResponse, CREATE_VIDEO_CONTAINER, DeleteVideoContainerRequestBody, DeleteVideoContainerResponse, DELETE_VIDEO_CONTAINER, GetVideoContainerRequestBody, GetVideoContainerResponse, GET_VIDEO_CONTAINER, CommitVideoContainerStagingDataRequestBody, CommitVideoContainerStagingDataResponse, COMMIT_VIDEO_CONTAINER_STAGING_DATA, ProcessVideoContainerWritingToFileTaskRequestBody, ProcessVideoContainerWritingToFileTaskResponse, PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK, GetVideoContainerWritingToFileTasksRequestBody, GetVideoContainerWritingToFileTasksResponse, GET_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS, ProcessVideoContainerSyncingTaskRequestBody, ProcessVideoContainerSyncingTaskResponse, PROCESS_VIDEO_CONTAINER_SYNCING_TASK, GetVideoContainerSyncingTasksRequestBody, GetVideoContainerSyncingTasksResponse, GET_VIDEO_CONTAINER_SYNCING_TASKS, StartMediaUploadingRequestBody, StartMediaUploadingResponse, START_MEDIA_UPLOADING, CompleteMediaUploadingRequestBody, CompleteMediaUploadingResponse, COMPLETE_MEDIA_UPLOADING, CancelMediaUploadingRequestBody, CancelMediaUploadingResponse, CANCEL_MEDIA_UPLOADING, StartSubtitleUploadingRequestBody, StartSubtitleUploadingResponse, START_SUBTITLE_UPLOADING, CompleteSubtitleUploadingRequestBody, CompleteSubtitleUploadingResponse, COMPLETE_SUBTITLE_UPLOADING, CancelSubtitleUploadingRequestBody, CancelSubtitleUploadingResponse, CANCEL_SUBTITLE_UPLOADING, ProcessMediaFormattingTaskRequestBody, ProcessMediaFormattingTaskResponse, PROCESS_MEDIA_FORMATTING_TASK, GetMediaFormattingTasksRequestBody, GetMediaFormattingTasksResponse, GET_MEDIA_FORMATTING_TASKS, CancelMediaFormattingRequestBody, CancelMediaFormattingResponse, CANCEL_MEDIA_FORMATTING, ProcessSubtitleFormattingTaskRequestBody, ProcessSubtitleFormattingTaskResponse, PROCESS_SUBTITLE_FORMATTING_TASK, GetSubtitleFormattingTasksRequestBody, GetSubtitleFormattingTasksResponse, GET_SUBTITLE_FORMATTING_TASKS, CancelSubtitleFormattingRequestBody, CancelSubtitleFormattingResponse, CANCEL_SUBTITLE_FORMATTING, DeleteVideoTrackRequestBody, DeleteVideoTrackResponse, DELETE_VIDEO_TRACK, DropVideoTrackStagingDataRequestBody, DropVideoTrackStagingDataResponse, DROP_VIDEO_TRACK_STAGING_DATA, UpdateAudioTrackRequestBody, UpdateAudioTrackResponse, UPDATE_AUDIO_TRACK, DeleteAudioTrackRequestBody, DeleteAudioTrackResponse, DELETE_AUDIO_TRACK, DropAudioTrackStagingDataRequestBody, DropAudioTrackStagingDataResponse, DROP_AUDIO_TRACK_STAGING_DATA, UpdateSubtitleTrackRequestBody, UpdateSubtitleTrackResponse, UPDATE_SUBTITLE_TRACK, DeleteSubtitleTrackRequestBody, DeleteSubtitleTrackResponse, DELETE_SUBTITLE_TRACK, DropSubtitleTrackStagingDataRequestBody, DropSubtitleTrackStagingDataResponse, DROP_SUBTITLE_TRACK_STAGING_DATA, ProcessGcsFileDeleteTaskRequestBody, ProcessGcsFileDeleteTaskResponse, PROCESS_GCS_FILE_DELETE_TASK, GetGcsFileDeleteTasksRequestBody, GetGcsFileDeleteTasksResponse, GET_GCS_FILE_DELETE_TASKS, ProcessR2KeyDeleteTaskRequestBody, ProcessR2KeyDeleteTaskResponse, PROCESS_R2_KEY_DELETE_TASK, GetR2KeyDeleteTasksRequestBody, GetR2KeyDeleteTasksResponse, GET_R2_KEY_DELETE_TASKS } from './interface';
+import { CreateVideoContainerRequestBody, CreateVideoContainerResponse, CREATE_VIDEO_CONTAINER, DeleteVideoContainerRequestBody, DeleteVideoContainerResponse, DELETE_VIDEO_CONTAINER, GetVideoContainerRequestBody, GetVideoContainerResponse, GET_VIDEO_CONTAINER, CommitVideoContainerStagingDataRequestBody, CommitVideoContainerStagingDataResponse, COMMIT_VIDEO_CONTAINER_STAGING_DATA, ProcessVideoContainerWritingToFileTaskRequestBody, ProcessVideoContainerWritingToFileTaskResponse, PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK, ListVideoContainerWritingToFileTasksRequestBody, ListVideoContainerWritingToFileTasksResponse, LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS, ProcessVideoContainerSyncingTaskRequestBody, ProcessVideoContainerSyncingTaskResponse, PROCESS_VIDEO_CONTAINER_SYNCING_TASK, ListVideoContainerSyncingTasksRequestBody, ListVideoContainerSyncingTasksResponse, LIST_VIDEO_CONTAINER_SYNCING_TASKS, StartMediaUploadingRequestBody, StartMediaUploadingResponse, START_MEDIA_UPLOADING, CompleteMediaUploadingRequestBody, CompleteMediaUploadingResponse, COMPLETE_MEDIA_UPLOADING, CancelMediaUploadingRequestBody, CancelMediaUploadingResponse, CANCEL_MEDIA_UPLOADING, StartSubtitleUploadingRequestBody, StartSubtitleUploadingResponse, START_SUBTITLE_UPLOADING, CompleteSubtitleUploadingRequestBody, CompleteSubtitleUploadingResponse, COMPLETE_SUBTITLE_UPLOADING, CancelSubtitleUploadingRequestBody, CancelSubtitleUploadingResponse, CANCEL_SUBTITLE_UPLOADING, ProcessMediaFormattingTaskRequestBody, ProcessMediaFormattingTaskResponse, PROCESS_MEDIA_FORMATTING_TASK, ListMediaFormattingTasksRequestBody, ListMediaFormattingTasksResponse, LIST_MEDIA_FORMATTING_TASKS, CancelMediaFormattingRequestBody, CancelMediaFormattingResponse, CANCEL_MEDIA_FORMATTING, ProcessSubtitleFormattingTaskRequestBody, ProcessSubtitleFormattingTaskResponse, PROCESS_SUBTITLE_FORMATTING_TASK, ListSubtitleFormattingTasksRequestBody, ListSubtitleFormattingTasksResponse, LIST_SUBTITLE_FORMATTING_TASKS, CancelSubtitleFormattingRequestBody, CancelSubtitleFormattingResponse, CANCEL_SUBTITLE_FORMATTING, DeleteVideoTrackRequestBody, DeleteVideoTrackResponse, DELETE_VIDEO_TRACK, DropVideoTrackStagingDataRequestBody, DropVideoTrackStagingDataResponse, DROP_VIDEO_TRACK_STAGING_DATA, UpdateAudioTrackRequestBody, UpdateAudioTrackResponse, UPDATE_AUDIO_TRACK, DeleteAudioTrackRequestBody, DeleteAudioTrackResponse, DELETE_AUDIO_TRACK, DropAudioTrackStagingDataRequestBody, DropAudioTrackStagingDataResponse, DROP_AUDIO_TRACK_STAGING_DATA, UpdateSubtitleTrackRequestBody, UpdateSubtitleTrackResponse, UPDATE_SUBTITLE_TRACK, DeleteSubtitleTrackRequestBody, DeleteSubtitleTrackResponse, DELETE_SUBTITLE_TRACK, DropSubtitleTrackStagingDataRequestBody, DropSubtitleTrackStagingDataResponse, DROP_SUBTITLE_TRACK_STAGING_DATA, ProcessGcsFileDeleteTaskRequestBody, ProcessGcsFileDeleteTaskResponse, PROCESS_GCS_FILE_DELETE_TASK, ListGcsFileDeleteTasksRequestBody, ListGcsFileDeleteTasksResponse, LIST_GCS_FILE_DELETE_TASKS, ProcessR2KeyDeleteTaskRequestBody, ProcessR2KeyDeleteTaskResponse, PROCESS_R2_KEY_DELETE_TASK, ListR2KeyDeleteTasksRequestBody, ListR2KeyDeleteTasksResponse, LIST_R2_KEY_DELETE_TASKS } from './interface';
 import { WebClientInterface, WebClientOptions } from '@selfage/service_descriptor/client_interface';
 
 export function createVideoContainer(
@@ -71,14 +71,14 @@ export function processVideoContainerWritingToFileTask(
   );
 }
 
-export function getVideoContainerWritingToFileTasks(
+export function listVideoContainerWritingToFileTasks(
   client: WebClientInterface,
-  body: GetVideoContainerWritingToFileTasksRequestBody,
+  body: ListVideoContainerWritingToFileTasksRequestBody,
   options?: WebClientOptions,
-): Promise<GetVideoContainerWritingToFileTasksResponse> {
+): Promise<ListVideoContainerWritingToFileTasksResponse> {
   return client.send(
     {
-      descriptor: GET_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS,
+      descriptor: LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS,
       body,
     },
     options,
@@ -99,14 +99,14 @@ export function processVideoContainerSyncingTask(
   );
 }
 
-export function getVideoContainerSyncingTasks(
+export function listVideoContainerSyncingTasks(
   client: WebClientInterface,
-  body: GetVideoContainerSyncingTasksRequestBody,
+  body: ListVideoContainerSyncingTasksRequestBody,
   options?: WebClientOptions,
-): Promise<GetVideoContainerSyncingTasksResponse> {
+): Promise<ListVideoContainerSyncingTasksResponse> {
   return client.send(
     {
-      descriptor: GET_VIDEO_CONTAINER_SYNCING_TASKS,
+      descriptor: LIST_VIDEO_CONTAINER_SYNCING_TASKS,
       body,
     },
     options,
@@ -211,14 +211,14 @@ export function processMediaFormattingTask(
   );
 }
 
-export function getMediaFormattingTasks(
+export function listMediaFormattingTasks(
   client: WebClientInterface,
-  body: GetMediaFormattingTasksRequestBody,
+  body: ListMediaFormattingTasksRequestBody,
   options?: WebClientOptions,
-): Promise<GetMediaFormattingTasksResponse> {
+): Promise<ListMediaFormattingTasksResponse> {
   return client.send(
     {
-      descriptor: GET_MEDIA_FORMATTING_TASKS,
+      descriptor: LIST_MEDIA_FORMATTING_TASKS,
       body,
     },
     options,
@@ -253,14 +253,14 @@ export function processSubtitleFormattingTask(
   );
 }
 
-export function getSubtitleFormattingTasks(
+export function listSubtitleFormattingTasks(
   client: WebClientInterface,
-  body: GetSubtitleFormattingTasksRequestBody,
+  body: ListSubtitleFormattingTasksRequestBody,
   options?: WebClientOptions,
-): Promise<GetSubtitleFormattingTasksResponse> {
+): Promise<ListSubtitleFormattingTasksResponse> {
   return client.send(
     {
-      descriptor: GET_SUBTITLE_FORMATTING_TASKS,
+      descriptor: LIST_SUBTITLE_FORMATTING_TASKS,
       body,
     },
     options,
@@ -407,14 +407,14 @@ export function processGcsFileDeleteTask(
   );
 }
 
-export function getGcsFileDeleteTasks(
+export function listGcsFileDeleteTasks(
   client: WebClientInterface,
-  body: GetGcsFileDeleteTasksRequestBody,
+  body: ListGcsFileDeleteTasksRequestBody,
   options?: WebClientOptions,
-): Promise<GetGcsFileDeleteTasksResponse> {
+): Promise<ListGcsFileDeleteTasksResponse> {
   return client.send(
     {
-      descriptor: GET_GCS_FILE_DELETE_TASKS,
+      descriptor: LIST_GCS_FILE_DELETE_TASKS,
       body,
     },
     options,
@@ -435,14 +435,14 @@ export function processR2KeyDeleteTask(
   );
 }
 
-export function getR2KeyDeleteTasks(
+export function listR2KeyDeleteTasks(
   client: WebClientInterface,
-  body: GetR2KeyDeleteTasksRequestBody,
+  body: ListR2KeyDeleteTasksRequestBody,
   options?: WebClientOptions,
-): Promise<GetR2KeyDeleteTasksResponse> {
+): Promise<ListR2KeyDeleteTasksResponse> {
   return client.send(
     {
-      descriptor: GET_R2_KEY_DELETE_TASKS,
+      descriptor: LIST_R2_KEY_DELETE_TASKS,
       body,
     },
     options,

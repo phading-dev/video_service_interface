@@ -79,9 +79,9 @@
 - message:
     name: ProcessVideoContainerWritingToFileTaskResponse
 - message:
-    name: GetVideoContainerWritingToFileTasksRequestBody
+    name: ListVideoContainerWritingToFileTasksRequestBody
 - message:
-    name: GetVideoContainerWritingToFileTasksResponse
+    name: ListVideoContainerWritingToFileTasksResponse
     fields:
       - name: tasks
         type: ProcessVideoContainerWritingToFileTaskRequestBody
@@ -99,9 +99,9 @@
 - message:
     name: ProcessVideoContainerSyncingTaskResponse
 - message:
-    name: GetVideoContainerSyncingTasksRequestBody
+    name: ListVideoContainerSyncingTasksRequestBody
 - message:
-    name: GetVideoContainerSyncingTasksResponse
+    name: ListVideoContainerSyncingTasksResponse
     fields:
       - name: tasks
         type: ProcessVideoContainerSyncingTaskRequestBody
@@ -199,9 +199,9 @@
 - message:
     name: ProcessMediaFormattingTaskResponse
 - message:
-    name: GetMediaFormattingTasksRequestBody
+    name: ListMediaFormattingTasksRequestBody
 - message:
-    name: GetMediaFormattingTasksResponse
+    name: ListMediaFormattingTasksResponse
     fields:
       - name: tasks
         type: ProcessMediaFormattingTaskRequestBody
@@ -227,9 +227,9 @@
 - message:
     name: ProcessSubtitleFormattingTaskResponse
 - message:
-    name: GetSubtitleFormattingTasksRequestBody
+    name: ListSubtitleFormattingTasksRequestBody
 - message:
-    name: GetSubtitleFormattingTasksResponse
+    name: ListSubtitleFormattingTasksResponse
     fields:
       - name: tasks
         type: ProcessSubtitleFormattingTaskRequestBody
@@ -355,9 +355,9 @@
 - message:
     name: ProcessGcsFileDeleteTaskResponse
 - message:
-    name: GetGcsFileDeleteTasksRequestBody
+    name: ListGcsFileDeleteTasksRequestBody
 - message:
-    name: GetGcsFileDeleteTasksResponse
+    name: ListGcsFileDeleteTasksResponse
     fields:
       - name: tasks
         type: ProcessGcsFileDeleteTaskRequestBody
@@ -372,9 +372,9 @@
 - message:
     name: ProcessR2KeyDeleteTaskResponse
 - message:
-    name: GetR2KeyDeleteTasksRequestBody
+    name: ListR2KeyDeleteTasksRequestBody
 - message:
-    name: GetR2KeyDeleteTasksResponse
+    name: ListR2KeyDeleteTasksResponse
     fields:
       - name: tasks
         type: ProcessR2KeyDeleteTaskRequestBody
@@ -403,18 +403,18 @@
         path: /ProcessVideoContainerWritingToFileTask
         body: ProcessVideoContainerWritingToFileTaskRequestBody
         response: ProcessVideoContainerWritingToFileTaskResponse
-      - name: GetVideoContainerWritingToFileTasks
-        path: /GetVideoContainerWritingToFileTasks
-        body: GetVideoContainerWritingToFileTasksRequestBody
-        response: GetVideoContainerWritingToFileTasksResponse
+      - name: ListVideoContainerWritingToFileTasks
+        path: /ListVideoContainerWritingToFileTasks
+        body: ListVideoContainerWritingToFileTasksRequestBody
+        response: ListVideoContainerWritingToFileTasksResponse
       - name: ProcessVideoContainerSyncingTask
         path: /ProcessVideoContainerSyncingTask
         body: ProcessVideoContainerSyncingTaskRequestBody
         response: ProcessVideoContainerSyncingTaskResponse
-      - name: GetVideoContainerSyncingTasks
-        path: /GetVideoContainerSyncingTasks
-        body: GetVideoContainerSyncingTasksRequestBody
-        response: GetVideoContainerSyncingTasksResponse
+      - name: ListVideoContainerSyncingTasks
+        path: /ListVideoContainerSyncingTasks
+        body: ListVideoContainerSyncingTasksRequestBody
+        response: ListVideoContainerSyncingTasksResponse
       - name: StartMediaUploading
         path: /StartMediaUploading
         body: StartMediaUploadingRequestBody
@@ -443,10 +443,10 @@
         path: /ProcessMediaFormattingTask
         body: ProcessMediaFormattingTaskRequestBody
         response: ProcessMediaFormattingTaskResponse
-      - name: GetMediaFormattingTasks
-        path: /GetMediaFormattingTasks
-        body: GetMediaFormattingTasksRequestBody
-        response: GetMediaFormattingTasksResponse
+      - name: ListMediaFormattingTasks
+        path: /ListMediaFormattingTasks
+        body: ListMediaFormattingTasksRequestBody
+        response: ListMediaFormattingTasksResponse
       - name: CancelMediaFormatting
         path: /CancelMediaFormatting
         body: CancelMediaFormattingRequestBody
@@ -455,10 +455,10 @@
         path: /ProcessSubtitleFormattingTask
         body: ProcessSubtitleFormattingTaskRequestBody
         response: ProcessSubtitleFormattingTaskResponse
-      - name: GetSubtitleFormattingTasks
-        path: /GetSubtitleFormattingTasks
-        body: GetSubtitleFormattingTasksRequestBody
-        response: GetSubtitleFormattingTasksResponse
+      - name: ListSubtitleFormattingTasks
+        path: /ListSubtitleFormattingTasks
+        body: ListSubtitleFormattingTasksRequestBody
+        response: ListSubtitleFormattingTasksResponse
       - name: CancelSubtitleFormatting
         path: /CancelSubtitleFormatting
         body: CancelSubtitleFormattingRequestBody
@@ -499,17 +499,17 @@
         path: /ProcessGcsFileDeleteTask
         body: ProcessGcsFileDeleteTaskRequestBody
         response: ProcessGcsFileDeleteTaskResponse
-      - name: GetGcsFileDeleteTasks
-        path: /GetGcsFileDeleteTasks
-        body: GetGcsFileDeleteTasksRequestBody
-        response: GetGcsFileDeleteTasksResponse
+      - name: ListGcsFileDeleteTasks
+        path: /ListGcsFileDeleteTasks
+        body: ListGcsFileDeleteTasksRequestBody
+        response: ListGcsFileDeleteTasksResponse
       - name: ProcessR2KeyDeleteTask
         path: /ProcessR2KeyDeleteTask
         body: ProcessR2KeyDeleteTaskRequestBody
         response: ProcessR2KeyDeleteTaskResponse
-      - name: GetR2KeyDeleteTasks
-        path: /GetR2KeyDeleteTasks
-        body: GetR2KeyDeleteTasksRequestBody
-        response: GetR2KeyDeleteTasksResponse
+      - name: ListR2KeyDeleteTasks
+        path: /ListR2KeyDeleteTasks
+        body: ListR2KeyDeleteTasksRequestBody
+        response: ListR2KeyDeleteTasksResponse
     outputClient: ./node/client
     outputHandler: ./node/handler

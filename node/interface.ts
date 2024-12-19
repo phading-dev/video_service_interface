@@ -177,20 +177,20 @@ export let PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK_RESPONSE: MessageDescrip
   fields: [],
 };
 
-export interface GetVideoContainerWritingToFileTasksRequestBody {
+export interface ListVideoContainerWritingToFileTasksRequestBody {
 }
 
-export let GET_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS_REQUEST_BODY: MessageDescriptor<GetVideoContainerWritingToFileTasksRequestBody> = {
-  name: 'GetVideoContainerWritingToFileTasksRequestBody',
+export let LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS_REQUEST_BODY: MessageDescriptor<ListVideoContainerWritingToFileTasksRequestBody> = {
+  name: 'ListVideoContainerWritingToFileTasksRequestBody',
   fields: [],
 };
 
-export interface GetVideoContainerWritingToFileTasksResponse {
+export interface ListVideoContainerWritingToFileTasksResponse {
   tasks?: Array<ProcessVideoContainerWritingToFileTaskRequestBody>,
 }
 
-export let GET_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS_RESPONSE: MessageDescriptor<GetVideoContainerWritingToFileTasksResponse> = {
-  name: 'GetVideoContainerWritingToFileTasksResponse',
+export let LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS_RESPONSE: MessageDescriptor<ListVideoContainerWritingToFileTasksResponse> = {
+  name: 'ListVideoContainerWritingToFileTasksResponse',
   fields: [{
     name: 'tasks',
     index: 1,
@@ -225,20 +225,20 @@ export let PROCESS_VIDEO_CONTAINER_SYNCING_TASK_RESPONSE: MessageDescriptor<Proc
   fields: [],
 };
 
-export interface GetVideoContainerSyncingTasksRequestBody {
+export interface ListVideoContainerSyncingTasksRequestBody {
 }
 
-export let GET_VIDEO_CONTAINER_SYNCING_TASKS_REQUEST_BODY: MessageDescriptor<GetVideoContainerSyncingTasksRequestBody> = {
-  name: 'GetVideoContainerSyncingTasksRequestBody',
+export let LIST_VIDEO_CONTAINER_SYNCING_TASKS_REQUEST_BODY: MessageDescriptor<ListVideoContainerSyncingTasksRequestBody> = {
+  name: 'ListVideoContainerSyncingTasksRequestBody',
   fields: [],
 };
 
-export interface GetVideoContainerSyncingTasksResponse {
+export interface ListVideoContainerSyncingTasksResponse {
   tasks?: Array<ProcessVideoContainerSyncingTaskRequestBody>,
 }
 
-export let GET_VIDEO_CONTAINER_SYNCING_TASKS_RESPONSE: MessageDescriptor<GetVideoContainerSyncingTasksResponse> = {
-  name: 'GetVideoContainerSyncingTasksResponse',
+export let LIST_VIDEO_CONTAINER_SYNCING_TASKS_RESPONSE: MessageDescriptor<ListVideoContainerSyncingTasksResponse> = {
+  name: 'ListVideoContainerSyncingTasksResponse',
   fields: [{
     name: 'tasks',
     index: 1,
@@ -449,20 +449,20 @@ export let PROCESS_MEDIA_FORMATTING_TASK_RESPONSE: MessageDescriptor<ProcessMedi
   fields: [],
 };
 
-export interface GetMediaFormattingTasksRequestBody {
+export interface ListMediaFormattingTasksRequestBody {
 }
 
-export let GET_MEDIA_FORMATTING_TASKS_REQUEST_BODY: MessageDescriptor<GetMediaFormattingTasksRequestBody> = {
-  name: 'GetMediaFormattingTasksRequestBody',
+export let LIST_MEDIA_FORMATTING_TASKS_REQUEST_BODY: MessageDescriptor<ListMediaFormattingTasksRequestBody> = {
+  name: 'ListMediaFormattingTasksRequestBody',
   fields: [],
 };
 
-export interface GetMediaFormattingTasksResponse {
+export interface ListMediaFormattingTasksResponse {
   tasks?: Array<ProcessMediaFormattingTaskRequestBody>,
 }
 
-export let GET_MEDIA_FORMATTING_TASKS_RESPONSE: MessageDescriptor<GetMediaFormattingTasksResponse> = {
-  name: 'GetMediaFormattingTasksResponse',
+export let LIST_MEDIA_FORMATTING_TASKS_RESPONSE: MessageDescriptor<ListMediaFormattingTasksResponse> = {
+  name: 'ListMediaFormattingTasksResponse',
   fields: [{
     name: 'tasks',
     index: 1,
@@ -518,20 +518,20 @@ export let PROCESS_SUBTITLE_FORMATTING_TASK_RESPONSE: MessageDescriptor<ProcessS
   fields: [],
 };
 
-export interface GetSubtitleFormattingTasksRequestBody {
+export interface ListSubtitleFormattingTasksRequestBody {
 }
 
-export let GET_SUBTITLE_FORMATTING_TASKS_REQUEST_BODY: MessageDescriptor<GetSubtitleFormattingTasksRequestBody> = {
-  name: 'GetSubtitleFormattingTasksRequestBody',
+export let LIST_SUBTITLE_FORMATTING_TASKS_REQUEST_BODY: MessageDescriptor<ListSubtitleFormattingTasksRequestBody> = {
+  name: 'ListSubtitleFormattingTasksRequestBody',
   fields: [],
 };
 
-export interface GetSubtitleFormattingTasksResponse {
+export interface ListSubtitleFormattingTasksResponse {
   tasks?: Array<ProcessSubtitleFormattingTaskRequestBody>,
 }
 
-export let GET_SUBTITLE_FORMATTING_TASKS_RESPONSE: MessageDescriptor<GetSubtitleFormattingTasksResponse> = {
-  name: 'GetSubtitleFormattingTasksResponse',
+export let LIST_SUBTITLE_FORMATTING_TASKS_RESPONSE: MessageDescriptor<ListSubtitleFormattingTasksResponse> = {
+  name: 'ListSubtitleFormattingTasksResponse',
   fields: [{
     name: 'tasks',
     index: 1,
@@ -815,20 +815,20 @@ export let PROCESS_GCS_FILE_DELETE_TASK_RESPONSE: MessageDescriptor<ProcessGcsFi
   fields: [],
 };
 
-export interface GetGcsFileDeleteTasksRequestBody {
+export interface ListGcsFileDeleteTasksRequestBody {
 }
 
-export let GET_GCS_FILE_DELETE_TASKS_REQUEST_BODY: MessageDescriptor<GetGcsFileDeleteTasksRequestBody> = {
-  name: 'GetGcsFileDeleteTasksRequestBody',
+export let LIST_GCS_FILE_DELETE_TASKS_REQUEST_BODY: MessageDescriptor<ListGcsFileDeleteTasksRequestBody> = {
+  name: 'ListGcsFileDeleteTasksRequestBody',
   fields: [],
 };
 
-export interface GetGcsFileDeleteTasksResponse {
+export interface ListGcsFileDeleteTasksResponse {
   tasks?: Array<ProcessGcsFileDeleteTaskRequestBody>,
 }
 
-export let GET_GCS_FILE_DELETE_TASKS_RESPONSE: MessageDescriptor<GetGcsFileDeleteTasksResponse> = {
-  name: 'GetGcsFileDeleteTasksResponse',
+export let LIST_GCS_FILE_DELETE_TASKS_RESPONSE: MessageDescriptor<ListGcsFileDeleteTasksResponse> = {
+  name: 'ListGcsFileDeleteTasksResponse',
   fields: [{
     name: 'tasks',
     index: 1,
@@ -858,20 +858,20 @@ export let PROCESS_R2_KEY_DELETE_TASK_RESPONSE: MessageDescriptor<ProcessR2KeyDe
   fields: [],
 };
 
-export interface GetR2KeyDeleteTasksRequestBody {
+export interface ListR2KeyDeleteTasksRequestBody {
 }
 
-export let GET_R2_KEY_DELETE_TASKS_REQUEST_BODY: MessageDescriptor<GetR2KeyDeleteTasksRequestBody> = {
-  name: 'GetR2KeyDeleteTasksRequestBody',
+export let LIST_R2_KEY_DELETE_TASKS_REQUEST_BODY: MessageDescriptor<ListR2KeyDeleteTasksRequestBody> = {
+  name: 'ListR2KeyDeleteTasksRequestBody',
   fields: [],
 };
 
-export interface GetR2KeyDeleteTasksResponse {
+export interface ListR2KeyDeleteTasksResponse {
   tasks?: Array<ProcessR2KeyDeleteTaskRequestBody>,
 }
 
-export let GET_R2_KEY_DELETE_TASKS_RESPONSE: MessageDescriptor<GetR2KeyDeleteTasksResponse> = {
-  name: 'GetR2KeyDeleteTasksResponse',
+export let LIST_R2_KEY_DELETE_TASKS_RESPONSE: MessageDescriptor<ListR2KeyDeleteTasksResponse> = {
+  name: 'ListR2KeyDeleteTasksResponse',
   fields: [{
     name: 'tasks',
     index: 1,
@@ -935,14 +935,14 @@ export let PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK: WebRemoteCallDescriptor
   },
 }
 
-export let GET_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS: WebRemoteCallDescriptor = {
-  name: "GetVideoContainerWritingToFileTasks",
-  path: "/GetVideoContainerWritingToFileTasks",
+export let LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS: WebRemoteCallDescriptor = {
+  name: "ListVideoContainerWritingToFileTasks",
+  path: "/ListVideoContainerWritingToFileTasks",
   body: {
-    messageType: GET_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS_REQUEST_BODY,
+    messageType: LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS_REQUEST_BODY,
   },
   response: {
-    messageType: GET_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS_RESPONSE,
+    messageType: LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS_RESPONSE,
   },
 }
 
@@ -957,14 +957,14 @@ export let PROCESS_VIDEO_CONTAINER_SYNCING_TASK: WebRemoteCallDescriptor = {
   },
 }
 
-export let GET_VIDEO_CONTAINER_SYNCING_TASKS: WebRemoteCallDescriptor = {
-  name: "GetVideoContainerSyncingTasks",
-  path: "/GetVideoContainerSyncingTasks",
+export let LIST_VIDEO_CONTAINER_SYNCING_TASKS: WebRemoteCallDescriptor = {
+  name: "ListVideoContainerSyncingTasks",
+  path: "/ListVideoContainerSyncingTasks",
   body: {
-    messageType: GET_VIDEO_CONTAINER_SYNCING_TASKS_REQUEST_BODY,
+    messageType: LIST_VIDEO_CONTAINER_SYNCING_TASKS_REQUEST_BODY,
   },
   response: {
-    messageType: GET_VIDEO_CONTAINER_SYNCING_TASKS_RESPONSE,
+    messageType: LIST_VIDEO_CONTAINER_SYNCING_TASKS_RESPONSE,
   },
 }
 
@@ -1045,14 +1045,14 @@ export let PROCESS_MEDIA_FORMATTING_TASK: WebRemoteCallDescriptor = {
   },
 }
 
-export let GET_MEDIA_FORMATTING_TASKS: WebRemoteCallDescriptor = {
-  name: "GetMediaFormattingTasks",
-  path: "/GetMediaFormattingTasks",
+export let LIST_MEDIA_FORMATTING_TASKS: WebRemoteCallDescriptor = {
+  name: "ListMediaFormattingTasks",
+  path: "/ListMediaFormattingTasks",
   body: {
-    messageType: GET_MEDIA_FORMATTING_TASKS_REQUEST_BODY,
+    messageType: LIST_MEDIA_FORMATTING_TASKS_REQUEST_BODY,
   },
   response: {
-    messageType: GET_MEDIA_FORMATTING_TASKS_RESPONSE,
+    messageType: LIST_MEDIA_FORMATTING_TASKS_RESPONSE,
   },
 }
 
@@ -1078,14 +1078,14 @@ export let PROCESS_SUBTITLE_FORMATTING_TASK: WebRemoteCallDescriptor = {
   },
 }
 
-export let GET_SUBTITLE_FORMATTING_TASKS: WebRemoteCallDescriptor = {
-  name: "GetSubtitleFormattingTasks",
-  path: "/GetSubtitleFormattingTasks",
+export let LIST_SUBTITLE_FORMATTING_TASKS: WebRemoteCallDescriptor = {
+  name: "ListSubtitleFormattingTasks",
+  path: "/ListSubtitleFormattingTasks",
   body: {
-    messageType: GET_SUBTITLE_FORMATTING_TASKS_REQUEST_BODY,
+    messageType: LIST_SUBTITLE_FORMATTING_TASKS_REQUEST_BODY,
   },
   response: {
-    messageType: GET_SUBTITLE_FORMATTING_TASKS_RESPONSE,
+    messageType: LIST_SUBTITLE_FORMATTING_TASKS_RESPONSE,
   },
 }
 
@@ -1199,14 +1199,14 @@ export let PROCESS_GCS_FILE_DELETE_TASK: WebRemoteCallDescriptor = {
   },
 }
 
-export let GET_GCS_FILE_DELETE_TASKS: WebRemoteCallDescriptor = {
-  name: "GetGcsFileDeleteTasks",
-  path: "/GetGcsFileDeleteTasks",
+export let LIST_GCS_FILE_DELETE_TASKS: WebRemoteCallDescriptor = {
+  name: "ListGcsFileDeleteTasks",
+  path: "/ListGcsFileDeleteTasks",
   body: {
-    messageType: GET_GCS_FILE_DELETE_TASKS_REQUEST_BODY,
+    messageType: LIST_GCS_FILE_DELETE_TASKS_REQUEST_BODY,
   },
   response: {
-    messageType: GET_GCS_FILE_DELETE_TASKS_RESPONSE,
+    messageType: LIST_GCS_FILE_DELETE_TASKS_RESPONSE,
   },
 }
 
@@ -1221,13 +1221,13 @@ export let PROCESS_R2_KEY_DELETE_TASK: WebRemoteCallDescriptor = {
   },
 }
 
-export let GET_R2_KEY_DELETE_TASKS: WebRemoteCallDescriptor = {
-  name: "GetR2KeyDeleteTasks",
-  path: "/GetR2KeyDeleteTasks",
+export let LIST_R2_KEY_DELETE_TASKS: WebRemoteCallDescriptor = {
+  name: "ListR2KeyDeleteTasks",
+  path: "/ListR2KeyDeleteTasks",
   body: {
-    messageType: GET_R2_KEY_DELETE_TASKS_REQUEST_BODY,
+    messageType: LIST_R2_KEY_DELETE_TASKS_REQUEST_BODY,
   },
   response: {
-    messageType: GET_R2_KEY_DELETE_TASKS_RESPONSE,
+    messageType: LIST_R2_KEY_DELETE_TASKS_RESPONSE,
   },
 }
