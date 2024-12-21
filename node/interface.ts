@@ -789,13 +789,13 @@ export let DROP_SUBTITLE_TRACK_STAGING_DATA_RESPONSE: MessageDescriptor<DropSubt
   fields: [],
 };
 
-export interface ProcessGcsFileDeletinTaskRequestBody {
+export interface ProcessGcsFileDeletingTaskRequestBody {
   gcsFilename?: string,
   uploadSessionUrl?: string,
 }
 
-export let PROCESS_GCS_FILE_DELETIN_TASK_REQUEST_BODY: MessageDescriptor<ProcessGcsFileDeletinTaskRequestBody> = {
-  name: 'ProcessGcsFileDeletinTaskRequestBody',
+export let PROCESS_GCS_FILE_DELETING_TASK_REQUEST_BODY: MessageDescriptor<ProcessGcsFileDeletingTaskRequestBody> = {
+  name: 'ProcessGcsFileDeletingTaskRequestBody',
   fields: [{
     name: 'gcsFilename',
     index: 1,
@@ -807,32 +807,32 @@ export let PROCESS_GCS_FILE_DELETIN_TASK_REQUEST_BODY: MessageDescriptor<Process
   }],
 };
 
-export interface ProcessGcsFileDeletinTaskResponse {
+export interface ProcessGcsFileDeletingTaskResponse {
 }
 
-export let PROCESS_GCS_FILE_DELETIN_TASK_RESPONSE: MessageDescriptor<ProcessGcsFileDeletinTaskResponse> = {
-  name: 'ProcessGcsFileDeletinTaskResponse',
+export let PROCESS_GCS_FILE_DELETING_TASK_RESPONSE: MessageDescriptor<ProcessGcsFileDeletingTaskResponse> = {
+  name: 'ProcessGcsFileDeletingTaskResponse',
   fields: [],
 };
 
-export interface ListGcsFileDeletinTasksRequestBody {
+export interface ListGcsFileDeletingTasksRequestBody {
 }
 
-export let LIST_GCS_FILE_DELETIN_TASKS_REQUEST_BODY: MessageDescriptor<ListGcsFileDeletinTasksRequestBody> = {
-  name: 'ListGcsFileDeletinTasksRequestBody',
+export let LIST_GCS_FILE_DELETING_TASKS_REQUEST_BODY: MessageDescriptor<ListGcsFileDeletingTasksRequestBody> = {
+  name: 'ListGcsFileDeletingTasksRequestBody',
   fields: [],
 };
 
-export interface ListGcsFileDeletinTasksResponse {
-  tasks?: Array<ProcessGcsFileDeletinTaskRequestBody>,
+export interface ListGcsFileDeletingTasksResponse {
+  tasks?: Array<ProcessGcsFileDeletingTaskRequestBody>,
 }
 
-export let LIST_GCS_FILE_DELETIN_TASKS_RESPONSE: MessageDescriptor<ListGcsFileDeletinTasksResponse> = {
-  name: 'ListGcsFileDeletinTasksResponse',
+export let LIST_GCS_FILE_DELETING_TASKS_RESPONSE: MessageDescriptor<ListGcsFileDeletingTasksResponse> = {
+  name: 'ListGcsFileDeletingTasksResponse',
   fields: [{
     name: 'tasks',
     index: 1,
-    messageType: PROCESS_GCS_FILE_DELETIN_TASK_REQUEST_BODY,
+    messageType: PROCESS_GCS_FILE_DELETING_TASK_REQUEST_BODY,
     isArray: true,
   }],
 };
@@ -1188,25 +1188,25 @@ export let DROP_SUBTITLE_TRACK_STAGING_DATA: NodeRemoteCallDescriptor = {
   },
 }
 
-export let PROCESS_GCS_FILE_DELETIN_TASK: NodeRemoteCallDescriptor = {
-  name: "ProcessGcsFileDeletinTask",
-  path: "/ProcessGcsFileDeletinTask",
+export let PROCESS_GCS_FILE_DELETING_TASK: NodeRemoteCallDescriptor = {
+  name: "ProcessGcsFileDeletingTask",
+  path: "/ProcessGcsFileDeletingTask",
   body: {
-    messageType: PROCESS_GCS_FILE_DELETIN_TASK_REQUEST_BODY,
+    messageType: PROCESS_GCS_FILE_DELETING_TASK_REQUEST_BODY,
   },
   response: {
-    messageType: PROCESS_GCS_FILE_DELETIN_TASK_RESPONSE,
+    messageType: PROCESS_GCS_FILE_DELETING_TASK_RESPONSE,
   },
 }
 
-export let LIST_GCS_FILE_DELETIN_TASKS: NodeRemoteCallDescriptor = {
-  name: "ListGcsFileDeletinTasks",
-  path: "/ListGcsFileDeletinTasks",
+export let LIST_GCS_FILE_DELETING_TASKS: NodeRemoteCallDescriptor = {
+  name: "ListGcsFileDeletingTasks",
+  path: "/ListGcsFileDeletingTasks",
   body: {
-    messageType: LIST_GCS_FILE_DELETIN_TASKS_REQUEST_BODY,
+    messageType: LIST_GCS_FILE_DELETING_TASKS_REQUEST_BODY,
   },
   response: {
-    messageType: LIST_GCS_FILE_DELETIN_TASKS_RESPONSE,
+    messageType: LIST_GCS_FILE_DELETING_TASKS_RESPONSE,
   },
 }
 
