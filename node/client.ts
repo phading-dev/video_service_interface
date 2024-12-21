@@ -1,4 +1,4 @@
-import { CreateVideoContainerRequestBody, CreateVideoContainerResponse, CREATE_VIDEO_CONTAINER, DeleteVideoContainerRequestBody, DeleteVideoContainerResponse, DELETE_VIDEO_CONTAINER, GetVideoContainerRequestBody, GetVideoContainerResponse, GET_VIDEO_CONTAINER, CommitVideoContainerStagingDataRequestBody, CommitVideoContainerStagingDataResponse, COMMIT_VIDEO_CONTAINER_STAGING_DATA, ProcessVideoContainerWritingToFileTaskRequestBody, ProcessVideoContainerWritingToFileTaskResponse, PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK, ListVideoContainerWritingToFileTasksRequestBody, ListVideoContainerWritingToFileTasksResponse, LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS, ProcessVideoContainerSyncingTaskRequestBody, ProcessVideoContainerSyncingTaskResponse, PROCESS_VIDEO_CONTAINER_SYNCING_TASK, ListVideoContainerSyncingTasksRequestBody, ListVideoContainerSyncingTasksResponse, LIST_VIDEO_CONTAINER_SYNCING_TASKS, StartMediaUploadingRequestBody, StartMediaUploadingResponse, START_MEDIA_UPLOADING, CompleteMediaUploadingRequestBody, CompleteMediaUploadingResponse, COMPLETE_MEDIA_UPLOADING, CancelMediaUploadingRequestBody, CancelMediaUploadingResponse, CANCEL_MEDIA_UPLOADING, StartSubtitleUploadingRequestBody, StartSubtitleUploadingResponse, START_SUBTITLE_UPLOADING, CompleteSubtitleUploadingRequestBody, CompleteSubtitleUploadingResponse, COMPLETE_SUBTITLE_UPLOADING, CancelSubtitleUploadingRequestBody, CancelSubtitleUploadingResponse, CANCEL_SUBTITLE_UPLOADING, ProcessMediaFormattingTaskRequestBody, ProcessMediaFormattingTaskResponse, PROCESS_MEDIA_FORMATTING_TASK, ListMediaFormattingTasksRequestBody, ListMediaFormattingTasksResponse, LIST_MEDIA_FORMATTING_TASKS, CancelMediaFormattingRequestBody, CancelMediaFormattingResponse, CANCEL_MEDIA_FORMATTING, ProcessSubtitleFormattingTaskRequestBody, ProcessSubtitleFormattingTaskResponse, PROCESS_SUBTITLE_FORMATTING_TASK, ListSubtitleFormattingTasksRequestBody, ListSubtitleFormattingTasksResponse, LIST_SUBTITLE_FORMATTING_TASKS, CancelSubtitleFormattingRequestBody, CancelSubtitleFormattingResponse, CANCEL_SUBTITLE_FORMATTING, DeleteVideoTrackRequestBody, DeleteVideoTrackResponse, DELETE_VIDEO_TRACK, DropVideoTrackStagingDataRequestBody, DropVideoTrackStagingDataResponse, DROP_VIDEO_TRACK_STAGING_DATA, UpdateAudioTrackRequestBody, UpdateAudioTrackResponse, UPDATE_AUDIO_TRACK, DeleteAudioTrackRequestBody, DeleteAudioTrackResponse, DELETE_AUDIO_TRACK, DropAudioTrackStagingDataRequestBody, DropAudioTrackStagingDataResponse, DROP_AUDIO_TRACK_STAGING_DATA, UpdateSubtitleTrackRequestBody, UpdateSubtitleTrackResponse, UPDATE_SUBTITLE_TRACK, DeleteSubtitleTrackRequestBody, DeleteSubtitleTrackResponse, DELETE_SUBTITLE_TRACK, DropSubtitleTrackStagingDataRequestBody, DropSubtitleTrackStagingDataResponse, DROP_SUBTITLE_TRACK_STAGING_DATA, ProcessGcsFileDeleteTaskRequestBody, ProcessGcsFileDeleteTaskResponse, PROCESS_GCS_FILE_DELETE_TASK, ListGcsFileDeleteTasksRequestBody, ListGcsFileDeleteTasksResponse, LIST_GCS_FILE_DELETE_TASKS, ProcessR2KeyDeleteTaskRequestBody, ProcessR2KeyDeleteTaskResponse, PROCESS_R2_KEY_DELETE_TASK, ListR2KeyDeleteTasksRequestBody, ListR2KeyDeleteTasksResponse, LIST_R2_KEY_DELETE_TASKS } from './interface';
+import { CreateVideoContainerRequestBody, CreateVideoContainerResponse, CREATE_VIDEO_CONTAINER, DeleteVideoContainerRequestBody, DeleteVideoContainerResponse, DELETE_VIDEO_CONTAINER, GetVideoContainerRequestBody, GetVideoContainerResponse, GET_VIDEO_CONTAINER, CommitVideoContainerStagingDataRequestBody, CommitVideoContainerStagingDataResponse, COMMIT_VIDEO_CONTAINER_STAGING_DATA, ProcessVideoContainerWritingToFileTaskRequestBody, ProcessVideoContainerWritingToFileTaskResponse, PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK, ListVideoContainerWritingToFileTasksRequestBody, ListVideoContainerWritingToFileTasksResponse, LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS, ProcessVideoContainerSyncingTaskRequestBody, ProcessVideoContainerSyncingTaskResponse, PROCESS_VIDEO_CONTAINER_SYNCING_TASK, ListVideoContainerSyncingTasksRequestBody, ListVideoContainerSyncingTasksResponse, LIST_VIDEO_CONTAINER_SYNCING_TASKS, StartMediaUploadingRequestBody, StartMediaUploadingResponse, START_MEDIA_UPLOADING, CompleteMediaUploadingRequestBody, CompleteMediaUploadingResponse, COMPLETE_MEDIA_UPLOADING, CancelMediaUploadingRequestBody, CancelMediaUploadingResponse, CANCEL_MEDIA_UPLOADING, StartSubtitleUploadingRequestBody, StartSubtitleUploadingResponse, START_SUBTITLE_UPLOADING, CompleteSubtitleUploadingRequestBody, CompleteSubtitleUploadingResponse, COMPLETE_SUBTITLE_UPLOADING, CancelSubtitleUploadingRequestBody, CancelSubtitleUploadingResponse, CANCEL_SUBTITLE_UPLOADING, ProcessMediaFormattingTaskRequestBody, ProcessMediaFormattingTaskResponse, PROCESS_MEDIA_FORMATTING_TASK, ListMediaFormattingTasksRequestBody, ListMediaFormattingTasksResponse, LIST_MEDIA_FORMATTING_TASKS, CancelMediaFormattingRequestBody, CancelMediaFormattingResponse, CANCEL_MEDIA_FORMATTING, ProcessSubtitleFormattingTaskRequestBody, ProcessSubtitleFormattingTaskResponse, PROCESS_SUBTITLE_FORMATTING_TASK, ListSubtitleFormattingTasksRequestBody, ListSubtitleFormattingTasksResponse, LIST_SUBTITLE_FORMATTING_TASKS, CancelSubtitleFormattingRequestBody, CancelSubtitleFormattingResponse, CANCEL_SUBTITLE_FORMATTING, DeleteVideoTrackRequestBody, DeleteVideoTrackResponse, DELETE_VIDEO_TRACK, DropVideoTrackStagingDataRequestBody, DropVideoTrackStagingDataResponse, DROP_VIDEO_TRACK_STAGING_DATA, UpdateAudioTrackRequestBody, UpdateAudioTrackResponse, UPDATE_AUDIO_TRACK, DeleteAudioTrackRequestBody, DeleteAudioTrackResponse, DELETE_AUDIO_TRACK, DropAudioTrackStagingDataRequestBody, DropAudioTrackStagingDataResponse, DROP_AUDIO_TRACK_STAGING_DATA, UpdateSubtitleTrackRequestBody, UpdateSubtitleTrackResponse, UPDATE_SUBTITLE_TRACK, DeleteSubtitleTrackRequestBody, DeleteSubtitleTrackResponse, DELETE_SUBTITLE_TRACK, DropSubtitleTrackStagingDataRequestBody, DropSubtitleTrackStagingDataResponse, DROP_SUBTITLE_TRACK_STAGING_DATA, ProcessGcsFileDeletinTaskRequestBody, ProcessGcsFileDeletinTaskResponse, PROCESS_GCS_FILE_DELETIN_TASK, ListGcsFileDeletinTasksRequestBody, ListGcsFileDeletinTasksResponse, LIST_GCS_FILE_DELETIN_TASKS, ProcessR2KeyDeletingTaskRequestBody, ProcessR2KeyDeletingTaskResponse, PROCESS_R2_KEY_DELETING_TASK, ListR2KeyDeletingTasksRequestBody, ListR2KeyDeletingTasksResponse, LIST_R2_KEY_DELETING_TASKS } from './interface';
 import { NodeClientInterface, NodeClientOptions } from '@selfage/service_descriptor/client_interface';
 
 export function createVideoContainer(
@@ -393,56 +393,56 @@ export function dropSubtitleTrackStagingData(
   );
 }
 
-export function processGcsFileDeleteTask(
+export function processGcsFileDeletinTask(
   client: NodeClientInterface,
-  body: ProcessGcsFileDeleteTaskRequestBody,
+  body: ProcessGcsFileDeletinTaskRequestBody,
   options?: NodeClientOptions,
-): Promise<ProcessGcsFileDeleteTaskResponse> {
+): Promise<ProcessGcsFileDeletinTaskResponse> {
   return client.send(
     {
-      descriptor: PROCESS_GCS_FILE_DELETE_TASK,
+      descriptor: PROCESS_GCS_FILE_DELETIN_TASK,
       body,
     },
     options,
   );
 }
 
-export function listGcsFileDeleteTasks(
+export function listGcsFileDeletinTasks(
   client: NodeClientInterface,
-  body: ListGcsFileDeleteTasksRequestBody,
+  body: ListGcsFileDeletinTasksRequestBody,
   options?: NodeClientOptions,
-): Promise<ListGcsFileDeleteTasksResponse> {
+): Promise<ListGcsFileDeletinTasksResponse> {
   return client.send(
     {
-      descriptor: LIST_GCS_FILE_DELETE_TASKS,
+      descriptor: LIST_GCS_FILE_DELETIN_TASKS,
       body,
     },
     options,
   );
 }
 
-export function processR2KeyDeleteTask(
+export function processR2KeyDeletingTask(
   client: NodeClientInterface,
-  body: ProcessR2KeyDeleteTaskRequestBody,
+  body: ProcessR2KeyDeletingTaskRequestBody,
   options?: NodeClientOptions,
-): Promise<ProcessR2KeyDeleteTaskResponse> {
+): Promise<ProcessR2KeyDeletingTaskResponse> {
   return client.send(
     {
-      descriptor: PROCESS_R2_KEY_DELETE_TASK,
+      descriptor: PROCESS_R2_KEY_DELETING_TASK,
       body,
     },
     options,
   );
 }
 
-export function listR2KeyDeleteTasks(
+export function listR2KeyDeletingTasks(
   client: NodeClientInterface,
-  body: ListR2KeyDeleteTasksRequestBody,
+  body: ListR2KeyDeletingTasksRequestBody,
   options?: NodeClientOptions,
-): Promise<ListR2KeyDeleteTasksResponse> {
+): Promise<ListR2KeyDeletingTasksResponse> {
   return client.send(
     {
-      descriptor: LIST_R2_KEY_DELETE_TASKS,
+      descriptor: LIST_R2_KEY_DELETING_TASKS,
       body,
     },
     options,

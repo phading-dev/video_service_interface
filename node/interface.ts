@@ -789,13 +789,13 @@ export let DROP_SUBTITLE_TRACK_STAGING_DATA_RESPONSE: MessageDescriptor<DropSubt
   fields: [],
 };
 
-export interface ProcessGcsFileDeleteTaskRequestBody {
+export interface ProcessGcsFileDeletinTaskRequestBody {
   gcsFilename?: string,
   uploadSessionUrl?: string,
 }
 
-export let PROCESS_GCS_FILE_DELETE_TASK_REQUEST_BODY: MessageDescriptor<ProcessGcsFileDeleteTaskRequestBody> = {
-  name: 'ProcessGcsFileDeleteTaskRequestBody',
+export let PROCESS_GCS_FILE_DELETIN_TASK_REQUEST_BODY: MessageDescriptor<ProcessGcsFileDeletinTaskRequestBody> = {
+  name: 'ProcessGcsFileDeletinTaskRequestBody',
   fields: [{
     name: 'gcsFilename',
     index: 1,
@@ -807,42 +807,42 @@ export let PROCESS_GCS_FILE_DELETE_TASK_REQUEST_BODY: MessageDescriptor<ProcessG
   }],
 };
 
-export interface ProcessGcsFileDeleteTaskResponse {
+export interface ProcessGcsFileDeletinTaskResponse {
 }
 
-export let PROCESS_GCS_FILE_DELETE_TASK_RESPONSE: MessageDescriptor<ProcessGcsFileDeleteTaskResponse> = {
-  name: 'ProcessGcsFileDeleteTaskResponse',
+export let PROCESS_GCS_FILE_DELETIN_TASK_RESPONSE: MessageDescriptor<ProcessGcsFileDeletinTaskResponse> = {
+  name: 'ProcessGcsFileDeletinTaskResponse',
   fields: [],
 };
 
-export interface ListGcsFileDeleteTasksRequestBody {
+export interface ListGcsFileDeletinTasksRequestBody {
 }
 
-export let LIST_GCS_FILE_DELETE_TASKS_REQUEST_BODY: MessageDescriptor<ListGcsFileDeleteTasksRequestBody> = {
-  name: 'ListGcsFileDeleteTasksRequestBody',
+export let LIST_GCS_FILE_DELETIN_TASKS_REQUEST_BODY: MessageDescriptor<ListGcsFileDeletinTasksRequestBody> = {
+  name: 'ListGcsFileDeletinTasksRequestBody',
   fields: [],
 };
 
-export interface ListGcsFileDeleteTasksResponse {
-  tasks?: Array<ProcessGcsFileDeleteTaskRequestBody>,
+export interface ListGcsFileDeletinTasksResponse {
+  tasks?: Array<ProcessGcsFileDeletinTaskRequestBody>,
 }
 
-export let LIST_GCS_FILE_DELETE_TASKS_RESPONSE: MessageDescriptor<ListGcsFileDeleteTasksResponse> = {
-  name: 'ListGcsFileDeleteTasksResponse',
+export let LIST_GCS_FILE_DELETIN_TASKS_RESPONSE: MessageDescriptor<ListGcsFileDeletinTasksResponse> = {
+  name: 'ListGcsFileDeletinTasksResponse',
   fields: [{
     name: 'tasks',
     index: 1,
-    messageType: PROCESS_GCS_FILE_DELETE_TASK_REQUEST_BODY,
+    messageType: PROCESS_GCS_FILE_DELETIN_TASK_REQUEST_BODY,
     isArray: true,
   }],
 };
 
-export interface ProcessR2KeyDeleteTaskRequestBody {
+export interface ProcessR2KeyDeletingTaskRequestBody {
   key?: string,
 }
 
-export let PROCESS_R2_KEY_DELETE_TASK_REQUEST_BODY: MessageDescriptor<ProcessR2KeyDeleteTaskRequestBody> = {
-  name: 'ProcessR2KeyDeleteTaskRequestBody',
+export let PROCESS_R2_KEY_DELETING_TASK_REQUEST_BODY: MessageDescriptor<ProcessR2KeyDeletingTaskRequestBody> = {
+  name: 'ProcessR2KeyDeletingTaskRequestBody',
   fields: [{
     name: 'key',
     index: 1,
@@ -850,32 +850,32 @@ export let PROCESS_R2_KEY_DELETE_TASK_REQUEST_BODY: MessageDescriptor<ProcessR2K
   }],
 };
 
-export interface ProcessR2KeyDeleteTaskResponse {
+export interface ProcessR2KeyDeletingTaskResponse {
 }
 
-export let PROCESS_R2_KEY_DELETE_TASK_RESPONSE: MessageDescriptor<ProcessR2KeyDeleteTaskResponse> = {
-  name: 'ProcessR2KeyDeleteTaskResponse',
+export let PROCESS_R2_KEY_DELETING_TASK_RESPONSE: MessageDescriptor<ProcessR2KeyDeletingTaskResponse> = {
+  name: 'ProcessR2KeyDeletingTaskResponse',
   fields: [],
 };
 
-export interface ListR2KeyDeleteTasksRequestBody {
+export interface ListR2KeyDeletingTasksRequestBody {
 }
 
-export let LIST_R2_KEY_DELETE_TASKS_REQUEST_BODY: MessageDescriptor<ListR2KeyDeleteTasksRequestBody> = {
-  name: 'ListR2KeyDeleteTasksRequestBody',
+export let LIST_R2_KEY_DELETING_TASKS_REQUEST_BODY: MessageDescriptor<ListR2KeyDeletingTasksRequestBody> = {
+  name: 'ListR2KeyDeletingTasksRequestBody',
   fields: [],
 };
 
-export interface ListR2KeyDeleteTasksResponse {
-  tasks?: Array<ProcessR2KeyDeleteTaskRequestBody>,
+export interface ListR2KeyDeletingTasksResponse {
+  tasks?: Array<ProcessR2KeyDeletingTaskRequestBody>,
 }
 
-export let LIST_R2_KEY_DELETE_TASKS_RESPONSE: MessageDescriptor<ListR2KeyDeleteTasksResponse> = {
-  name: 'ListR2KeyDeleteTasksResponse',
+export let LIST_R2_KEY_DELETING_TASKS_RESPONSE: MessageDescriptor<ListR2KeyDeletingTasksResponse> = {
+  name: 'ListR2KeyDeletingTasksResponse',
   fields: [{
     name: 'tasks',
     index: 1,
-    messageType: PROCESS_R2_KEY_DELETE_TASK_REQUEST_BODY,
+    messageType: PROCESS_R2_KEY_DELETING_TASK_REQUEST_BODY,
     isArray: true,
   }],
 };
@@ -1188,46 +1188,46 @@ export let DROP_SUBTITLE_TRACK_STAGING_DATA: NodeRemoteCallDescriptor = {
   },
 }
 
-export let PROCESS_GCS_FILE_DELETE_TASK: NodeRemoteCallDescriptor = {
-  name: "ProcessGcsFileDeleteTask",
-  path: "/ProcessGcsFileDeleteTask",
+export let PROCESS_GCS_FILE_DELETIN_TASK: NodeRemoteCallDescriptor = {
+  name: "ProcessGcsFileDeletinTask",
+  path: "/ProcessGcsFileDeletinTask",
   body: {
-    messageType: PROCESS_GCS_FILE_DELETE_TASK_REQUEST_BODY,
+    messageType: PROCESS_GCS_FILE_DELETIN_TASK_REQUEST_BODY,
   },
   response: {
-    messageType: PROCESS_GCS_FILE_DELETE_TASK_RESPONSE,
+    messageType: PROCESS_GCS_FILE_DELETIN_TASK_RESPONSE,
   },
 }
 
-export let LIST_GCS_FILE_DELETE_TASKS: NodeRemoteCallDescriptor = {
-  name: "ListGcsFileDeleteTasks",
-  path: "/ListGcsFileDeleteTasks",
+export let LIST_GCS_FILE_DELETIN_TASKS: NodeRemoteCallDescriptor = {
+  name: "ListGcsFileDeletinTasks",
+  path: "/ListGcsFileDeletinTasks",
   body: {
-    messageType: LIST_GCS_FILE_DELETE_TASKS_REQUEST_BODY,
+    messageType: LIST_GCS_FILE_DELETIN_TASKS_REQUEST_BODY,
   },
   response: {
-    messageType: LIST_GCS_FILE_DELETE_TASKS_RESPONSE,
+    messageType: LIST_GCS_FILE_DELETIN_TASKS_RESPONSE,
   },
 }
 
-export let PROCESS_R2_KEY_DELETE_TASK: NodeRemoteCallDescriptor = {
-  name: "ProcessR2KeyDeleteTask",
-  path: "/ProcessR2KeyDeleteTask",
+export let PROCESS_R2_KEY_DELETING_TASK: NodeRemoteCallDescriptor = {
+  name: "ProcessR2KeyDeletingTask",
+  path: "/ProcessR2KeyDeletingTask",
   body: {
-    messageType: PROCESS_R2_KEY_DELETE_TASK_REQUEST_BODY,
+    messageType: PROCESS_R2_KEY_DELETING_TASK_REQUEST_BODY,
   },
   response: {
-    messageType: PROCESS_R2_KEY_DELETE_TASK_RESPONSE,
+    messageType: PROCESS_R2_KEY_DELETING_TASK_RESPONSE,
   },
 }
 
-export let LIST_R2_KEY_DELETE_TASKS: NodeRemoteCallDescriptor = {
-  name: "ListR2KeyDeleteTasks",
-  path: "/ListR2KeyDeleteTasks",
+export let LIST_R2_KEY_DELETING_TASKS: NodeRemoteCallDescriptor = {
+  name: "ListR2KeyDeletingTasks",
+  path: "/ListR2KeyDeletingTasks",
   body: {
-    messageType: LIST_R2_KEY_DELETE_TASKS_REQUEST_BODY,
+    messageType: LIST_R2_KEY_DELETING_TASKS_REQUEST_BODY,
   },
   response: {
-    messageType: LIST_R2_KEY_DELETE_TASKS_RESPONSE,
+    messageType: LIST_R2_KEY_DELETING_TASKS_RESPONSE,
   },
 }
