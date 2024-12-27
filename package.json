@@ -1,12 +1,12 @@
 {
   "name": "@phading/video_service_interface",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "The web and backend interfaces of VideoService.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/phading-dev/video_service_interface.git"
   },
-  "author": "Yuxuan Xie <teststaybaka@gmail.com> (http://www.yuxuanxie.com)",
+  "author": "Yuxuan Xie <ykuyo.dev@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/phading-dev/video_service_interface/issues"
