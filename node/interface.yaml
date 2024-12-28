@@ -7,12 +7,11 @@
     - name: episodeId
       type: string
       index: 2
+    - name: videoContainerId
+      type: string
+      index: 3
 - kind: Message
   name: CreateVideoContainerResponse
-  fields:
-    - name: containerId
-      type: string
-      index: 1
 - kind: Message
   name: DeleteVideoContainerRequestBody
   fields:
