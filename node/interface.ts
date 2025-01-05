@@ -3,24 +3,29 @@ import { VideoContainer, VIDEO_CONTAINER } from './video_container';
 import { NodeRemoteCallDescriptor } from '@selfage/service_descriptor';
 
 export interface CreateVideoContainerRequestBody {
+  videoContainerId?: string,
   seasonId?: string,
   episodeId?: string,
-  videoContainerId?: string,
+  accountId?: string,
 }
 
 export let CREATE_VIDEO_CONTAINER_REQUEST_BODY: MessageDescriptor<CreateVideoContainerRequestBody> = {
   name: 'CreateVideoContainerRequestBody',
   fields: [{
-    name: 'seasonId',
+    name: 'videoContainerId',
     index: 1,
     primitiveType: PrimitiveType.STRING,
   }, {
-    name: 'episodeId',
+    name: 'seasonId',
     index: 2,
     primitiveType: PrimitiveType.STRING,
   }, {
-    name: 'videoContainerId',
+    name: 'episodeId',
     index: 3,
+    primitiveType: PrimitiveType.STRING,
+  }, {
+    name: 'accountId',
+    index: 4,
     primitiveType: PrimitiveType.STRING,
   }],
 };
