@@ -428,6 +428,59 @@ export let CANCEL_SUBTITLE_UPLOADING_RESPONSE: MessageDescriptor<CancelSubtitleU
   fields: [],
 };
 
+export interface ProcessUploadedRecordingTaskRequestBody {
+  gcsFilename?: string,
+  accountId?: string,
+  totalBytes?: number,
+}
+
+export let PROCESS_UPLOADED_RECORDING_TASK_REQUEST_BODY: MessageDescriptor<ProcessUploadedRecordingTaskRequestBody> = {
+  name: 'ProcessUploadedRecordingTaskRequestBody',
+  fields: [{
+    name: 'gcsFilename',
+    index: 1,
+    primitiveType: PrimitiveType.STRING,
+  }, {
+    name: 'accountId',
+    index: 2,
+    primitiveType: PrimitiveType.STRING,
+  }, {
+    name: 'totalBytes',
+    index: 3,
+    primitiveType: PrimitiveType.NUMBER,
+  }],
+};
+
+export interface ProcessUploadedRecordingTaskResponse {
+}
+
+export let PROCESS_UPLOADED_RECORDING_TASK_RESPONSE: MessageDescriptor<ProcessUploadedRecordingTaskResponse> = {
+  name: 'ProcessUploadedRecordingTaskResponse',
+  fields: [],
+};
+
+export interface ListUploadedRecordingTasksRequestBody {
+}
+
+export let LIST_UPLOADED_RECORDING_TASKS_REQUEST_BODY: MessageDescriptor<ListUploadedRecordingTasksRequestBody> = {
+  name: 'ListUploadedRecordingTasksRequestBody',
+  fields: [],
+};
+
+export interface ListUploadedRecordingTasksResponse {
+  tasks?: Array<ProcessUploadedRecordingTaskRequestBody>,
+}
+
+export let LIST_UPLOADED_RECORDING_TASKS_RESPONSE: MessageDescriptor<ListUploadedRecordingTasksResponse> = {
+  name: 'ListUploadedRecordingTasksResponse',
+  fields: [{
+    name: 'tasks',
+    index: 1,
+    messageType: PROCESS_UPLOADED_RECORDING_TASK_REQUEST_BODY,
+    isArray: true,
+  }],
+};
+
 export interface ProcessMediaFormattingTaskRequestBody {
   containerId?: string,
   gcsFilename?: string,
@@ -564,6 +617,64 @@ export interface CancelSubtitleFormattingResponse {
 export let CANCEL_SUBTITLE_FORMATTING_RESPONSE: MessageDescriptor<CancelSubtitleFormattingResponse> = {
   name: 'CancelSubtitleFormattingResponse',
   fields: [],
+};
+
+export interface ProcessStorageStartRecordingTaskRequestBody {
+  r2Dirname?: string,
+  accountId?: string,
+  totalBytes?: number,
+  startTimeMs?: number,
+}
+
+export let PROCESS_STORAGE_START_RECORDING_TASK_REQUEST_BODY: MessageDescriptor<ProcessStorageStartRecordingTaskRequestBody> = {
+  name: 'ProcessStorageStartRecordingTaskRequestBody',
+  fields: [{
+    name: 'r2Dirname',
+    index: 1,
+    primitiveType: PrimitiveType.STRING,
+  }, {
+    name: 'accountId',
+    index: 2,
+    primitiveType: PrimitiveType.STRING,
+  }, {
+    name: 'totalBytes',
+    index: 3,
+    primitiveType: PrimitiveType.NUMBER,
+  }, {
+    name: 'startTimeMs',
+    index: 4,
+    primitiveType: PrimitiveType.NUMBER,
+  }],
+};
+
+export interface ProcessStorageStartRecordingTaskResponse {
+}
+
+export let PROCESS_STORAGE_START_RECORDING_TASK_RESPONSE: MessageDescriptor<ProcessStorageStartRecordingTaskResponse> = {
+  name: 'ProcessStorageStartRecordingTaskResponse',
+  fields: [],
+};
+
+export interface ListStorageStartRecordingTasksRequestBody {
+}
+
+export let LIST_STORAGE_START_RECORDING_TASKS_REQUEST_BODY: MessageDescriptor<ListStorageStartRecordingTasksRequestBody> = {
+  name: 'ListStorageStartRecordingTasksRequestBody',
+  fields: [],
+};
+
+export interface ListStorageStartRecordingTasksResponse {
+  tasks?: Array<ProcessStorageStartRecordingTaskRequestBody>,
+}
+
+export let LIST_STORAGE_START_RECORDING_TASKS_RESPONSE: MessageDescriptor<ListStorageStartRecordingTasksResponse> = {
+  name: 'ListStorageStartRecordingTasksResponse',
+  fields: [{
+    name: 'tasks',
+    index: 1,
+    messageType: PROCESS_STORAGE_START_RECORDING_TASK_REQUEST_BODY,
+    isArray: true,
+  }],
 };
 
 export interface DeleteVideoTrackRequestBody {
@@ -792,6 +903,59 @@ export interface DropSubtitleTrackStagingDataResponse {
 export let DROP_SUBTITLE_TRACK_STAGING_DATA_RESPONSE: MessageDescriptor<DropSubtitleTrackStagingDataResponse> = {
   name: 'DropSubtitleTrackStagingDataResponse',
   fields: [],
+};
+
+export interface ProcessStorageEndRecordingTaskRequestBody {
+  r2Dirname?: string,
+  accountId?: string,
+  endTimeMs?: number,
+}
+
+export let PROCESS_STORAGE_END_RECORDING_TASK_REQUEST_BODY: MessageDescriptor<ProcessStorageEndRecordingTaskRequestBody> = {
+  name: 'ProcessStorageEndRecordingTaskRequestBody',
+  fields: [{
+    name: 'r2Dirname',
+    index: 1,
+    primitiveType: PrimitiveType.STRING,
+  }, {
+    name: 'accountId',
+    index: 2,
+    primitiveType: PrimitiveType.STRING,
+  }, {
+    name: 'endTimeMs',
+    index: 3,
+    primitiveType: PrimitiveType.NUMBER,
+  }],
+};
+
+export interface ProcessStorageEndRecordingTaskResponse {
+}
+
+export let PROCESS_STORAGE_END_RECORDING_TASK_RESPONSE: MessageDescriptor<ProcessStorageEndRecordingTaskResponse> = {
+  name: 'ProcessStorageEndRecordingTaskResponse',
+  fields: [],
+};
+
+export interface ListStorageEndRecordingTasksRequestBody {
+}
+
+export let LIST_STORAGE_END_RECORDING_TASKS_REQUEST_BODY: MessageDescriptor<ListStorageEndRecordingTasksRequestBody> = {
+  name: 'ListStorageEndRecordingTasksRequestBody',
+  fields: [],
+};
+
+export interface ListStorageEndRecordingTasksResponse {
+  tasks?: Array<ProcessStorageEndRecordingTaskRequestBody>,
+}
+
+export let LIST_STORAGE_END_RECORDING_TASKS_RESPONSE: MessageDescriptor<ListStorageEndRecordingTasksResponse> = {
+  name: 'ListStorageEndRecordingTasksResponse',
+  fields: [{
+    name: 'tasks',
+    index: 1,
+    messageType: PROCESS_STORAGE_END_RECORDING_TASK_REQUEST_BODY,
+    isArray: true,
+  }],
 };
 
 export interface ProcessGcsFileDeletingTaskRequestBody {
@@ -1039,6 +1203,28 @@ export let CANCEL_SUBTITLE_UPLOADING: NodeRemoteCallDescriptor = {
   },
 }
 
+export let PROCESS_UPLOADED_RECORDING_TASK: NodeRemoteCallDescriptor = {
+  name: "ProcessUploadedRecordingTask",
+  path: "/ProcessUploadedRecordingTask",
+  body: {
+    messageType: PROCESS_UPLOADED_RECORDING_TASK_REQUEST_BODY,
+  },
+  response: {
+    messageType: PROCESS_UPLOADED_RECORDING_TASK_RESPONSE,
+  },
+}
+
+export let LIST_UPLOADED_RECORDING_TASKS: NodeRemoteCallDescriptor = {
+  name: "ListUploadedRecordingTasks",
+  path: "/ListUploadedRecordingTasks",
+  body: {
+    messageType: LIST_UPLOADED_RECORDING_TASKS_REQUEST_BODY,
+  },
+  response: {
+    messageType: LIST_UPLOADED_RECORDING_TASKS_RESPONSE,
+  },
+}
+
 export let PROCESS_MEDIA_FORMATTING_TASK: NodeRemoteCallDescriptor = {
   name: "ProcessMediaFormattingTask",
   path: "/ProcessMediaFormattingTask",
@@ -1102,6 +1288,28 @@ export let CANCEL_SUBTITLE_FORMATTING: NodeRemoteCallDescriptor = {
   },
   response: {
     messageType: CANCEL_SUBTITLE_FORMATTING_RESPONSE,
+  },
+}
+
+export let PROCESS_STORAGE_START_RECORDING_TASK: NodeRemoteCallDescriptor = {
+  name: "ProcessStorageStartRecordingTask",
+  path: "/ProcessStorageStartRecordingTask",
+  body: {
+    messageType: PROCESS_STORAGE_START_RECORDING_TASK_REQUEST_BODY,
+  },
+  response: {
+    messageType: PROCESS_STORAGE_START_RECORDING_TASK_RESPONSE,
+  },
+}
+
+export let LIST_STORAGE_START_RECORDING_TASKS: NodeRemoteCallDescriptor = {
+  name: "ListStorageStartRecordingTasks",
+  path: "/ListStorageStartRecordingTasks",
+  body: {
+    messageType: LIST_STORAGE_START_RECORDING_TASKS_REQUEST_BODY,
+  },
+  response: {
+    messageType: LIST_STORAGE_START_RECORDING_TASKS_RESPONSE,
   },
 }
 
@@ -1190,6 +1398,28 @@ export let DROP_SUBTITLE_TRACK_STAGING_DATA: NodeRemoteCallDescriptor = {
   },
   response: {
     messageType: DROP_SUBTITLE_TRACK_STAGING_DATA_RESPONSE,
+  },
+}
+
+export let PROCESS_STORAGE_END_RECORDING_TASK: NodeRemoteCallDescriptor = {
+  name: "ProcessStorageEndRecordingTask",
+  path: "/ProcessStorageEndRecordingTask",
+  body: {
+    messageType: PROCESS_STORAGE_END_RECORDING_TASK_REQUEST_BODY,
+  },
+  response: {
+    messageType: PROCESS_STORAGE_END_RECORDING_TASK_RESPONSE,
+  },
+}
+
+export let LIST_STORAGE_END_RECORDING_TASKS: NodeRemoteCallDescriptor = {
+  name: "ListStorageEndRecordingTasks",
+  path: "/ListStorageEndRecordingTasks",
+  body: {
+    messageType: LIST_STORAGE_END_RECORDING_TASKS_REQUEST_BODY,
+  },
+  response: {
+    messageType: LIST_STORAGE_END_RECORDING_TASKS_RESPONSE,
   },
 }
 

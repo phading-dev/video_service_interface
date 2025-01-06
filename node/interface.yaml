@@ -191,6 +191,29 @@
 - kind: Message
   name: CancelSubtitleUploadingResponse
 - kind: Message
+  name: ProcessUploadedRecordingTaskRequestBody
+  fields:
+    - name: gcsFilename
+      type: string
+      index: 1
+    - name: accountId
+      type: string
+      index: 2
+    - name: totalBytes
+      type: number
+      index: 3
+- kind: Message
+  name: ProcessUploadedRecordingTaskResponse
+- kind: Message
+  name: ListUploadedRecordingTasksRequestBody
+- kind: Message
+  name: ListUploadedRecordingTasksResponse
+  fields:
+    - name: tasks
+      type: ProcessUploadedRecordingTaskRequestBody
+      isArray: true
+      index: 1
+- kind: Message
   name: ProcessMediaFormattingTaskRequestBody
   fields:
     - name: containerId
@@ -246,6 +269,32 @@
       index: 1
 - kind: Message
   name: CancelSubtitleFormattingResponse
+- kind: Message
+  name: ProcessStorageStartRecordingTaskRequestBody
+  fields:
+    - name: r2Dirname
+      type: string
+      index: 1
+    - name: accountId
+      type: string
+      index: 2
+    - name: totalBytes
+      type: number
+      index: 3
+    - name: startTimeMs
+      type: number
+      index: 4
+- kind: Message
+  name: ProcessStorageStartRecordingTaskResponse
+- kind: Message
+  name: ListStorageStartRecordingTasksRequestBody
+- kind: Message
+  name: ListStorageStartRecordingTasksResponse
+  fields:
+    - name: tasks
+      type: ProcessStorageStartRecordingTaskRequestBody
+      isArray: true
+      index: 1
 - kind: Message
   name: DeleteVideoTrackRequestBody
   fields:
@@ -347,6 +396,29 @@
 - kind: Message
   name: DropSubtitleTrackStagingDataResponse
 - kind: Message
+  name: ProcessStorageEndRecordingTaskRequestBody
+  fields:
+    - name: r2Dirname
+      type: string
+      index: 1
+    - name: accountId
+      type: string
+      index: 2
+    - name: endTimeMs
+      type: number
+      index: 3
+- kind: Message
+  name: ProcessStorageEndRecordingTaskResponse
+- kind: Message
+  name: ListStorageEndRecordingTasksRequestBody
+- kind: Message
+  name: ListStorageEndRecordingTasksResponse
+  fields:
+    - name: tasks
+      type: ProcessStorageEndRecordingTaskRequestBody
+      isArray: true
+      index: 1
+- kind: Message
   name: ProcessGcsFileDeletingTaskRequestBody
   fields:
     - name: gcsFilename
@@ -442,6 +514,14 @@
       path: /CancelSubtitleUploading
       body: CancelSubtitleUploadingRequestBody
       response: CancelSubtitleUploadingResponse
+    - name: ProcessUploadedRecordingTask
+      path: /ProcessUploadedRecordingTask
+      body: ProcessUploadedRecordingTaskRequestBody
+      response: ProcessUploadedRecordingTaskResponse
+    - name: ListUploadedRecordingTasks
+      path: /ListUploadedRecordingTasks
+      body: ListUploadedRecordingTasksRequestBody
+      response: ListUploadedRecordingTasksResponse
     - name: ProcessMediaFormattingTask
       path: /ProcessMediaFormattingTask
       body: ProcessMediaFormattingTaskRequestBody
@@ -466,6 +546,14 @@
       path: /CancelSubtitleFormatting
       body: CancelSubtitleFormattingRequestBody
       response: CancelSubtitleFormattingResponse
+    - name: ProcessStorageStartRecordingTask
+      path: /ProcessStorageStartRecordingTask
+      body: ProcessStorageStartRecordingTaskRequestBody
+      response: ProcessStorageStartRecordingTaskResponse
+    - name: ListStorageStartRecordingTasks
+      path: /ListStorageStartRecordingTasks
+      body: ListStorageStartRecordingTasksRequestBody
+      response: ListStorageStartRecordingTasksResponse
     - name: DeleteVideoTrack
       path: /DeleteVideoTrack
       body: DeleteVideoTrackRequestBody
@@ -498,6 +586,14 @@
       path: /DropSubtitleTrackStagingData
       body: DropSubtitleTrackStagingDataRequestBody
       response: DropSubtitleTrackStagingDataResponse
+    - name: ProcessStorageEndRecordingTask
+      path: /ProcessStorageEndRecordingTask
+      body: ProcessStorageEndRecordingTaskRequestBody
+      response: ProcessStorageEndRecordingTaskResponse
+    - name: ListStorageEndRecordingTasks
+      path: /ListStorageEndRecordingTasks
+      body: ListStorageEndRecordingTasksRequestBody
+      response: ListStorageEndRecordingTasksResponse
     - name: ProcessGcsFileDeletingTask
       path: /ProcessGcsFileDeletingTask
       body: ProcessGcsFileDeletingTaskRequestBody
