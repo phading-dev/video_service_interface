@@ -455,9 +455,11 @@
       type: ProcessR2KeyDeletingTaskRequestBody
       isArray: true
       index: 1
-- kind: NodeService
-  name: VideoFrontendService
-  remoteCalls:
+- kind: RemoteCallsGroup
+  name: VideoNodeRemoteCalls
+  service: VideoNodeService
+  importService: ./service
+  calls:
     - name: CreateVideoContainer
       path: /CreateVideoContainer
       body: CreateVideoContainerRequestBody

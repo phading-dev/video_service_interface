@@ -1,6 +1,7 @@
 import { PrimitiveType, MessageDescriptor, EnumDescriptor } from '@selfage/message/descriptor';
 import { VideoContainer, VIDEO_CONTAINER } from './video_container';
-import { NodeRemoteCallDescriptor } from '@selfage/service_descriptor';
+import { VIDEO_NODE_SERVICE } from '../service';
+import { RemoteCallDescriptor } from '@selfage/service_descriptor';
 
 export interface CreateVideoContainerRequestBody {
   videoContainerId?: string,
@@ -1049,8 +1050,9 @@ export let LIST_R2_KEY_DELETING_TASKS_RESPONSE: MessageDescriptor<ListR2KeyDelet
   }],
 };
 
-export let CREATE_VIDEO_CONTAINER: NodeRemoteCallDescriptor = {
+export let CREATE_VIDEO_CONTAINER: RemoteCallDescriptor = {
   name: "CreateVideoContainer",
+  service: VIDEO_NODE_SERVICE,
   path: "/CreateVideoContainer",
   body: {
     messageType: CREATE_VIDEO_CONTAINER_REQUEST_BODY,
@@ -1060,8 +1062,9 @@ export let CREATE_VIDEO_CONTAINER: NodeRemoteCallDescriptor = {
   },
 }
 
-export let DELETE_VIDEO_CONTAINER: NodeRemoteCallDescriptor = {
+export let DELETE_VIDEO_CONTAINER: RemoteCallDescriptor = {
   name: "DeleteVideoContainer",
+  service: VIDEO_NODE_SERVICE,
   path: "/DeleteVideoContainer",
   body: {
     messageType: DELETE_VIDEO_CONTAINER_REQUEST_BODY,
@@ -1071,8 +1074,9 @@ export let DELETE_VIDEO_CONTAINER: NodeRemoteCallDescriptor = {
   },
 }
 
-export let GET_VIDEO_CONTAINER: NodeRemoteCallDescriptor = {
+export let GET_VIDEO_CONTAINER: RemoteCallDescriptor = {
   name: "GetVideoContainer",
+  service: VIDEO_NODE_SERVICE,
   path: "/GetVideoContainer",
   body: {
     messageType: GET_VIDEO_CONTAINER_REQUEST_BODY,
@@ -1082,8 +1086,9 @@ export let GET_VIDEO_CONTAINER: NodeRemoteCallDescriptor = {
   },
 }
 
-export let COMMIT_VIDEO_CONTAINER_STAGING_DATA: NodeRemoteCallDescriptor = {
+export let COMMIT_VIDEO_CONTAINER_STAGING_DATA: RemoteCallDescriptor = {
   name: "CommitVideoContainerStagingData",
+  service: VIDEO_NODE_SERVICE,
   path: "/CommitVideoContainerStagingData",
   body: {
     messageType: COMMIT_VIDEO_CONTAINER_STAGING_DATA_REQUEST_BODY,
@@ -1093,8 +1098,9 @@ export let COMMIT_VIDEO_CONTAINER_STAGING_DATA: NodeRemoteCallDescriptor = {
   },
 }
 
-export let PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK: NodeRemoteCallDescriptor = {
+export let PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK: RemoteCallDescriptor = {
   name: "ProcessVideoContainerWritingToFileTask",
+  service: VIDEO_NODE_SERVICE,
   path: "/ProcessVideoContainerWritingToFileTask",
   body: {
     messageType: PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK_REQUEST_BODY,
@@ -1104,8 +1110,9 @@ export let PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK: NodeRemoteCallDescripto
   },
 }
 
-export let LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS: NodeRemoteCallDescriptor = {
+export let LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS: RemoteCallDescriptor = {
   name: "ListVideoContainerWritingToFileTasks",
+  service: VIDEO_NODE_SERVICE,
   path: "/ListVideoContainerWritingToFileTasks",
   body: {
     messageType: LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS_REQUEST_BODY,
@@ -1115,8 +1122,9 @@ export let LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS: NodeRemoteCallDescriptor 
   },
 }
 
-export let PROCESS_VIDEO_CONTAINER_SYNCING_TASK: NodeRemoteCallDescriptor = {
+export let PROCESS_VIDEO_CONTAINER_SYNCING_TASK: RemoteCallDescriptor = {
   name: "ProcessVideoContainerSyncingTask",
+  service: VIDEO_NODE_SERVICE,
   path: "/ProcessVideoContainerSyncingTask",
   body: {
     messageType: PROCESS_VIDEO_CONTAINER_SYNCING_TASK_REQUEST_BODY,
@@ -1126,8 +1134,9 @@ export let PROCESS_VIDEO_CONTAINER_SYNCING_TASK: NodeRemoteCallDescriptor = {
   },
 }
 
-export let LIST_VIDEO_CONTAINER_SYNCING_TASKS: NodeRemoteCallDescriptor = {
+export let LIST_VIDEO_CONTAINER_SYNCING_TASKS: RemoteCallDescriptor = {
   name: "ListVideoContainerSyncingTasks",
+  service: VIDEO_NODE_SERVICE,
   path: "/ListVideoContainerSyncingTasks",
   body: {
     messageType: LIST_VIDEO_CONTAINER_SYNCING_TASKS_REQUEST_BODY,
@@ -1137,8 +1146,9 @@ export let LIST_VIDEO_CONTAINER_SYNCING_TASKS: NodeRemoteCallDescriptor = {
   },
 }
 
-export let START_MEDIA_UPLOADING: NodeRemoteCallDescriptor = {
+export let START_MEDIA_UPLOADING: RemoteCallDescriptor = {
   name: "StartMediaUploading",
+  service: VIDEO_NODE_SERVICE,
   path: "/StartMediaUploading",
   body: {
     messageType: START_MEDIA_UPLOADING_REQUEST_BODY,
@@ -1148,8 +1158,9 @@ export let START_MEDIA_UPLOADING: NodeRemoteCallDescriptor = {
   },
 }
 
-export let COMPLETE_MEDIA_UPLOADING: NodeRemoteCallDescriptor = {
+export let COMPLETE_MEDIA_UPLOADING: RemoteCallDescriptor = {
   name: "CompleteMediaUploading",
+  service: VIDEO_NODE_SERVICE,
   path: "/CompleteMediaUploading",
   body: {
     messageType: COMPLETE_MEDIA_UPLOADING_REQUEST_BODY,
@@ -1159,8 +1170,9 @@ export let COMPLETE_MEDIA_UPLOADING: NodeRemoteCallDescriptor = {
   },
 }
 
-export let CANCEL_MEDIA_UPLOADING: NodeRemoteCallDescriptor = {
+export let CANCEL_MEDIA_UPLOADING: RemoteCallDescriptor = {
   name: "CancelMediaUploading",
+  service: VIDEO_NODE_SERVICE,
   path: "/CancelMediaUploading",
   body: {
     messageType: CANCEL_MEDIA_UPLOADING_REQUEST_BODY,
@@ -1170,8 +1182,9 @@ export let CANCEL_MEDIA_UPLOADING: NodeRemoteCallDescriptor = {
   },
 }
 
-export let START_SUBTITLE_UPLOADING: NodeRemoteCallDescriptor = {
+export let START_SUBTITLE_UPLOADING: RemoteCallDescriptor = {
   name: "StartSubtitleUploading",
+  service: VIDEO_NODE_SERVICE,
   path: "/StartSubtitleUploading",
   body: {
     messageType: START_SUBTITLE_UPLOADING_REQUEST_BODY,
@@ -1181,8 +1194,9 @@ export let START_SUBTITLE_UPLOADING: NodeRemoteCallDescriptor = {
   },
 }
 
-export let COMPLETE_SUBTITLE_UPLOADING: NodeRemoteCallDescriptor = {
+export let COMPLETE_SUBTITLE_UPLOADING: RemoteCallDescriptor = {
   name: "CompleteSubtitleUploading",
+  service: VIDEO_NODE_SERVICE,
   path: "/CompleteSubtitleUploading",
   body: {
     messageType: COMPLETE_SUBTITLE_UPLOADING_REQUEST_BODY,
@@ -1192,8 +1206,9 @@ export let COMPLETE_SUBTITLE_UPLOADING: NodeRemoteCallDescriptor = {
   },
 }
 
-export let CANCEL_SUBTITLE_UPLOADING: NodeRemoteCallDescriptor = {
+export let CANCEL_SUBTITLE_UPLOADING: RemoteCallDescriptor = {
   name: "CancelSubtitleUploading",
+  service: VIDEO_NODE_SERVICE,
   path: "/CancelSubtitleUploading",
   body: {
     messageType: CANCEL_SUBTITLE_UPLOADING_REQUEST_BODY,
@@ -1203,8 +1218,9 @@ export let CANCEL_SUBTITLE_UPLOADING: NodeRemoteCallDescriptor = {
   },
 }
 
-export let PROCESS_UPLOADED_RECORDING_TASK: NodeRemoteCallDescriptor = {
+export let PROCESS_UPLOADED_RECORDING_TASK: RemoteCallDescriptor = {
   name: "ProcessUploadedRecordingTask",
+  service: VIDEO_NODE_SERVICE,
   path: "/ProcessUploadedRecordingTask",
   body: {
     messageType: PROCESS_UPLOADED_RECORDING_TASK_REQUEST_BODY,
@@ -1214,8 +1230,9 @@ export let PROCESS_UPLOADED_RECORDING_TASK: NodeRemoteCallDescriptor = {
   },
 }
 
-export let LIST_UPLOADED_RECORDING_TASKS: NodeRemoteCallDescriptor = {
+export let LIST_UPLOADED_RECORDING_TASKS: RemoteCallDescriptor = {
   name: "ListUploadedRecordingTasks",
+  service: VIDEO_NODE_SERVICE,
   path: "/ListUploadedRecordingTasks",
   body: {
     messageType: LIST_UPLOADED_RECORDING_TASKS_REQUEST_BODY,
@@ -1225,8 +1242,9 @@ export let LIST_UPLOADED_RECORDING_TASKS: NodeRemoteCallDescriptor = {
   },
 }
 
-export let PROCESS_MEDIA_FORMATTING_TASK: NodeRemoteCallDescriptor = {
+export let PROCESS_MEDIA_FORMATTING_TASK: RemoteCallDescriptor = {
   name: "ProcessMediaFormattingTask",
+  service: VIDEO_NODE_SERVICE,
   path: "/ProcessMediaFormattingTask",
   body: {
     messageType: PROCESS_MEDIA_FORMATTING_TASK_REQUEST_BODY,
@@ -1236,8 +1254,9 @@ export let PROCESS_MEDIA_FORMATTING_TASK: NodeRemoteCallDescriptor = {
   },
 }
 
-export let LIST_MEDIA_FORMATTING_TASKS: NodeRemoteCallDescriptor = {
+export let LIST_MEDIA_FORMATTING_TASKS: RemoteCallDescriptor = {
   name: "ListMediaFormattingTasks",
+  service: VIDEO_NODE_SERVICE,
   path: "/ListMediaFormattingTasks",
   body: {
     messageType: LIST_MEDIA_FORMATTING_TASKS_REQUEST_BODY,
@@ -1247,8 +1266,9 @@ export let LIST_MEDIA_FORMATTING_TASKS: NodeRemoteCallDescriptor = {
   },
 }
 
-export let CANCEL_MEDIA_FORMATTING: NodeRemoteCallDescriptor = {
+export let CANCEL_MEDIA_FORMATTING: RemoteCallDescriptor = {
   name: "CancelMediaFormatting",
+  service: VIDEO_NODE_SERVICE,
   path: "/CancelMediaFormatting",
   body: {
     messageType: CANCEL_MEDIA_FORMATTING_REQUEST_BODY,
@@ -1258,8 +1278,9 @@ export let CANCEL_MEDIA_FORMATTING: NodeRemoteCallDescriptor = {
   },
 }
 
-export let PROCESS_SUBTITLE_FORMATTING_TASK: NodeRemoteCallDescriptor = {
+export let PROCESS_SUBTITLE_FORMATTING_TASK: RemoteCallDescriptor = {
   name: "ProcessSubtitleFormattingTask",
+  service: VIDEO_NODE_SERVICE,
   path: "/ProcessSubtitleFormattingTask",
   body: {
     messageType: PROCESS_SUBTITLE_FORMATTING_TASK_REQUEST_BODY,
@@ -1269,8 +1290,9 @@ export let PROCESS_SUBTITLE_FORMATTING_TASK: NodeRemoteCallDescriptor = {
   },
 }
 
-export let LIST_SUBTITLE_FORMATTING_TASKS: NodeRemoteCallDescriptor = {
+export let LIST_SUBTITLE_FORMATTING_TASKS: RemoteCallDescriptor = {
   name: "ListSubtitleFormattingTasks",
+  service: VIDEO_NODE_SERVICE,
   path: "/ListSubtitleFormattingTasks",
   body: {
     messageType: LIST_SUBTITLE_FORMATTING_TASKS_REQUEST_BODY,
@@ -1280,8 +1302,9 @@ export let LIST_SUBTITLE_FORMATTING_TASKS: NodeRemoteCallDescriptor = {
   },
 }
 
-export let CANCEL_SUBTITLE_FORMATTING: NodeRemoteCallDescriptor = {
+export let CANCEL_SUBTITLE_FORMATTING: RemoteCallDescriptor = {
   name: "CancelSubtitleFormatting",
+  service: VIDEO_NODE_SERVICE,
   path: "/CancelSubtitleFormatting",
   body: {
     messageType: CANCEL_SUBTITLE_FORMATTING_REQUEST_BODY,
@@ -1291,8 +1314,9 @@ export let CANCEL_SUBTITLE_FORMATTING: NodeRemoteCallDescriptor = {
   },
 }
 
-export let PROCESS_STORAGE_START_RECORDING_TASK: NodeRemoteCallDescriptor = {
+export let PROCESS_STORAGE_START_RECORDING_TASK: RemoteCallDescriptor = {
   name: "ProcessStorageStartRecordingTask",
+  service: VIDEO_NODE_SERVICE,
   path: "/ProcessStorageStartRecordingTask",
   body: {
     messageType: PROCESS_STORAGE_START_RECORDING_TASK_REQUEST_BODY,
@@ -1302,8 +1326,9 @@ export let PROCESS_STORAGE_START_RECORDING_TASK: NodeRemoteCallDescriptor = {
   },
 }
 
-export let LIST_STORAGE_START_RECORDING_TASKS: NodeRemoteCallDescriptor = {
+export let LIST_STORAGE_START_RECORDING_TASKS: RemoteCallDescriptor = {
   name: "ListStorageStartRecordingTasks",
+  service: VIDEO_NODE_SERVICE,
   path: "/ListStorageStartRecordingTasks",
   body: {
     messageType: LIST_STORAGE_START_RECORDING_TASKS_REQUEST_BODY,
@@ -1313,8 +1338,9 @@ export let LIST_STORAGE_START_RECORDING_TASKS: NodeRemoteCallDescriptor = {
   },
 }
 
-export let DELETE_VIDEO_TRACK: NodeRemoteCallDescriptor = {
+export let DELETE_VIDEO_TRACK: RemoteCallDescriptor = {
   name: "DeleteVideoTrack",
+  service: VIDEO_NODE_SERVICE,
   path: "/DeleteVideoTrack",
   body: {
     messageType: DELETE_VIDEO_TRACK_REQUEST_BODY,
@@ -1324,8 +1350,9 @@ export let DELETE_VIDEO_TRACK: NodeRemoteCallDescriptor = {
   },
 }
 
-export let DROP_VIDEO_TRACK_STAGING_DATA: NodeRemoteCallDescriptor = {
+export let DROP_VIDEO_TRACK_STAGING_DATA: RemoteCallDescriptor = {
   name: "DropVideoTrackStagingData",
+  service: VIDEO_NODE_SERVICE,
   path: "/DropVideoTrackStagingData",
   body: {
     messageType: DROP_VIDEO_TRACK_STAGING_DATA_REQUEST_BODY,
@@ -1335,8 +1362,9 @@ export let DROP_VIDEO_TRACK_STAGING_DATA: NodeRemoteCallDescriptor = {
   },
 }
 
-export let UPDATE_AUDIO_TRACK: NodeRemoteCallDescriptor = {
+export let UPDATE_AUDIO_TRACK: RemoteCallDescriptor = {
   name: "UpdateAudioTrack",
+  service: VIDEO_NODE_SERVICE,
   path: "/UpdateAudioTrack",
   body: {
     messageType: UPDATE_AUDIO_TRACK_REQUEST_BODY,
@@ -1346,8 +1374,9 @@ export let UPDATE_AUDIO_TRACK: NodeRemoteCallDescriptor = {
   },
 }
 
-export let DELETE_AUDIO_TRACK: NodeRemoteCallDescriptor = {
+export let DELETE_AUDIO_TRACK: RemoteCallDescriptor = {
   name: "DeleteAudioTrack",
+  service: VIDEO_NODE_SERVICE,
   path: "/DeleteAudioTrack",
   body: {
     messageType: DELETE_AUDIO_TRACK_REQUEST_BODY,
@@ -1357,8 +1386,9 @@ export let DELETE_AUDIO_TRACK: NodeRemoteCallDescriptor = {
   },
 }
 
-export let DROP_AUDIO_TRACK_STAGING_DATA: NodeRemoteCallDescriptor = {
+export let DROP_AUDIO_TRACK_STAGING_DATA: RemoteCallDescriptor = {
   name: "DropAudioTrackStagingData",
+  service: VIDEO_NODE_SERVICE,
   path: "/DropAudioTrackStagingData",
   body: {
     messageType: DROP_AUDIO_TRACK_STAGING_DATA_REQUEST_BODY,
@@ -1368,8 +1398,9 @@ export let DROP_AUDIO_TRACK_STAGING_DATA: NodeRemoteCallDescriptor = {
   },
 }
 
-export let UPDATE_SUBTITLE_TRACK: NodeRemoteCallDescriptor = {
+export let UPDATE_SUBTITLE_TRACK: RemoteCallDescriptor = {
   name: "UpdateSubtitleTrack",
+  service: VIDEO_NODE_SERVICE,
   path: "/UpdateSubtitleTrack",
   body: {
     messageType: UPDATE_SUBTITLE_TRACK_REQUEST_BODY,
@@ -1379,8 +1410,9 @@ export let UPDATE_SUBTITLE_TRACK: NodeRemoteCallDescriptor = {
   },
 }
 
-export let DELETE_SUBTITLE_TRACK: NodeRemoteCallDescriptor = {
+export let DELETE_SUBTITLE_TRACK: RemoteCallDescriptor = {
   name: "DeleteSubtitleTrack",
+  service: VIDEO_NODE_SERVICE,
   path: "/DeleteSubtitleTrack",
   body: {
     messageType: DELETE_SUBTITLE_TRACK_REQUEST_BODY,
@@ -1390,8 +1422,9 @@ export let DELETE_SUBTITLE_TRACK: NodeRemoteCallDescriptor = {
   },
 }
 
-export let DROP_SUBTITLE_TRACK_STAGING_DATA: NodeRemoteCallDescriptor = {
+export let DROP_SUBTITLE_TRACK_STAGING_DATA: RemoteCallDescriptor = {
   name: "DropSubtitleTrackStagingData",
+  service: VIDEO_NODE_SERVICE,
   path: "/DropSubtitleTrackStagingData",
   body: {
     messageType: DROP_SUBTITLE_TRACK_STAGING_DATA_REQUEST_BODY,
@@ -1401,8 +1434,9 @@ export let DROP_SUBTITLE_TRACK_STAGING_DATA: NodeRemoteCallDescriptor = {
   },
 }
 
-export let PROCESS_STORAGE_END_RECORDING_TASK: NodeRemoteCallDescriptor = {
+export let PROCESS_STORAGE_END_RECORDING_TASK: RemoteCallDescriptor = {
   name: "ProcessStorageEndRecordingTask",
+  service: VIDEO_NODE_SERVICE,
   path: "/ProcessStorageEndRecordingTask",
   body: {
     messageType: PROCESS_STORAGE_END_RECORDING_TASK_REQUEST_BODY,
@@ -1412,8 +1446,9 @@ export let PROCESS_STORAGE_END_RECORDING_TASK: NodeRemoteCallDescriptor = {
   },
 }
 
-export let LIST_STORAGE_END_RECORDING_TASKS: NodeRemoteCallDescriptor = {
+export let LIST_STORAGE_END_RECORDING_TASKS: RemoteCallDescriptor = {
   name: "ListStorageEndRecordingTasks",
+  service: VIDEO_NODE_SERVICE,
   path: "/ListStorageEndRecordingTasks",
   body: {
     messageType: LIST_STORAGE_END_RECORDING_TASKS_REQUEST_BODY,
@@ -1423,8 +1458,9 @@ export let LIST_STORAGE_END_RECORDING_TASKS: NodeRemoteCallDescriptor = {
   },
 }
 
-export let PROCESS_GCS_FILE_DELETING_TASK: NodeRemoteCallDescriptor = {
+export let PROCESS_GCS_FILE_DELETING_TASK: RemoteCallDescriptor = {
   name: "ProcessGcsFileDeletingTask",
+  service: VIDEO_NODE_SERVICE,
   path: "/ProcessGcsFileDeletingTask",
   body: {
     messageType: PROCESS_GCS_FILE_DELETING_TASK_REQUEST_BODY,
@@ -1434,8 +1470,9 @@ export let PROCESS_GCS_FILE_DELETING_TASK: NodeRemoteCallDescriptor = {
   },
 }
 
-export let LIST_GCS_FILE_DELETING_TASKS: NodeRemoteCallDescriptor = {
+export let LIST_GCS_FILE_DELETING_TASKS: RemoteCallDescriptor = {
   name: "ListGcsFileDeletingTasks",
+  service: VIDEO_NODE_SERVICE,
   path: "/ListGcsFileDeletingTasks",
   body: {
     messageType: LIST_GCS_FILE_DELETING_TASKS_REQUEST_BODY,
@@ -1445,8 +1482,9 @@ export let LIST_GCS_FILE_DELETING_TASKS: NodeRemoteCallDescriptor = {
   },
 }
 
-export let PROCESS_R2_KEY_DELETING_TASK: NodeRemoteCallDescriptor = {
+export let PROCESS_R2_KEY_DELETING_TASK: RemoteCallDescriptor = {
   name: "ProcessR2KeyDeletingTask",
+  service: VIDEO_NODE_SERVICE,
   path: "/ProcessR2KeyDeletingTask",
   body: {
     messageType: PROCESS_R2_KEY_DELETING_TASK_REQUEST_BODY,
@@ -1456,8 +1494,9 @@ export let PROCESS_R2_KEY_DELETING_TASK: NodeRemoteCallDescriptor = {
   },
 }
 
-export let LIST_R2_KEY_DELETING_TASKS: NodeRemoteCallDescriptor = {
+export let LIST_R2_KEY_DELETING_TASKS: RemoteCallDescriptor = {
   name: "ListR2KeyDeletingTasks",
+  service: VIDEO_NODE_SERVICE,
   path: "/ListR2KeyDeletingTasks",
   body: {
     messageType: LIST_R2_KEY_DELETING_TASKS_REQUEST_BODY,

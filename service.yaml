@@ -1,0 +1,3 @@
+- kind: Service
+  name: VideoNodeService
+  path: /v/n

@@ -1,534 +1,344 @@
 import { CreateVideoContainerRequestBody, CreateVideoContainerResponse, CREATE_VIDEO_CONTAINER, DeleteVideoContainerRequestBody, DeleteVideoContainerResponse, DELETE_VIDEO_CONTAINER, GetVideoContainerRequestBody, GetVideoContainerResponse, GET_VIDEO_CONTAINER, CommitVideoContainerStagingDataRequestBody, CommitVideoContainerStagingDataResponse, COMMIT_VIDEO_CONTAINER_STAGING_DATA, ProcessVideoContainerWritingToFileTaskRequestBody, ProcessVideoContainerWritingToFileTaskResponse, PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK, ListVideoContainerWritingToFileTasksRequestBody, ListVideoContainerWritingToFileTasksResponse, LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS, ProcessVideoContainerSyncingTaskRequestBody, ProcessVideoContainerSyncingTaskResponse, PROCESS_VIDEO_CONTAINER_SYNCING_TASK, ListVideoContainerSyncingTasksRequestBody, ListVideoContainerSyncingTasksResponse, LIST_VIDEO_CONTAINER_SYNCING_TASKS, StartMediaUploadingRequestBody, StartMediaUploadingResponse, START_MEDIA_UPLOADING, CompleteMediaUploadingRequestBody, CompleteMediaUploadingResponse, COMPLETE_MEDIA_UPLOADING, CancelMediaUploadingRequestBody, CancelMediaUploadingResponse, CANCEL_MEDIA_UPLOADING, StartSubtitleUploadingRequestBody, StartSubtitleUploadingResponse, START_SUBTITLE_UPLOADING, CompleteSubtitleUploadingRequestBody, CompleteSubtitleUploadingResponse, COMPLETE_SUBTITLE_UPLOADING, CancelSubtitleUploadingRequestBody, CancelSubtitleUploadingResponse, CANCEL_SUBTITLE_UPLOADING, ProcessUploadedRecordingTaskRequestBody, ProcessUploadedRecordingTaskResponse, PROCESS_UPLOADED_RECORDING_TASK, ListUploadedRecordingTasksRequestBody, ListUploadedRecordingTasksResponse, LIST_UPLOADED_RECORDING_TASKS, ProcessMediaFormattingTaskRequestBody, ProcessMediaFormattingTaskResponse, PROCESS_MEDIA_FORMATTING_TASK, ListMediaFormattingTasksRequestBody, ListMediaFormattingTasksResponse, LIST_MEDIA_FORMATTING_TASKS, CancelMediaFormattingRequestBody, CancelMediaFormattingResponse, CANCEL_MEDIA_FORMATTING, ProcessSubtitleFormattingTaskRequestBody, ProcessSubtitleFormattingTaskResponse, PROCESS_SUBTITLE_FORMATTING_TASK, ListSubtitleFormattingTasksRequestBody, ListSubtitleFormattingTasksResponse, LIST_SUBTITLE_FORMATTING_TASKS, CancelSubtitleFormattingRequestBody, CancelSubtitleFormattingResponse, CANCEL_SUBTITLE_FORMATTING, ProcessStorageStartRecordingTaskRequestBody, ProcessStorageStartRecordingTaskResponse, PROCESS_STORAGE_START_RECORDING_TASK, ListStorageStartRecordingTasksRequestBody, ListStorageStartRecordingTasksResponse, LIST_STORAGE_START_RECORDING_TASKS, DeleteVideoTrackRequestBody, DeleteVideoTrackResponse, DELETE_VIDEO_TRACK, DropVideoTrackStagingDataRequestBody, DropVideoTrackStagingDataResponse, DROP_VIDEO_TRACK_STAGING_DATA, UpdateAudioTrackRequestBody, UpdateAudioTrackResponse, UPDATE_AUDIO_TRACK, DeleteAudioTrackRequestBody, DeleteAudioTrackResponse, DELETE_AUDIO_TRACK, DropAudioTrackStagingDataRequestBody, DropAudioTrackStagingDataResponse, DROP_AUDIO_TRACK_STAGING_DATA, UpdateSubtitleTrackRequestBody, UpdateSubtitleTrackResponse, UPDATE_SUBTITLE_TRACK, DeleteSubtitleTrackRequestBody, DeleteSubtitleTrackResponse, DELETE_SUBTITLE_TRACK, DropSubtitleTrackStagingDataRequestBody, DropSubtitleTrackStagingDataResponse, DROP_SUBTITLE_TRACK_STAGING_DATA, ProcessStorageEndRecordingTaskRequestBody, ProcessStorageEndRecordingTaskResponse, PROCESS_STORAGE_END_RECORDING_TASK, ListStorageEndRecordingTasksRequestBody, ListStorageEndRecordingTasksResponse, LIST_STORAGE_END_RECORDING_TASKS, ProcessGcsFileDeletingTaskRequestBody, ProcessGcsFileDeletingTaskResponse, PROCESS_GCS_FILE_DELETING_TASK, ListGcsFileDeletingTasksRequestBody, ListGcsFileDeletingTasksResponse, LIST_GCS_FILE_DELETING_TASKS, ProcessR2KeyDeletingTaskRequestBody, ProcessR2KeyDeletingTaskResponse, PROCESS_R2_KEY_DELETING_TASK, ListR2KeyDeletingTasksRequestBody, ListR2KeyDeletingTasksResponse, LIST_R2_KEY_DELETING_TASKS } from './interface';
-import { NodeClientInterface, NodeClientOptions } from '@selfage/service_descriptor/client_interface';
+import { ClientRequestInterface } from '@selfage/service_descriptor/client_request_interface';
 
-export function createVideoContainer(
-  client: NodeClientInterface,
+export function newCreateVideoContainerRequest(
   body: CreateVideoContainerRequestBody,
-  options?: NodeClientOptions,
-): Promise<CreateVideoContainerResponse> {
-  return client.send(
-    {
-      descriptor: CREATE_VIDEO_CONTAINER,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<CreateVideoContainerResponse> {
+  return {
+    descriptor: CREATE_VIDEO_CONTAINER,
+    body,
+  };
 }
 
-export function deleteVideoContainer(
-  client: NodeClientInterface,
+export function newDeleteVideoContainerRequest(
   body: DeleteVideoContainerRequestBody,
-  options?: NodeClientOptions,
-): Promise<DeleteVideoContainerResponse> {
-  return client.send(
-    {
-      descriptor: DELETE_VIDEO_CONTAINER,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<DeleteVideoContainerResponse> {
+  return {
+    descriptor: DELETE_VIDEO_CONTAINER,
+    body,
+  };
 }
 
-export function getVideoContainer(
-  client: NodeClientInterface,
+export function newGetVideoContainerRequest(
   body: GetVideoContainerRequestBody,
-  options?: NodeClientOptions,
-): Promise<GetVideoContainerResponse> {
-  return client.send(
-    {
-      descriptor: GET_VIDEO_CONTAINER,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<GetVideoContainerResponse> {
+  return {
+    descriptor: GET_VIDEO_CONTAINER,
+    body,
+  };
 }
 
-export function commitVideoContainerStagingData(
-  client: NodeClientInterface,
+export function newCommitVideoContainerStagingDataRequest(
   body: CommitVideoContainerStagingDataRequestBody,
-  options?: NodeClientOptions,
-): Promise<CommitVideoContainerStagingDataResponse> {
-  return client.send(
-    {
-      descriptor: COMMIT_VIDEO_CONTAINER_STAGING_DATA,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<CommitVideoContainerStagingDataResponse> {
+  return {
+    descriptor: COMMIT_VIDEO_CONTAINER_STAGING_DATA,
+    body,
+  };
 }
 
-export function processVideoContainerWritingToFileTask(
-  client: NodeClientInterface,
+export function newProcessVideoContainerWritingToFileTaskRequest(
   body: ProcessVideoContainerWritingToFileTaskRequestBody,
-  options?: NodeClientOptions,
-): Promise<ProcessVideoContainerWritingToFileTaskResponse> {
-  return client.send(
-    {
-      descriptor: PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ProcessVideoContainerWritingToFileTaskResponse> {
+  return {
+    descriptor: PROCESS_VIDEO_CONTAINER_WRITING_TO_FILE_TASK,
+    body,
+  };
 }
 
-export function listVideoContainerWritingToFileTasks(
-  client: NodeClientInterface,
+export function newListVideoContainerWritingToFileTasksRequest(
   body: ListVideoContainerWritingToFileTasksRequestBody,
-  options?: NodeClientOptions,
-): Promise<ListVideoContainerWritingToFileTasksResponse> {
-  return client.send(
-    {
-      descriptor: LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ListVideoContainerWritingToFileTasksResponse> {
+  return {
+    descriptor: LIST_VIDEO_CONTAINER_WRITING_TO_FILE_TASKS,
+    body,
+  };
 }
 
-export function processVideoContainerSyncingTask(
-  client: NodeClientInterface,
+export function newProcessVideoContainerSyncingTaskRequest(
   body: ProcessVideoContainerSyncingTaskRequestBody,
-  options?: NodeClientOptions,
-): Promise<ProcessVideoContainerSyncingTaskResponse> {
-  return client.send(
-    {
-      descriptor: PROCESS_VIDEO_CONTAINER_SYNCING_TASK,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ProcessVideoContainerSyncingTaskResponse> {
+  return {
+    descriptor: PROCESS_VIDEO_CONTAINER_SYNCING_TASK,
+    body,
+  };
 }
 
-export function listVideoContainerSyncingTasks(
-  client: NodeClientInterface,
+export function newListVideoContainerSyncingTasksRequest(
   body: ListVideoContainerSyncingTasksRequestBody,
-  options?: NodeClientOptions,
-): Promise<ListVideoContainerSyncingTasksResponse> {
-  return client.send(
-    {
-      descriptor: LIST_VIDEO_CONTAINER_SYNCING_TASKS,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ListVideoContainerSyncingTasksResponse> {
+  return {
+    descriptor: LIST_VIDEO_CONTAINER_SYNCING_TASKS,
+    body,
+  };
 }
 
-export function startMediaUploading(
-  client: NodeClientInterface,
+export function newStartMediaUploadingRequest(
   body: StartMediaUploadingRequestBody,
-  options?: NodeClientOptions,
-): Promise<StartMediaUploadingResponse> {
-  return client.send(
-    {
-      descriptor: START_MEDIA_UPLOADING,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<StartMediaUploadingResponse> {
+  return {
+    descriptor: START_MEDIA_UPLOADING,
+    body,
+  };
 }
 
-export function completeMediaUploading(
-  client: NodeClientInterface,
+export function newCompleteMediaUploadingRequest(
   body: CompleteMediaUploadingRequestBody,
-  options?: NodeClientOptions,
-): Promise<CompleteMediaUploadingResponse> {
-  return client.send(
-    {
-      descriptor: COMPLETE_MEDIA_UPLOADING,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<CompleteMediaUploadingResponse> {
+  return {
+    descriptor: COMPLETE_MEDIA_UPLOADING,
+    body,
+  };
 }
 
-export function cancelMediaUploading(
-  client: NodeClientInterface,
+export function newCancelMediaUploadingRequest(
   body: CancelMediaUploadingRequestBody,
-  options?: NodeClientOptions,
-): Promise<CancelMediaUploadingResponse> {
-  return client.send(
-    {
-      descriptor: CANCEL_MEDIA_UPLOADING,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<CancelMediaUploadingResponse> {
+  return {
+    descriptor: CANCEL_MEDIA_UPLOADING,
+    body,
+  };
 }
 
-export function startSubtitleUploading(
-  client: NodeClientInterface,
+export function newStartSubtitleUploadingRequest(
   body: StartSubtitleUploadingRequestBody,
-  options?: NodeClientOptions,
-): Promise<StartSubtitleUploadingResponse> {
-  return client.send(
-    {
-      descriptor: START_SUBTITLE_UPLOADING,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<StartSubtitleUploadingResponse> {
+  return {
+    descriptor: START_SUBTITLE_UPLOADING,
+    body,
+  };
 }
 
-export function completeSubtitleUploading(
-  client: NodeClientInterface,
+export function newCompleteSubtitleUploadingRequest(
   body: CompleteSubtitleUploadingRequestBody,
-  options?: NodeClientOptions,
-): Promise<CompleteSubtitleUploadingResponse> {
-  return client.send(
-    {
-      descriptor: COMPLETE_SUBTITLE_UPLOADING,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<CompleteSubtitleUploadingResponse> {
+  return {
+    descriptor: COMPLETE_SUBTITLE_UPLOADING,
+    body,
+  };
 }
 
-export function cancelSubtitleUploading(
-  client: NodeClientInterface,
+export function newCancelSubtitleUploadingRequest(
   body: CancelSubtitleUploadingRequestBody,
-  options?: NodeClientOptions,
-): Promise<CancelSubtitleUploadingResponse> {
-  return client.send(
-    {
-      descriptor: CANCEL_SUBTITLE_UPLOADING,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<CancelSubtitleUploadingResponse> {
+  return {
+    descriptor: CANCEL_SUBTITLE_UPLOADING,
+    body,
+  };
 }
 
-export function processUploadedRecordingTask(
-  client: NodeClientInterface,
+export function newProcessUploadedRecordingTaskRequest(
   body: ProcessUploadedRecordingTaskRequestBody,
-  options?: NodeClientOptions,
-): Promise<ProcessUploadedRecordingTaskResponse> {
-  return client.send(
-    {
-      descriptor: PROCESS_UPLOADED_RECORDING_TASK,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ProcessUploadedRecordingTaskResponse> {
+  return {
+    descriptor: PROCESS_UPLOADED_RECORDING_TASK,
+    body,
+  };
 }
 
-export function listUploadedRecordingTasks(
-  client: NodeClientInterface,
+export function newListUploadedRecordingTasksRequest(
   body: ListUploadedRecordingTasksRequestBody,
-  options?: NodeClientOptions,
-): Promise<ListUploadedRecordingTasksResponse> {
-  return client.send(
-    {
-      descriptor: LIST_UPLOADED_RECORDING_TASKS,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ListUploadedRecordingTasksResponse> {
+  return {
+    descriptor: LIST_UPLOADED_RECORDING_TASKS,
+    body,
+  };
 }
 
-export function processMediaFormattingTask(
-  client: NodeClientInterface,
+export function newProcessMediaFormattingTaskRequest(
   body: ProcessMediaFormattingTaskRequestBody,
-  options?: NodeClientOptions,
-): Promise<ProcessMediaFormattingTaskResponse> {
-  return client.send(
-    {
-      descriptor: PROCESS_MEDIA_FORMATTING_TASK,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ProcessMediaFormattingTaskResponse> {
+  return {
+    descriptor: PROCESS_MEDIA_FORMATTING_TASK,
+    body,
+  };
 }
 
-export function listMediaFormattingTasks(
-  client: NodeClientInterface,
+export function newListMediaFormattingTasksRequest(
   body: ListMediaFormattingTasksRequestBody,
-  options?: NodeClientOptions,
-): Promise<ListMediaFormattingTasksResponse> {
-  return client.send(
-    {
-      descriptor: LIST_MEDIA_FORMATTING_TASKS,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ListMediaFormattingTasksResponse> {
+  return {
+    descriptor: LIST_MEDIA_FORMATTING_TASKS,
+    body,
+  };
 }
 
-export function cancelMediaFormatting(
-  client: NodeClientInterface,
+export function newCancelMediaFormattingRequest(
   body: CancelMediaFormattingRequestBody,
-  options?: NodeClientOptions,
-): Promise<CancelMediaFormattingResponse> {
-  return client.send(
-    {
-      descriptor: CANCEL_MEDIA_FORMATTING,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<CancelMediaFormattingResponse> {
+  return {
+    descriptor: CANCEL_MEDIA_FORMATTING,
+    body,
+  };
 }
 
-export function processSubtitleFormattingTask(
-  client: NodeClientInterface,
+export function newProcessSubtitleFormattingTaskRequest(
   body: ProcessSubtitleFormattingTaskRequestBody,
-  options?: NodeClientOptions,
-): Promise<ProcessSubtitleFormattingTaskResponse> {
-  return client.send(
-    {
-      descriptor: PROCESS_SUBTITLE_FORMATTING_TASK,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ProcessSubtitleFormattingTaskResponse> {
+  return {
+    descriptor: PROCESS_SUBTITLE_FORMATTING_TASK,
+    body,
+  };
 }
 
-export function listSubtitleFormattingTasks(
-  client: NodeClientInterface,
+export function newListSubtitleFormattingTasksRequest(
   body: ListSubtitleFormattingTasksRequestBody,
-  options?: NodeClientOptions,
-): Promise<ListSubtitleFormattingTasksResponse> {
-  return client.send(
-    {
-      descriptor: LIST_SUBTITLE_FORMATTING_TASKS,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ListSubtitleFormattingTasksResponse> {
+  return {
+    descriptor: LIST_SUBTITLE_FORMATTING_TASKS,
+    body,
+  };
 }
 
-export function cancelSubtitleFormatting(
-  client: NodeClientInterface,
+export function newCancelSubtitleFormattingRequest(
   body: CancelSubtitleFormattingRequestBody,
-  options?: NodeClientOptions,
-): Promise<CancelSubtitleFormattingResponse> {
-  return client.send(
-    {
-      descriptor: CANCEL_SUBTITLE_FORMATTING,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<CancelSubtitleFormattingResponse> {
+  return {
+    descriptor: CANCEL_SUBTITLE_FORMATTING,
+    body,
+  };
 }
 
-export function processStorageStartRecordingTask(
-  client: NodeClientInterface,
+export function newProcessStorageStartRecordingTaskRequest(
   body: ProcessStorageStartRecordingTaskRequestBody,
-  options?: NodeClientOptions,
-): Promise<ProcessStorageStartRecordingTaskResponse> {
-  return client.send(
-    {
-      descriptor: PROCESS_STORAGE_START_RECORDING_TASK,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ProcessStorageStartRecordingTaskResponse> {
+  return {
+    descriptor: PROCESS_STORAGE_START_RECORDING_TASK,
+    body,
+  };
 }
 
-export function listStorageStartRecordingTasks(
-  client: NodeClientInterface,
+export function newListStorageStartRecordingTasksRequest(
   body: ListStorageStartRecordingTasksRequestBody,
-  options?: NodeClientOptions,
-): Promise<ListStorageStartRecordingTasksResponse> {
-  return client.send(
-    {
-      descriptor: LIST_STORAGE_START_RECORDING_TASKS,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ListStorageStartRecordingTasksResponse> {
+  return {
+    descriptor: LIST_STORAGE_START_RECORDING_TASKS,
+    body,
+  };
 }
 
-export function deleteVideoTrack(
-  client: NodeClientInterface,
+export function newDeleteVideoTrackRequest(
   body: DeleteVideoTrackRequestBody,
-  options?: NodeClientOptions,
-): Promise<DeleteVideoTrackResponse> {
-  return client.send(
-    {
-      descriptor: DELETE_VIDEO_TRACK,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<DeleteVideoTrackResponse> {
+  return {
+    descriptor: DELETE_VIDEO_TRACK,
+    body,
+  };
 }
 
-export function dropVideoTrackStagingData(
-  client: NodeClientInterface,
+export function newDropVideoTrackStagingDataRequest(
   body: DropVideoTrackStagingDataRequestBody,
-  options?: NodeClientOptions,
-): Promise<DropVideoTrackStagingDataResponse> {
-  return client.send(
-    {
-      descriptor: DROP_VIDEO_TRACK_STAGING_DATA,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<DropVideoTrackStagingDataResponse> {
+  return {
+    descriptor: DROP_VIDEO_TRACK_STAGING_DATA,
+    body,
+  };
 }
 
-export function updateAudioTrack(
-  client: NodeClientInterface,
+export function newUpdateAudioTrackRequest(
   body: UpdateAudioTrackRequestBody,
-  options?: NodeClientOptions,
-): Promise<UpdateAudioTrackResponse> {
-  return client.send(
-    {
-      descriptor: UPDATE_AUDIO_TRACK,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<UpdateAudioTrackResponse> {
+  return {
+    descriptor: UPDATE_AUDIO_TRACK,
+    body,
+  };
 }
 
-export function deleteAudioTrack(
-  client: NodeClientInterface,
+export function newDeleteAudioTrackRequest(
   body: DeleteAudioTrackRequestBody,
-  options?: NodeClientOptions,
-): Promise<DeleteAudioTrackResponse> {
-  return client.send(
-    {
-      descriptor: DELETE_AUDIO_TRACK,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<DeleteAudioTrackResponse> {
+  return {
+    descriptor: DELETE_AUDIO_TRACK,
+    body,
+  };
 }
 
-export function dropAudioTrackStagingData(
-  client: NodeClientInterface,
+export function newDropAudioTrackStagingDataRequest(
   body: DropAudioTrackStagingDataRequestBody,
-  options?: NodeClientOptions,
-): Promise<DropAudioTrackStagingDataResponse> {
-  return client.send(
-    {
-      descriptor: DROP_AUDIO_TRACK_STAGING_DATA,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<DropAudioTrackStagingDataResponse> {
+  return {
+    descriptor: DROP_AUDIO_TRACK_STAGING_DATA,
+    body,
+  };
 }
 
-export function updateSubtitleTrack(
-  client: NodeClientInterface,
+export function newUpdateSubtitleTrackRequest(
   body: UpdateSubtitleTrackRequestBody,
-  options?: NodeClientOptions,
-): Promise<UpdateSubtitleTrackResponse> {
-  return client.send(
-    {
-      descriptor: UPDATE_SUBTITLE_TRACK,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<UpdateSubtitleTrackResponse> {
+  return {
+    descriptor: UPDATE_SUBTITLE_TRACK,
+    body,
+  };
 }
 
-export function deleteSubtitleTrack(
-  client: NodeClientInterface,
+export function newDeleteSubtitleTrackRequest(
   body: DeleteSubtitleTrackRequestBody,
-  options?: NodeClientOptions,
-): Promise<DeleteSubtitleTrackResponse> {
-  return client.send(
-    {
-      descriptor: DELETE_SUBTITLE_TRACK,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<DeleteSubtitleTrackResponse> {
+  return {
+    descriptor: DELETE_SUBTITLE_TRACK,
+    body,
+  };
 }
 
-export function dropSubtitleTrackStagingData(
-  client: NodeClientInterface,
+export function newDropSubtitleTrackStagingDataRequest(
   body: DropSubtitleTrackStagingDataRequestBody,
-  options?: NodeClientOptions,
-): Promise<DropSubtitleTrackStagingDataResponse> {
-  return client.send(
-    {
-      descriptor: DROP_SUBTITLE_TRACK_STAGING_DATA,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<DropSubtitleTrackStagingDataResponse> {
+  return {
+    descriptor: DROP_SUBTITLE_TRACK_STAGING_DATA,
+    body,
+  };
 }
 
-export function processStorageEndRecordingTask(
-  client: NodeClientInterface,
+export function newProcessStorageEndRecordingTaskRequest(
   body: ProcessStorageEndRecordingTaskRequestBody,
-  options?: NodeClientOptions,
-): Promise<ProcessStorageEndRecordingTaskResponse> {
-  return client.send(
-    {
-      descriptor: PROCESS_STORAGE_END_RECORDING_TASK,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ProcessStorageEndRecordingTaskResponse> {
+  return {
+    descriptor: PROCESS_STORAGE_END_RECORDING_TASK,
+    body,
+  };
 }
 
-export function listStorageEndRecordingTasks(
-  client: NodeClientInterface,
+export function newListStorageEndRecordingTasksRequest(
   body: ListStorageEndRecordingTasksRequestBody,
-  options?: NodeClientOptions,
-): Promise<ListStorageEndRecordingTasksResponse> {
-  return client.send(
-    {
-      descriptor: LIST_STORAGE_END_RECORDING_TASKS,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ListStorageEndRecordingTasksResponse> {
+  return {
+    descriptor: LIST_STORAGE_END_RECORDING_TASKS,
+    body,
+  };
 }
 
-export function processGcsFileDeletingTask(
-  client: NodeClientInterface,
+export function newProcessGcsFileDeletingTaskRequest(
   body: ProcessGcsFileDeletingTaskRequestBody,
-  options?: NodeClientOptions,
-): Promise<ProcessGcsFileDeletingTaskResponse> {
-  return client.send(
-    {
-      descriptor: PROCESS_GCS_FILE_DELETING_TASK,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ProcessGcsFileDeletingTaskResponse> {
+  return {
+    descriptor: PROCESS_GCS_FILE_DELETING_TASK,
+    body,
+  };
 }
 
-export function listGcsFileDeletingTasks(
-  client: NodeClientInterface,
+export function newListGcsFileDeletingTasksRequest(
   body: ListGcsFileDeletingTasksRequestBody,
-  options?: NodeClientOptions,
-): Promise<ListGcsFileDeletingTasksResponse> {
-  return client.send(
-    {
-      descriptor: LIST_GCS_FILE_DELETING_TASKS,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ListGcsFileDeletingTasksResponse> {
+  return {
+    descriptor: LIST_GCS_FILE_DELETING_TASKS,
+    body,
+  };
 }
 
-export function processR2KeyDeletingTask(
-  client: NodeClientInterface,
+export function newProcessR2KeyDeletingTaskRequest(
   body: ProcessR2KeyDeletingTaskRequestBody,
-  options?: NodeClientOptions,
-): Promise<ProcessR2KeyDeletingTaskResponse> {
-  return client.send(
-    {
-      descriptor: PROCESS_R2_KEY_DELETING_TASK,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ProcessR2KeyDeletingTaskResponse> {
+  return {
+    descriptor: PROCESS_R2_KEY_DELETING_TASK,
+    body,
+  };
 }
 
-export function listR2KeyDeletingTasks(
-  client: NodeClientInterface,
+export function newListR2KeyDeletingTasksRequest(
   body: ListR2KeyDeletingTasksRequestBody,
-  options?: NodeClientOptions,
-): Promise<ListR2KeyDeletingTasksResponse> {
-  return client.send(
-    {
-      descriptor: LIST_R2_KEY_DELETING_TASKS,
-      body,
-    },
-    options,
-  );
+): ClientRequestInterface<ListR2KeyDeletingTasksResponse> {
+  return {
+    descriptor: LIST_R2_KEY_DELETING_TASKS,
+    body,
+  };
 }
