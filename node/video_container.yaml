@@ -1,15 +1,5 @@
 - kind: Message
   name: ResumableUploadingState
-  fields:
-    - name: byteOffset
-      type: number
-      index: 1
-    - name: contentLength
-      type: number
-      index: 2
-    - name: contentType
-      type: string
-      index: 3
 - kind: Message
   name: FormattingState
 - kind: Message
@@ -60,7 +50,7 @@
     - name: committed
       type: VideoTrackData
       index: 2
-    - name: change
+    - name: staging
       type: VideoTrackDataStaging
       index: 3
 - kind: Message
@@ -126,7 +116,7 @@
     - name: committed
       type: SubtitleTrackData
       index: 2
-    - name: change
+    - name: staging
       type: SubtitleTrackDataStaging
       index: 3
 - kind: Message

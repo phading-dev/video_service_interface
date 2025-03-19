@@ -1,27 +1,12 @@
-import { PrimitiveType, MessageDescriptor } from '@selfage/message/descriptor';
+import { MessageDescriptor, PrimitiveType } from '@selfage/message/descriptor';
 import { ProcessingFailureReason, PROCESSING_FAILURE_REASON } from './processing_failure_reason';
 
 export interface ResumableUploadingState {
-  byteOffset?: number,
-  contentLength?: number,
-  contentType?: string,
 }
 
 export let RESUMABLE_UPLOADING_STATE: MessageDescriptor<ResumableUploadingState> = {
   name: 'ResumableUploadingState',
-  fields: [{
-    name: 'byteOffset',
-    index: 1,
-    primitiveType: PrimitiveType.NUMBER,
-  }, {
-    name: 'contentLength',
-    index: 2,
-    primitiveType: PrimitiveType.NUMBER,
-  }, {
-    name: 'contentType',
-    index: 3,
-    primitiveType: PrimitiveType.STRING,
-  }],
+  fields: [],
 };
 
 export interface FormattingState {
@@ -112,7 +97,7 @@ export let VIDEO_TRACK_DATA_STAGING: MessageDescriptor<VideoTrackDataStaging> = 
 export interface VideoTrack {
   r2TrackDirname?: string,
   committed?: VideoTrackData,
-  change?: VideoTrackDataStaging,
+  staging?: VideoTrackDataStaging,
 }
 
 export let VIDEO_TRACK: MessageDescriptor<VideoTrack> = {
@@ -126,7 +111,7 @@ export let VIDEO_TRACK: MessageDescriptor<VideoTrack> = {
     index: 2,
     messageType: VIDEO_TRACK_DATA,
   }, {
-    name: 'change',
+    name: 'staging',
     index: 3,
     messageType: VIDEO_TRACK_DATA_STAGING,
   }],
@@ -240,7 +225,7 @@ export let SUBTITLE_TRACK_DATA_STAGING: MessageDescriptor<SubtitleTrackDataStagi
 export interface SubtitleTrack {
   r2TrackDirname?: string,
   committed?: SubtitleTrackData,
-  change?: SubtitleTrackDataStaging,
+  staging?: SubtitleTrackDataStaging,
 }
 
 export let SUBTITLE_TRACK: MessageDescriptor<SubtitleTrack> = {
@@ -254,7 +239,7 @@ export let SUBTITLE_TRACK: MessageDescriptor<SubtitleTrack> = {
     index: 2,
     messageType: SUBTITLE_TRACK_DATA,
   }, {
-    name: 'change',
+    name: 'staging',
     index: 3,
     messageType: SUBTITLE_TRACK_DATA_STAGING,
   }],
