@@ -57,10 +57,6 @@
       value: 5
     - name: TOO_MANY_SUBTITLE_TRACKS
       value: 6
-    - name: NO_DEFAULT_SUBTITLE_TRACK
-      value: 7
-    - name: MORE_THAN_ONE_DEFAULT_SUBTITLE_TRACKS
-      value: 8
 - kind: Message
   name: CommitVideoContainerStagingDataResponse
   fields:
@@ -368,9 +364,6 @@
     - name: name
       type: string
       index: 3
-    - name: isDefault
-      type: boolean
-      index: 4
 - kind: Message
   name: UpdateSubtitleTrackResponse
 - kind: Message

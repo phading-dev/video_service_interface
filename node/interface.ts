@@ -106,8 +106,6 @@ export enum ValidationError {
   NO_DEFAULT_AUDIO_TRACK = 4,
   MORE_THAN_ONE_DEFAULT_AUDIO_TRACKS = 5,
   TOO_MANY_SUBTITLE_TRACKS = 6,
-  NO_DEFAULT_SUBTITLE_TRACK = 7,
-  MORE_THAN_ONE_DEFAULT_SUBTITLE_TRACKS = 8,
 }
 
 export let VALIDATION_ERROR: EnumDescriptor<ValidationError> = {
@@ -130,12 +128,6 @@ export let VALIDATION_ERROR: EnumDescriptor<ValidationError> = {
   }, {
     name: 'TOO_MANY_SUBTITLE_TRACKS',
     value: 6,
-  }, {
-    name: 'NO_DEFAULT_SUBTITLE_TRACK',
-    value: 7,
-  }, {
-    name: 'MORE_THAN_ONE_DEFAULT_SUBTITLE_TRACKS',
-    value: 8,
   }]
 }
 
@@ -822,7 +814,6 @@ export interface UpdateSubtitleTrackRequestBody {
   containerId?: string,
   r2TrackDirname?: string,
   name?: string,
-  isDefault?: boolean,
 }
 
 export let UPDATE_SUBTITLE_TRACK_REQUEST_BODY: MessageDescriptor<UpdateSubtitleTrackRequestBody> = {
@@ -839,10 +830,6 @@ export let UPDATE_SUBTITLE_TRACK_REQUEST_BODY: MessageDescriptor<UpdateSubtitleT
     name: 'name',
     index: 3,
     primitiveType: PrimitiveType.STRING,
-  }, {
-    name: 'isDefault',
-    index: 4,
-    primitiveType: PrimitiveType.BOOLEAN,
   }],
 };
 

@@ -1,20 +1,45 @@
-import { MessageDescriptor, PrimitiveType } from '@selfage/message/descriptor';
+import { PrimitiveType, MessageDescriptor } from '@selfage/message/descriptor';
 import { ProcessingFailureReason, PROCESSING_FAILURE_REASON } from './processing_failure_reason';
 
 export interface ResumableUploadingState {
+  gcsFilename?: string,
+  uploadSessionUrl?: string,
+  contentLength?: number,
+  contentType?: string,
 }
 
 export let RESUMABLE_UPLOADING_STATE: MessageDescriptor<ResumableUploadingState> = {
   name: 'ResumableUploadingState',
-  fields: [],
+  fields: [{
+    name: 'gcsFilename',
+    index: 1,
+    primitiveType: PrimitiveType.STRING,
+  }, {
+    name: 'uploadSessionUrl',
+    index: 2,
+    primitiveType: PrimitiveType.STRING,
+  }, {
+    name: 'contentLength',
+    index: 3,
+    primitiveType: PrimitiveType.NUMBER,
+  }, {
+    name: 'contentType',
+    index: 4,
+    primitiveType: PrimitiveType.STRING,
+  }],
 };
 
 export interface FormattingState {
+  gcsFilename?: string,
 }
 
 export let FORMATTING_STATE: MessageDescriptor<FormattingState> = {
   name: 'FormattingState',
-  fields: [],
+  fields: [{
+    name: 'gcsFilename',
+    index: 1,
+    primitiveType: PrimitiveType.STRING,
+  }],
 };
 
 export interface ProcessingState {
@@ -53,31 +78,8 @@ export let ONE_OF_PROCESSING_STATE: MessageDescriptor<OneOfProcessingState> = {
   }],
 };
 
-export interface VideoTrackData {
-  durationSec?: number,
-  resolution?: string,
-  totalBytes?: number,
-}
-
-export let VIDEO_TRACK_DATA: MessageDescriptor<VideoTrackData> = {
-  name: 'VideoTrackData',
-  fields: [{
-    name: 'durationSec',
-    index: 1,
-    primitiveType: PrimitiveType.NUMBER,
-  }, {
-    name: 'resolution',
-    index: 2,
-    primitiveType: PrimitiveType.STRING,
-  }, {
-    name: 'totalBytes',
-    index: 3,
-    primitiveType: PrimitiveType.NUMBER,
-  }],
-};
-
 export interface VideoTrackDataStaging {
-  toAdd?: VideoTrackData,
+  toAdd?: boolean,
   toDelete?: boolean,
 }
 
@@ -86,7 +88,7 @@ export let VIDEO_TRACK_DATA_STAGING: MessageDescriptor<VideoTrackDataStaging> = 
   fields: [{
     name: 'toAdd',
     index: 1,
-    messageType: VIDEO_TRACK_DATA,
+    primitiveType: PrimitiveType.BOOLEAN,
   }, {
     name: 'toDelete',
     index: 2,
@@ -96,7 +98,10 @@ export let VIDEO_TRACK_DATA_STAGING: MessageDescriptor<VideoTrackDataStaging> = 
 
 export interface VideoTrack {
   r2TrackDirname?: string,
-  committed?: VideoTrackData,
+  durationSec?: number,
+  resolution?: string,
+  totalBytes?: number,
+  committed?: boolean,
   staging?: VideoTrackDataStaging,
 }
 
@@ -107,12 +112,24 @@ export let VIDEO_TRACK: MessageDescriptor<VideoTrack> = {
     index: 1,
     primitiveType: PrimitiveType.STRING,
   }, {
-    name: 'committed',
+    name: 'durationSec',
     index: 2,
-    messageType: VIDEO_TRACK_DATA,
+    primitiveType: PrimitiveType.NUMBER,
+  }, {
+    name: 'resolution',
+    index: 3,
+    primitiveType: PrimitiveType.STRING,
+  }, {
+    name: 'totalBytes',
+    index: 4,
+    primitiveType: PrimitiveType.NUMBER,
+  }, {
+    name: 'committed',
+    index: 5,
+    primitiveType: PrimitiveType.BOOLEAN,
   }, {
     name: 'staging',
-    index: 3,
+    index: 6,
     messageType: VIDEO_TRACK_DATA_STAGING,
   }],
 };
@@ -120,7 +137,6 @@ export let VIDEO_TRACK: MessageDescriptor<VideoTrack> = {
 export interface AudioTrackData {
   name?: string,
   isDefault?: boolean,
-  totalBytes?: number,
 }
 
 export let AUDIO_TRACK_DATA: MessageDescriptor<AudioTrackData> = {
@@ -133,10 +149,6 @@ export let AUDIO_TRACK_DATA: MessageDescriptor<AudioTrackData> = {
     name: 'isDefault',
     index: 2,
     primitiveType: PrimitiveType.BOOLEAN,
-  }, {
-    name: 'totalBytes',
-    index: 3,
-    primitiveType: PrimitiveType.NUMBER,
   }],
 };
 
@@ -160,6 +172,7 @@ export let AUDIO_TRACK_DATA_STAGING: MessageDescriptor<AudioTrackDataStaging> = 
 
 export interface AudioTrack {
   r2TrackDirname?: string,
+  totalBytes?: number,
   committed?: AudioTrackData,
   staging?: AudioTrackDataStaging,
 }
@@ -171,20 +184,22 @@ export let AUDIO_TRACK: MessageDescriptor<AudioTrack> = {
     index: 1,
     primitiveType: PrimitiveType.STRING,
   }, {
-    name: 'committed',
+    name: 'totalBytes',
     index: 2,
+    primitiveType: PrimitiveType.NUMBER,
+  }, {
+    name: 'committed',
+    index: 3,
     messageType: AUDIO_TRACK_DATA,
   }, {
     name: 'staging',
-    index: 3,
+    index: 4,
     messageType: AUDIO_TRACK_DATA_STAGING,
   }],
 };
 
 export interface SubtitleTrackData {
   name?: string,
-  isDefault?: boolean,
-  totalBytes?: number,
 }
 
 export let SUBTITLE_TRACK_DATA: MessageDescriptor<SubtitleTrackData> = {
@@ -193,14 +208,6 @@ export let SUBTITLE_TRACK_DATA: MessageDescriptor<SubtitleTrackData> = {
     name: 'name',
     index: 1,
     primitiveType: PrimitiveType.STRING,
-  }, {
-    name: 'isDefault',
-    index: 2,
-    primitiveType: PrimitiveType.BOOLEAN,
-  }, {
-    name: 'totalBytes',
-    index: 3,
-    primitiveType: PrimitiveType.NUMBER,
   }],
 };
 
@@ -224,6 +231,7 @@ export let SUBTITLE_TRACK_DATA_STAGING: MessageDescriptor<SubtitleTrackDataStagi
 
 export interface SubtitleTrack {
   r2TrackDirname?: string,
+  totalBytes?: number,
   committed?: SubtitleTrackData,
   staging?: SubtitleTrackDataStaging,
 }
@@ -235,12 +243,16 @@ export let SUBTITLE_TRACK: MessageDescriptor<SubtitleTrack> = {
     index: 1,
     primitiveType: PrimitiveType.STRING,
   }, {
-    name: 'committed',
+    name: 'totalBytes',
     index: 2,
+    primitiveType: PrimitiveType.NUMBER,
+  }, {
+    name: 'committed',
+    index: 3,
     messageType: SUBTITLE_TRACK_DATA,
   }, {
     name: 'staging',
-    index: 3,
+    index: 4,
     messageType: SUBTITLE_TRACK_DATA_STAGING,
   }],
 };
