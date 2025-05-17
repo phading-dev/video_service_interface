@@ -7,3 +7,13 @@
       value: 2
     - name: SUBTITLE_ZIP_FORMAT_INVALID
       value: 3
+- kind: Message
+  name: LastProcessingFailure
+  fields:
+    - name: reasons
+      type: ProcessingFailureReason
+      isArray: true
+      index: 1
+    - name: timeMs
+      type: number
+      index: 2

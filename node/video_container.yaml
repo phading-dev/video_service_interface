@@ -1,15 +1,4 @@
 - kind: Message
-  name: LastProcessingFailure
-  fields:
-    - name: reason
-      type: ProcessingFailureReason
-      import: ./node/processing_failure_reason
-      isArray: true
-      index: 1
-    - name: timeMs
-      type: number
-      index: 2
-- kind: Message
   name: ResumableUploadingState
 - kind: Message
   name: FormattingState
@@ -165,6 +154,7 @@
       index: 2
     - name: lastProcessingFailure
       type: LastProcessingFailure
+      import: ./node/last_processing_failure
       index: 3
     - name: videos # Non-null
       type: VideoTrack

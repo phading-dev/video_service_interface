@@ -1,24 +1,5 @@
-import { ProcessingFailureReason, PROCESSING_FAILURE_REASON } from './processing_failure_reason';
-import { PrimitiveType, MessageDescriptor } from '@selfage/message/descriptor';
-
-export interface LastProcessingFailure {
-  reason?: Array<ProcessingFailureReason>,
-  timeMs?: number,
-}
-
-export let LAST_PROCESSING_FAILURE: MessageDescriptor<LastProcessingFailure> = {
-  name: 'LastProcessingFailure',
-  fields: [{
-    name: 'reason',
-    index: 1,
-    enumType: PROCESSING_FAILURE_REASON,
-    isArray: true,
-  }, {
-    name: 'timeMs',
-    index: 2,
-    primitiveType: PrimitiveType.NUMBER,
-  }],
-};
+import { MessageDescriptor, PrimitiveType } from '@selfage/message/descriptor';
+import { LastProcessingFailure, LAST_PROCESSING_FAILURE } from './last_processing_failure';
 
 export interface ResumableUploadingState {
 }
