@@ -1,45 +1,39 @@
-import { PrimitiveType, MessageDescriptor } from '@selfage/message/descriptor';
 import { ProcessingFailureReason, PROCESSING_FAILURE_REASON } from './processing_failure_reason';
+import { PrimitiveType, MessageDescriptor } from '@selfage/message/descriptor';
+
+export interface LastProcessingFailure {
+  reason?: Array<ProcessingFailureReason>,
+  timeMs?: number,
+}
+
+export let LAST_PROCESSING_FAILURE: MessageDescriptor<LastProcessingFailure> = {
+  name: 'LastProcessingFailure',
+  fields: [{
+    name: 'reason',
+    index: 1,
+    enumType: PROCESSING_FAILURE_REASON,
+    isArray: true,
+  }, {
+    name: 'timeMs',
+    index: 2,
+    primitiveType: PrimitiveType.NUMBER,
+  }],
+};
 
 export interface ResumableUploadingState {
-  gcsFilename?: string,
-  uploadSessionUrl?: string,
-  contentLength?: number,
-  contentType?: string,
 }
 
 export let RESUMABLE_UPLOADING_STATE: MessageDescriptor<ResumableUploadingState> = {
   name: 'ResumableUploadingState',
-  fields: [{
-    name: 'gcsFilename',
-    index: 1,
-    primitiveType: PrimitiveType.STRING,
-  }, {
-    name: 'uploadSessionUrl',
-    index: 2,
-    primitiveType: PrimitiveType.STRING,
-  }, {
-    name: 'contentLength',
-    index: 3,
-    primitiveType: PrimitiveType.NUMBER,
-  }, {
-    name: 'contentType',
-    index: 4,
-    primitiveType: PrimitiveType.STRING,
-  }],
+  fields: [],
 };
 
 export interface FormattingState {
-  gcsFilename?: string,
 }
 
 export let FORMATTING_STATE: MessageDescriptor<FormattingState> = {
   name: 'FormattingState',
-  fields: [{
-    name: 'gcsFilename',
-    index: 1,
-    primitiveType: PrimitiveType.STRING,
-  }],
+  fields: [],
 };
 
 export interface ProcessingState {
@@ -322,7 +316,7 @@ export let MASTER_PLAYLIST_STATE: MessageDescriptor<MasterPlaylistState> = {
 export interface VideoContainer {
   masterPlaylist?: MasterPlaylistState,
   processing?: OneOfProcessingState,
-  lastProcessingFailures?: Array<ProcessingFailureReason>,
+  lastProcessingFailure?: LastProcessingFailure,
   videos?: Array<VideoTrack>,
   audios?: Array<AudioTrack>,
   subtitles?: Array<SubtitleTrack>,
@@ -339,10 +333,9 @@ export let VIDEO_CONTAINER: MessageDescriptor<VideoContainer> = {
     index: 2,
     messageType: ONE_OF_PROCESSING_STATE,
   }, {
-    name: 'lastProcessingFailures',
+    name: 'lastProcessingFailure',
     index: 3,
-    enumType: PROCESSING_FAILURE_REASON,
-    isArray: true,
+    messageType: LAST_PROCESSING_FAILURE,
   }, {
     name: 'videos',
     index: 4,
