@@ -1,25 +1,26 @@
 - kind: Message
   name: ResumableUploadingState
+  fields:
+    - name: fileExt
+      type: string
+      index: 1
+    - name: md5
+      type: string
+      index: 2
 - kind: Message
   name: FormattingState
 - kind: Message
-  name: ProcessingState
+  name: OneOfProcessingState
   fields:
     - name: uploading
       type: ResumableUploadingState
       index: 1
-    - name: formatting
+    - name: mediaFormatting
       type: FormattingState
       index: 2
-- kind: Message
-  name: OneOfProcessingState
-  fields:
-    - name: media
-      type: ProcessingState
-      index: 1
-    - name: subtitle
-      type: ProcessingState
-      index: 2
+    - name: subtitleFormatting
+      type: FormattingState
+      index: 3
 - kind: Message
   name: VideoTrackDataStaging
   fields:

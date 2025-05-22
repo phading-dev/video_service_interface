@@ -107,7 +107,7 @@
       isArray: true
       index: 1
 - kind: Message
-  name: StartMediaUploadingRequestBody
+  name: StartUploadingRequestBody
   fields:
     - name: containerId
       type: string
@@ -115,11 +115,14 @@
     - name: contentLength
       type: number
       index: 2
-    - name: fileType
+    - name: fileExt
       type: string
       index: 3
+    - name: md5
+      type: string
+      index: 4
 - kind: Message
-  name: StartMediaUploadingResponse
+  name: StartUploadingResponse
   fields:
     - name: uploadSessionUrl
       type: string
@@ -128,7 +131,7 @@
       type: number
       index: 2
 - kind: Message
-  name: CompleteMediaUploadingRequestBody
+  name: CompleteUploadingRequestBody
   fields:
     - name: containerId
       type: string
@@ -137,55 +140,15 @@
       type: string
       index: 2
 - kind: Message
-  name: CompleteMediaUploadingResponse
+  name: CompleteUploadingResponse
 - kind: Message
-  name: CancelMediaUploadingRequestBody
+  name: CancelUploadingRequestBody
   fields:
     - name: containerId
       type: string
       index: 1
 - kind: Message
-  name: CancelMediaUploadingResponse
-- kind: Message
-  name: StartSubtitleUploadingRequestBody
-  fields:
-    - name: containerId
-      type: string
-      index: 1
-    - name: contentLength
-      type: number
-      index: 2
-    - name: fileType
-      type: string
-      index: 3
-- kind: Message
-  name: StartSubtitleUploadingResponse
-  fields:
-    - name: uploadSessionUrl
-      type: string
-      index: 1
-    - name: byteOffset
-      type: number
-      index: 2
-- kind: Message
-  name: CompleteSubtitleUploadingRequestBody
-  fields:
-    - name: containerId
-      type: string
-      index: 1
-    - name: uploadSessionUrl
-      type: string
-      index: 2
-- kind: Message
-  name: CompleteSubtitleUploadingResponse
-- kind: Message
-  name: CancelSubtitleUploadingRequestBody
-  fields:
-    - name: containerId
-      type: string
-      index: 1
-- kind: Message
-  name: CancelSubtitleUploadingResponse
+  name: CancelUploadingResponse
 - kind: Message
   name: ProcessUploadedRecordingTaskRequestBody
   fields:
@@ -485,30 +448,18 @@
       path: /ListVideoContainerSyncingTasks
       body: ListVideoContainerSyncingTasksRequestBody
       response: ListVideoContainerSyncingTasksResponse
-    - name: StartMediaUploading
-      path: /StartMediaUploading
-      body: StartMediaUploadingRequestBody
-      response: StartMediaUploadingResponse
-    - name: CompleteMediaUploading
-      path: /CompleteMediaUploading
-      body: CompleteMediaUploadingRequestBody
-      response: CompleteMediaUploadingResponse
-    - name: CancelMediaUploading
-      path: /CancelMediaUploading
-      body: CancelMediaUploadingRequestBody
-      response: CancelMediaUploadingResponse
-    - name: StartSubtitleUploading
-      path: /StartSubtitleUploading
-      body: StartSubtitleUploadingRequestBody
-      response: StartSubtitleUploadingResponse
-    - name: CompleteSubtitleUploading
-      path: /CompleteSubtitleUploading
-      body: CompleteSubtitleUploadingRequestBody
-      response: CompleteSubtitleUploadingResponse
-    - name: CancelSubtitleUploading
-      path: /CancelSubtitleUploading
-      body: CancelSubtitleUploadingRequestBody
-      response: CancelSubtitleUploadingResponse
+    - name: StartUploading
+      path: /StartUploading
+      body: StartUploadingRequestBody
+      response: StartUploadingResponse
+    - name: CompleteUploading
+      path: /CompleteUploading
+      body: CompleteUploadingRequestBody
+      response: CompleteUploadingResponse
+    - name: CancelUploading
+      path: /CancelUploading
+      body: CancelUploadingRequestBody
+      response: CancelUploadingResponse
     - name: ProcessUploadedRecordingTask
       path: /ProcessUploadedRecordingTask
       body: ProcessUploadedRecordingTaskRequestBody
