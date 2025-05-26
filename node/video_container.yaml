@@ -22,7 +22,7 @@
       type: FormattingState
       index: 3
 - kind: Message
-  name: VideoTrackDataStaging
+  name: VideoTrackStagingData
   fields:
     - name: toAdd
       type: boolean
@@ -49,7 +49,7 @@
       type: boolean
       index: 5
     - name: staging
-      type: VideoTrackDataStaging
+      type: VideoTrackStagingData
       index: 6
 - kind: Message
   name: AudioTrackData
@@ -61,7 +61,7 @@
       type: boolean
       index: 2
 - kind: Message
-  name: AudioTrackDataStaging
+  name: AudioTrackStagingData
   fields:
     - name: toAdd
       type: AudioTrackData
@@ -82,7 +82,7 @@
       type: AudioTrackData
       index: 3
     - name: staging
-      type: AudioTrackDataStaging
+      type: AudioTrackStagingData
       index: 4
 - kind: Message
   name: SubtitleTrackData
@@ -91,7 +91,7 @@
       type: string
       index: 1
 - kind: Message
-  name: SubtitleTrackDataStaging
+  name: SubtitleTrackStagingData
   fields:
     - name: toAdd
       type: SubtitleTrackData
@@ -112,7 +112,7 @@
       type: SubtitleTrackData
       index: 3
     - name: staging
-      type: SubtitleTrackDataStaging
+      type: SubtitleTrackStagingData
       index: 4
 - kind: Message
   name: WritingToFileState

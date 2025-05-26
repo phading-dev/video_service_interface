@@ -1,5 +1,7 @@
-import { PrimitiveType, MessageDescriptor, EnumDescriptor } from '@selfage/message/descriptor';
+import { PrimitiveType, MessageDescriptor } from '@selfage/message/descriptor';
 import { VideoContainer, VIDEO_CONTAINER } from './video_container';
+import { VideoContainerStagingData, VIDEO_CONTAINER_STAGING_DATA } from './video_container_staging_data';
+import { ValidationError, VALIDATION_ERROR } from './validation_error';
 import { VIDEO_NODE_SERVICE } from '../service';
 import { RemoteCallDescriptor } from '@selfage/service_descriptor';
 
@@ -86,8 +88,40 @@ export let GET_VIDEO_CONTAINER_RESPONSE: MessageDescriptor<GetVideoContainerResp
   }],
 };
 
+export interface SaveVideoContainerStagingDataRequestBody {
+  containerId?: string,
+  videoContainer?: VideoContainerStagingData,
+}
+
+export let SAVE_VIDEO_CONTAINER_STAGING_DATA_REQUEST_BODY: MessageDescriptor<SaveVideoContainerStagingDataRequestBody> = {
+  name: 'SaveVideoContainerStagingDataRequestBody',
+  fields: [{
+    name: 'containerId',
+    index: 1,
+    primitiveType: PrimitiveType.STRING,
+  }, {
+    name: 'videoContainer',
+    index: 2,
+    messageType: VIDEO_CONTAINER_STAGING_DATA,
+  }],
+};
+
+export interface SaveVideoContainerStagingDataResponse {
+  error?: ValidationError,
+}
+
+export let SAVE_VIDEO_CONTAINER_STAGING_DATA_RESPONSE: MessageDescriptor<SaveVideoContainerStagingDataResponse> = {
+  name: 'SaveVideoContainerStagingDataResponse',
+  fields: [{
+    name: 'error',
+    index: 1,
+    enumType: VALIDATION_ERROR,
+  }],
+};
+
 export interface CommitVideoContainerStagingDataRequestBody {
   containerId?: string,
+  videoContainer?: VideoContainerStagingData,
 }
 
 export let COMMIT_VIDEO_CONTAINER_STAGING_DATA_REQUEST_BODY: MessageDescriptor<CommitVideoContainerStagingDataRequestBody> = {
@@ -96,55 +130,22 @@ export let COMMIT_VIDEO_CONTAINER_STAGING_DATA_REQUEST_BODY: MessageDescriptor<C
     name: 'containerId',
     index: 1,
     primitiveType: PrimitiveType.STRING,
+  }, {
+    name: 'videoContainer',
+    index: 2,
+    messageType: VIDEO_CONTAINER_STAGING_DATA,
   }],
 };
 
-export enum ValidationError {
-  NO_VIDEO_TRACK = 1,
-  MORE_THAN_ONE_VIDEO_TRACKS = 2,
-  TOO_MANY_AUDIO_TRACKS = 3,
-  NO_DEFAULT_AUDIO_TRACK = 4,
-  MORE_THAN_ONE_DEFAULT_AUDIO_TRACKS = 5,
-  TOO_MANY_SUBTITLE_TRACKS = 6,
-}
-
-export let VALIDATION_ERROR: EnumDescriptor<ValidationError> = {
-  name: 'ValidationError',
-  values: [{
-    name: 'NO_VIDEO_TRACK',
-    value: 1,
-  }, {
-    name: 'MORE_THAN_ONE_VIDEO_TRACKS',
-    value: 2,
-  }, {
-    name: 'TOO_MANY_AUDIO_TRACKS',
-    value: 3,
-  }, {
-    name: 'NO_DEFAULT_AUDIO_TRACK',
-    value: 4,
-  }, {
-    name: 'MORE_THAN_ONE_DEFAULT_AUDIO_TRACKS',
-    value: 5,
-  }, {
-    name: 'TOO_MANY_SUBTITLE_TRACKS',
-    value: 6,
-  }]
-}
-
 export interface CommitVideoContainerStagingDataResponse {
-  success?: boolean,
   error?: ValidationError,
 }
 
 export let COMMIT_VIDEO_CONTAINER_STAGING_DATA_RESPONSE: MessageDescriptor<CommitVideoContainerStagingDataResponse> = {
   name: 'CommitVideoContainerStagingDataResponse',
   fields: [{
-    name: 'success',
-    index: 1,
-    primitiveType: PrimitiveType.BOOLEAN,
-  }, {
     name: 'error',
-    index: 2,
+    index: 1,
     enumType: VALIDATION_ERROR,
   }],
 };
@@ -587,229 +588,6 @@ export let LIST_STORAGE_START_RECORDING_TASKS_RESPONSE: MessageDescriptor<ListSt
   }],
 };
 
-export interface DeleteVideoTrackRequestBody {
-  containerId?: string,
-  r2TrackDirname?: string,
-}
-
-export let DELETE_VIDEO_TRACK_REQUEST_BODY: MessageDescriptor<DeleteVideoTrackRequestBody> = {
-  name: 'DeleteVideoTrackRequestBody',
-  fields: [{
-    name: 'containerId',
-    index: 1,
-    primitiveType: PrimitiveType.STRING,
-  }, {
-    name: 'r2TrackDirname',
-    index: 2,
-    primitiveType: PrimitiveType.STRING,
-  }],
-};
-
-export interface DeleteVideoTrackResponse {
-}
-
-export let DELETE_VIDEO_TRACK_RESPONSE: MessageDescriptor<DeleteVideoTrackResponse> = {
-  name: 'DeleteVideoTrackResponse',
-  fields: [],
-};
-
-export interface DropVideoTrackStagingDataRequestBody {
-  containerId?: string,
-  r2TrackDirname?: string,
-}
-
-export let DROP_VIDEO_TRACK_STAGING_DATA_REQUEST_BODY: MessageDescriptor<DropVideoTrackStagingDataRequestBody> = {
-  name: 'DropVideoTrackStagingDataRequestBody',
-  fields: [{
-    name: 'containerId',
-    index: 1,
-    primitiveType: PrimitiveType.STRING,
-  }, {
-    name: 'r2TrackDirname',
-    index: 2,
-    primitiveType: PrimitiveType.STRING,
-  }],
-};
-
-export interface DropVideoTrackStagingDataResponse {
-}
-
-export let DROP_VIDEO_TRACK_STAGING_DATA_RESPONSE: MessageDescriptor<DropVideoTrackStagingDataResponse> = {
-  name: 'DropVideoTrackStagingDataResponse',
-  fields: [],
-};
-
-export interface UpdateAudioTrackRequestBody {
-  containerId?: string,
-  r2TrackDirname?: string,
-  name?: string,
-  isDefault?: boolean,
-}
-
-export let UPDATE_AUDIO_TRACK_REQUEST_BODY: MessageDescriptor<UpdateAudioTrackRequestBody> = {
-  name: 'UpdateAudioTrackRequestBody',
-  fields: [{
-    name: 'containerId',
-    index: 1,
-    primitiveType: PrimitiveType.STRING,
-  }, {
-    name: 'r2TrackDirname',
-    index: 2,
-    primitiveType: PrimitiveType.STRING,
-  }, {
-    name: 'name',
-    index: 3,
-    primitiveType: PrimitiveType.STRING,
-  }, {
-    name: 'isDefault',
-    index: 4,
-    primitiveType: PrimitiveType.BOOLEAN,
-  }],
-};
-
-export interface UpdateAudioTrackResponse {
-}
-
-export let UPDATE_AUDIO_TRACK_RESPONSE: MessageDescriptor<UpdateAudioTrackResponse> = {
-  name: 'UpdateAudioTrackResponse',
-  fields: [],
-};
-
-export interface DeleteAudioTrackRequestBody {
-  containerId?: string,
-  r2TrackDirname?: string,
-}
-
-export let DELETE_AUDIO_TRACK_REQUEST_BODY: MessageDescriptor<DeleteAudioTrackRequestBody> = {
-  name: 'DeleteAudioTrackRequestBody',
-  fields: [{
-    name: 'containerId',
-    index: 1,
-    primitiveType: PrimitiveType.STRING,
-  }, {
-    name: 'r2TrackDirname',
-    index: 2,
-    primitiveType: PrimitiveType.STRING,
-  }],
-};
-
-export interface DeleteAudioTrackResponse {
-}
-
-export let DELETE_AUDIO_TRACK_RESPONSE: MessageDescriptor<DeleteAudioTrackResponse> = {
-  name: 'DeleteAudioTrackResponse',
-  fields: [],
-};
-
-export interface DropAudioTrackStagingDataRequestBody {
-  containerId?: string,
-  r2TrackDirname?: string,
-}
-
-export let DROP_AUDIO_TRACK_STAGING_DATA_REQUEST_BODY: MessageDescriptor<DropAudioTrackStagingDataRequestBody> = {
-  name: 'DropAudioTrackStagingDataRequestBody',
-  fields: [{
-    name: 'containerId',
-    index: 1,
-    primitiveType: PrimitiveType.STRING,
-  }, {
-    name: 'r2TrackDirname',
-    index: 2,
-    primitiveType: PrimitiveType.STRING,
-  }],
-};
-
-export interface DropAudioTrackStagingDataResponse {
-}
-
-export let DROP_AUDIO_TRACK_STAGING_DATA_RESPONSE: MessageDescriptor<DropAudioTrackStagingDataResponse> = {
-  name: 'DropAudioTrackStagingDataResponse',
-  fields: [],
-};
-
-export interface UpdateSubtitleTrackRequestBody {
-  containerId?: string,
-  r2TrackDirname?: string,
-  name?: string,
-}
-
-export let UPDATE_SUBTITLE_TRACK_REQUEST_BODY: MessageDescriptor<UpdateSubtitleTrackRequestBody> = {
-  name: 'UpdateSubtitleTrackRequestBody',
-  fields: [{
-    name: 'containerId',
-    index: 1,
-    primitiveType: PrimitiveType.STRING,
-  }, {
-    name: 'r2TrackDirname',
-    index: 2,
-    primitiveType: PrimitiveType.STRING,
-  }, {
-    name: 'name',
-    index: 3,
-    primitiveType: PrimitiveType.STRING,
-  }],
-};
-
-export interface UpdateSubtitleTrackResponse {
-}
-
-export let UPDATE_SUBTITLE_TRACK_RESPONSE: MessageDescriptor<UpdateSubtitleTrackResponse> = {
-  name: 'UpdateSubtitleTrackResponse',
-  fields: [],
-};
-
-export interface DeleteSubtitleTrackRequestBody {
-  containerId?: string,
-  r2TrackDirname?: string,
-}
-
-export let DELETE_SUBTITLE_TRACK_REQUEST_BODY: MessageDescriptor<DeleteSubtitleTrackRequestBody> = {
-  name: 'DeleteSubtitleTrackRequestBody',
-  fields: [{
-    name: 'containerId',
-    index: 1,
-    primitiveType: PrimitiveType.STRING,
-  }, {
-    name: 'r2TrackDirname',
-    index: 2,
-    primitiveType: PrimitiveType.STRING,
-  }],
-};
-
-export interface DeleteSubtitleTrackResponse {
-}
-
-export let DELETE_SUBTITLE_TRACK_RESPONSE: MessageDescriptor<DeleteSubtitleTrackResponse> = {
-  name: 'DeleteSubtitleTrackResponse',
-  fields: [],
-};
-
-export interface DropSubtitleTrackStagingDataRequestBody {
-  containerId?: string,
-  r2TrackDirname?: string,
-}
-
-export let DROP_SUBTITLE_TRACK_STAGING_DATA_REQUEST_BODY: MessageDescriptor<DropSubtitleTrackStagingDataRequestBody> = {
-  name: 'DropSubtitleTrackStagingDataRequestBody',
-  fields: [{
-    name: 'containerId',
-    index: 1,
-    primitiveType: PrimitiveType.STRING,
-  }, {
-    name: 'r2TrackDirname',
-    index: 2,
-    primitiveType: PrimitiveType.STRING,
-  }],
-};
-
-export interface DropSubtitleTrackStagingDataResponse {
-}
-
-export let DROP_SUBTITLE_TRACK_STAGING_DATA_RESPONSE: MessageDescriptor<DropSubtitleTrackStagingDataResponse> = {
-  name: 'DropSubtitleTrackStagingDataResponse',
-  fields: [],
-};
-
 export interface ProcessStorageEndRecordingTaskRequestBody {
   r2Dirname?: string,
   accountId?: string,
@@ -987,6 +765,18 @@ export let GET_VIDEO_CONTAINER: RemoteCallDescriptor = {
   },
   response: {
     messageType: GET_VIDEO_CONTAINER_RESPONSE,
+  },
+}
+
+export let SAVE_VIDEO_CONTAINER_STAGING_DATA: RemoteCallDescriptor = {
+  name: "SaveVideoContainerStagingData",
+  service: VIDEO_NODE_SERVICE,
+  path: "/SaveVideoContainerStagingData",
+  body: {
+    messageType: SAVE_VIDEO_CONTAINER_STAGING_DATA_REQUEST_BODY,
+  },
+  response: {
+    messageType: SAVE_VIDEO_CONTAINER_STAGING_DATA_RESPONSE,
   },
 }
 
@@ -1203,102 +993,6 @@ export let LIST_STORAGE_START_RECORDING_TASKS: RemoteCallDescriptor = {
   },
   response: {
     messageType: LIST_STORAGE_START_RECORDING_TASKS_RESPONSE,
-  },
-}
-
-export let DELETE_VIDEO_TRACK: RemoteCallDescriptor = {
-  name: "DeleteVideoTrack",
-  service: VIDEO_NODE_SERVICE,
-  path: "/DeleteVideoTrack",
-  body: {
-    messageType: DELETE_VIDEO_TRACK_REQUEST_BODY,
-  },
-  response: {
-    messageType: DELETE_VIDEO_TRACK_RESPONSE,
-  },
-}
-
-export let DROP_VIDEO_TRACK_STAGING_DATA: RemoteCallDescriptor = {
-  name: "DropVideoTrackStagingData",
-  service: VIDEO_NODE_SERVICE,
-  path: "/DropVideoTrackStagingData",
-  body: {
-    messageType: DROP_VIDEO_TRACK_STAGING_DATA_REQUEST_BODY,
-  },
-  response: {
-    messageType: DROP_VIDEO_TRACK_STAGING_DATA_RESPONSE,
-  },
-}
-
-export let UPDATE_AUDIO_TRACK: RemoteCallDescriptor = {
-  name: "UpdateAudioTrack",
-  service: VIDEO_NODE_SERVICE,
-  path: "/UpdateAudioTrack",
-  body: {
-    messageType: UPDATE_AUDIO_TRACK_REQUEST_BODY,
-  },
-  response: {
-    messageType: UPDATE_AUDIO_TRACK_RESPONSE,
-  },
-}
-
-export let DELETE_AUDIO_TRACK: RemoteCallDescriptor = {
-  name: "DeleteAudioTrack",
-  service: VIDEO_NODE_SERVICE,
-  path: "/DeleteAudioTrack",
-  body: {
-    messageType: DELETE_AUDIO_TRACK_REQUEST_BODY,
-  },
-  response: {
-    messageType: DELETE_AUDIO_TRACK_RESPONSE,
-  },
-}
-
-export let DROP_AUDIO_TRACK_STAGING_DATA: RemoteCallDescriptor = {
-  name: "DropAudioTrackStagingData",
-  service: VIDEO_NODE_SERVICE,
-  path: "/DropAudioTrackStagingData",
-  body: {
-    messageType: DROP_AUDIO_TRACK_STAGING_DATA_REQUEST_BODY,
-  },
-  response: {
-    messageType: DROP_AUDIO_TRACK_STAGING_DATA_RESPONSE,
-  },
-}
-
-export let UPDATE_SUBTITLE_TRACK: RemoteCallDescriptor = {
-  name: "UpdateSubtitleTrack",
-  service: VIDEO_NODE_SERVICE,
-  path: "/UpdateSubtitleTrack",
-  body: {
-    messageType: UPDATE_SUBTITLE_TRACK_REQUEST_BODY,
-  },
-  response: {
-    messageType: UPDATE_SUBTITLE_TRACK_RESPONSE,
-  },
-}
-
-export let DELETE_SUBTITLE_TRACK: RemoteCallDescriptor = {
-  name: "DeleteSubtitleTrack",
-  service: VIDEO_NODE_SERVICE,
-  path: "/DeleteSubtitleTrack",
-  body: {
-    messageType: DELETE_SUBTITLE_TRACK_REQUEST_BODY,
-  },
-  response: {
-    messageType: DELETE_SUBTITLE_TRACK_RESPONSE,
-  },
-}
-
-export let DROP_SUBTITLE_TRACK_STAGING_DATA: RemoteCallDescriptor = {
-  name: "DropSubtitleTrackStagingData",
-  service: VIDEO_NODE_SERVICE,
-  path: "/DropSubtitleTrackStagingData",
-  body: {
-    messageType: DROP_SUBTITLE_TRACK_STAGING_DATA_REQUEST_BODY,
-  },
-  response: {
-    messageType: DROP_SUBTITLE_TRACK_STAGING_DATA_RESPONSE,
   },
 }
 

@@ -50,13 +50,13 @@ export let ONE_OF_PROCESSING_STATE: MessageDescriptor<OneOfProcessingState> = {
   }],
 };
 
-export interface VideoTrackDataStaging {
+export interface VideoTrackStagingData {
   toAdd?: boolean,
   toDelete?: boolean,
 }
 
-export let VIDEO_TRACK_DATA_STAGING: MessageDescriptor<VideoTrackDataStaging> = {
-  name: 'VideoTrackDataStaging',
+export let VIDEO_TRACK_STAGING_DATA: MessageDescriptor<VideoTrackStagingData> = {
+  name: 'VideoTrackStagingData',
   fields: [{
     name: 'toAdd',
     index: 1,
@@ -74,7 +74,7 @@ export interface VideoTrack {
   resolution?: string,
   totalBytes?: number,
   committed?: boolean,
-  staging?: VideoTrackDataStaging,
+  staging?: VideoTrackStagingData,
 }
 
 export let VIDEO_TRACK: MessageDescriptor<VideoTrack> = {
@@ -102,7 +102,7 @@ export let VIDEO_TRACK: MessageDescriptor<VideoTrack> = {
   }, {
     name: 'staging',
     index: 6,
-    messageType: VIDEO_TRACK_DATA_STAGING,
+    messageType: VIDEO_TRACK_STAGING_DATA,
   }],
 };
 
@@ -124,13 +124,13 @@ export let AUDIO_TRACK_DATA: MessageDescriptor<AudioTrackData> = {
   }],
 };
 
-export interface AudioTrackDataStaging {
+export interface AudioTrackStagingData {
   toAdd?: AudioTrackData,
   toDelete?: boolean,
 }
 
-export let AUDIO_TRACK_DATA_STAGING: MessageDescriptor<AudioTrackDataStaging> = {
-  name: 'AudioTrackDataStaging',
+export let AUDIO_TRACK_STAGING_DATA: MessageDescriptor<AudioTrackStagingData> = {
+  name: 'AudioTrackStagingData',
   fields: [{
     name: 'toAdd',
     index: 1,
@@ -146,7 +146,7 @@ export interface AudioTrack {
   r2TrackDirname?: string,
   totalBytes?: number,
   committed?: AudioTrackData,
-  staging?: AudioTrackDataStaging,
+  staging?: AudioTrackStagingData,
 }
 
 export let AUDIO_TRACK: MessageDescriptor<AudioTrack> = {
@@ -166,7 +166,7 @@ export let AUDIO_TRACK: MessageDescriptor<AudioTrack> = {
   }, {
     name: 'staging',
     index: 4,
-    messageType: AUDIO_TRACK_DATA_STAGING,
+    messageType: AUDIO_TRACK_STAGING_DATA,
   }],
 };
 
@@ -183,13 +183,13 @@ export let SUBTITLE_TRACK_DATA: MessageDescriptor<SubtitleTrackData> = {
   }],
 };
 
-export interface SubtitleTrackDataStaging {
+export interface SubtitleTrackStagingData {
   toAdd?: SubtitleTrackData,
   toDelete?: boolean,
 }
 
-export let SUBTITLE_TRACK_DATA_STAGING: MessageDescriptor<SubtitleTrackDataStaging> = {
-  name: 'SubtitleTrackDataStaging',
+export let SUBTITLE_TRACK_STAGING_DATA: MessageDescriptor<SubtitleTrackStagingData> = {
+  name: 'SubtitleTrackStagingData',
   fields: [{
     name: 'toAdd',
     index: 1,
@@ -205,7 +205,7 @@ export interface SubtitleTrack {
   r2TrackDirname?: string,
   totalBytes?: number,
   committed?: SubtitleTrackData,
-  staging?: SubtitleTrackDataStaging,
+  staging?: SubtitleTrackStagingData,
 }
 
 export let SUBTITLE_TRACK: MessageDescriptor<SubtitleTrack> = {
@@ -225,7 +225,7 @@ export let SUBTITLE_TRACK: MessageDescriptor<SubtitleTrack> = {
   }, {
     name: 'staging',
     index: 4,
-    messageType: SUBTITLE_TRACK_DATA_STAGING,
+    messageType: SUBTITLE_TRACK_STAGING_DATA,
   }],
 };
 

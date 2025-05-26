@@ -37,35 +37,39 @@
       import: ./node/video_container
       index: 1
 - kind: Message
+  name: SaveVideoContainerStagingDataRequestBody
+  fields:
+    - name: containerId
+      type: string
+      index: 1
+    - name: videoContainer
+      type: VideoContainerStagingData
+      import: ./node/video_container_staging_data
+      index: 2
+- kind: Message
+  name: SaveVideoContainerStagingDataResponse
+  fields:
+    - name: error
+      type: ValidationError
+      import: ./node/validation_error
+      index: 1
+- kind: Message
   name: CommitVideoContainerStagingDataRequestBody
   fields:
     - name: containerId
       type: string
       index: 1
-- kind: Enum
-  name: ValidationError
-  values:
-    - name: NO_VIDEO_TRACK
-      value: 1
-    - name: MORE_THAN_ONE_VIDEO_TRACKS
-      value: 2
-    - name: TOO_MANY_AUDIO_TRACKS
-      value: 3
-    - name: NO_DEFAULT_AUDIO_TRACK
-      value: 4
-    - name: MORE_THAN_ONE_DEFAULT_AUDIO_TRACKS
-      value: 5
-    - name: TOO_MANY_SUBTITLE_TRACKS
-      value: 6
+    - name: videoContainer
+      type: VideoContainerStagingData
+      import: ./node/video_container_staging_data
+      index: 2
 - kind: Message
   name: CommitVideoContainerStagingDataResponse
   fields:
-    - name: success
-      type: boolean
-      index: 1
     - name: error
       type: ValidationError
-      index: 2
+      import: ./node/validation_error
+      index: 1
 - kind: Message
   name: ProcessVideoContainerWritingToFileTaskRequestBody
   fields:
@@ -255,103 +259,6 @@
       isArray: true
       index: 1
 - kind: Message
-  name: DeleteVideoTrackRequestBody
-  fields:
-    - name: containerId
-      type: string
-      index: 1
-    - name: r2TrackDirname
-      type: string
-      index: 2
-- kind: Message
-  name: DeleteVideoTrackResponse
-- kind: Message
-  name: DropVideoTrackStagingDataRequestBody
-  fields:
-    - name: containerId
-      type: string
-      index: 1
-    - name: r2TrackDirname
-      type: string
-      index: 2
-- kind: Message
-  name: DropVideoTrackStagingDataResponse
-- kind: Message
-  name: UpdateAudioTrackRequestBody
-  fields:
-    - name: containerId
-      type: string
-      index: 1
-    - name: r2TrackDirname
-      type: string
-      index: 2
-    - name: name
-      type: string
-      index: 3
-    - name: isDefault
-      type: boolean
-      index: 4
-- kind: Message
-  name: UpdateAudioTrackResponse
-- kind: Message
-  name: DeleteAudioTrackRequestBody
-  fields:
-    - name: containerId
-      type: string
-      index: 1
-    - name: r2TrackDirname
-      type: string
-      index: 2
-- kind: Message
-  name: DeleteAudioTrackResponse
-- kind: Message
-  name: DropAudioTrackStagingDataRequestBody
-  fields:
-    - name: containerId
-      type: string
-      index: 1
-    - name: r2TrackDirname
-      type: string
-      index: 2
-- kind: Message
-  name: DropAudioTrackStagingDataResponse
-- kind: Message
-  name: UpdateSubtitleTrackRequestBody
-  fields:
-    - name: containerId
-      type: string
-      index: 1
-    - name: r2TrackDirname
-      type: string
-      index: 2
-    - name: name
-      type: string
-      index: 3
-- kind: Message
-  name: UpdateSubtitleTrackResponse
-- kind: Message
-  name: DeleteSubtitleTrackRequestBody
-  fields:
-    - name: containerId
-      type: string
-      index: 1
-    - name: r2TrackDirname
-      type: string
-      index: 2
-- kind: Message
-  name: DeleteSubtitleTrackResponse
-- kind: Message
-  name: DropSubtitleTrackStagingDataRequestBody
-  fields:
-    - name: containerId
-      type: string
-      index: 1
-    - name: r2TrackDirname
-      type: string
-      index: 2
-- kind: Message
-  name: DropSubtitleTrackStagingDataResponse
-- kind: Message
   name: ProcessStorageEndRecordingTaskRequestBody
   fields:
     - name: r2Dirname
@@ -428,6 +335,10 @@
       path: /GetVideoContainer
       body: GetVideoContainerRequestBody
       response: GetVideoContainerResponse
+    - name: SaveVideoContainerStagingData
+      path: /SaveVideoContainerStagingData
+      body: SaveVideoContainerStagingDataRequestBody
+      response: SaveVideoContainerStagingDataResponse
     - name: CommitVideoContainerStagingData
       path: /CommitVideoContainerStagingData
       body: CommitVideoContainerStagingDataRequestBody
@@ -500,38 +411,6 @@
       path: /ListStorageStartRecordingTasks
       body: ListStorageStartRecordingTasksRequestBody
       response: ListStorageStartRecordingTasksResponse
-    - name: DeleteVideoTrack
-      path: /DeleteVideoTrack
-      body: DeleteVideoTrackRequestBody
-      response: DeleteVideoTrackResponse
-    - name: DropVideoTrackStagingData
-      path: /DropVideoTrackStagingData
-      body: DropVideoTrackStagingDataRequestBody
-      response: DropVideoTrackStagingDataResponse
-    - name: UpdateAudioTrack
-      path: /UpdateAudioTrack
-      body: UpdateAudioTrackRequestBody
-      response: UpdateAudioTrackResponse
-    - name: DeleteAudioTrack
-      path: /DeleteAudioTrack
-      body: DeleteAudioTrackRequestBody
-      response: DeleteAudioTrackResponse
-    - name: DropAudioTrackStagingData
-      path: /DropAudioTrackStagingData
-      body: DropAudioTrackStagingDataRequestBody
-      response: DropAudioTrackStagingDataResponse
-    - name: UpdateSubtitleTrack
-      path: /UpdateSubtitleTrack
-      body: UpdateSubtitleTrackRequestBody
-      response: UpdateSubtitleTrackResponse
-    - name: DeleteSubtitleTrack
-      path: /DeleteSubtitleTrack
-      body: DeleteSubtitleTrackRequestBody
-      response: DeleteSubtitleTrackResponse
-    - name: DropSubtitleTrackStagingData
-      path: /DropSubtitleTrackStagingData
-      body: DropSubtitleTrackStagingDataRequestBody
-      response: DropSubtitleTrackStagingDataResponse
     - name: ProcessStorageEndRecordingTask
       path: /ProcessStorageEndRecordingTask
       body: ProcessStorageEndRecordingTaskRequestBody

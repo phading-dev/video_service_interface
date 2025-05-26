@@ -1,0 +1,45 @@
+- kind: Message
+  name: VideoTrack
+  fields:
+    - name: r2TrackDirname
+      type: string
+      index: 1
+    - name: staging
+      type: VideoTrackStagingData
+      import: ./node/video_container
+      index: 2
+- kind: Message
+  name: AudioTrack
+  fields:
+    - name: r2TrackDirname
+      type: string
+      index: 1
+    - name: staging
+      type: AudioTrackStagingData
+      import: ./node/video_container
+      index: 2
+- kind: Message
+  name: SubtitleTrack
+  fields:
+    - name: r2TrackDirname
+      type: string
+      index: 1
+    - name: staging
+      type: SubtitleTrackStagingData
+      import: ./node/video_container
+      index: 2
+- kind: Message
+  name: VideoContainerStagingData
+  fields:
+    - name: videos # Non-null
+      type: VideoTrack
+      isArray: true
+      index: 1
+    - name: audios # Non-null
+      type: AudioTrack
+      isArray: true
+      index: 2
+    - name: subtitles # Non-null
+      type: SubtitleTrack
+      isArray: true
+      index: 3
