@@ -173,14 +173,14 @@ export let SYNCED_STATE: MessageDescriptor<SyncedState> = {
 };
 
 export interface MasterPlaylistState {
-  comitting?: CommittingState,
+  committing?: CommittingState,
   synced?: SyncedState,
 }
 
 export let MASTER_PLAYLIST_STATE: MessageDescriptor<MasterPlaylistState> = {
   name: 'MasterPlaylistState',
   fields: [{
-    name: 'comitting',
+    name: 'committing',
     index: 1,
     messageType: COMMITTING_STATE,
   }, {

@@ -92,7 +92,7 @@
 - kind: Message
   name: MasterPlaylistState
   fields:
-    - name: comitting
+    - name: committing
       type: CommittingState
       index: 1
     - name: synced
