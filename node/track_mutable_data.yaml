@@ -1,0 +1,15 @@
+- kind: Message
+  name: AudioTrackMutableData
+  fields:
+    - name: name
+      type: string
+      index: 1
+    - name: isDefault
+      type: boolean
+      index: 2
+- kind: Message
+  name: SubtitleTrackMutableData
+  fields:
+    - name: name
+      type: string
+      index: 1

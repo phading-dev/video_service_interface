@@ -1,4 +1,33 @@
 - kind: Message
+  name: VideoTrackStagingData
+  fields:
+    - name: toAdd
+      type: boolean
+      index: 1
+    - name: toDelete
+      type: boolean
+      index: 2
+- kind: Message
+  name: AudioTrackStagingData
+  fields:
+    - name: toAdd
+      type: AudioTrackMutableData
+      import: ./node/track_mutable_data
+      index: 1
+    - name: toDelete
+      type: boolean
+      index: 2
+- kind: Message
+  name: SubtitleTrackStagingData
+  fields:
+    - name: toAdd
+      type: SubtitleTrackMutableData
+      import: ./node/track_mutable_data
+      index: 1
+    - name: toDelete
+      type: boolean
+      index: 2
+- kind: Message
   name: VideoTrack
   fields:
     - name: r2TrackDirname
@@ -6,7 +35,6 @@
       index: 1
     - name: staging
       type: VideoTrackStagingData
-      import: ./node/video_container
       index: 2
 - kind: Message
   name: AudioTrack
@@ -16,7 +44,6 @@
       index: 1
     - name: staging
       type: AudioTrackStagingData
-      import: ./node/video_container
       index: 2
 - kind: Message
   name: SubtitleTrack
@@ -26,7 +53,6 @@
       index: 1
     - name: staging
       type: SubtitleTrackStagingData
-      import: ./node/video_container
       index: 2
 - kind: Message
   name: VideoContainerStagingData

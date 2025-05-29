@@ -22,15 +22,6 @@
       type: FormattingState
       index: 3
 - kind: Message
-  name: VideoTrackStagingData
-  fields:
-    - name: toAdd
-      type: boolean
-      index: 1
-    - name: toDelete
-      type: boolean
-      index: 2
-- kind: Message
   name: VideoTrack
   fields:
     - name: r2TrackDirname # The dir that contains HLS segments for a track.
@@ -50,25 +41,8 @@
       index: 5
     - name: staging
       type: VideoTrackStagingData
+      import: ./node/video_container_staging_data
       index: 6
-- kind: Message
-  name: AudioTrackData
-  fields:
-    - name: name
-      type: string
-      index: 1
-    - name: isDefault
-      type: boolean
-      index: 2
-- kind: Message
-  name: AudioTrackStagingData
-  fields:
-    - name: toAdd
-      type: AudioTrackData
-      index: 1
-    - name: toDelete
-      type: boolean
-      index: 2
 - kind: Message
   name: AudioTrack
   fields:
@@ -79,26 +53,13 @@
       type: number
       index: 2
     - name: committed
-      type: AudioTrackData
+      type: AudioTrackMutableData
+      import: ./node/track_mutable_data
       index: 3
     - name: staging
       type: AudioTrackStagingData
+      import: ./node/video_container_staging_data
       index: 4
-- kind: Message
-  name: SubtitleTrackData
-  fields:
-    - name: name
-      type: string
-      index: 1
-- kind: Message
-  name: SubtitleTrackStagingData
-  fields:
-    - name: toAdd
-      type: SubtitleTrackData
-      index: 1
-    - name: toDelete
-      type: boolean
-      index: 2
 - kind: Message
   name: SubtitleTrack
   fields:
@@ -109,19 +70,15 @@
       type: number
       index: 2
     - name: committed
-      type: SubtitleTrackData
+      type: SubtitleTrackMutableData
+      import: ./node/track_mutable_data
       index: 3
     - name: staging
       type: SubtitleTrackStagingData
+      import: ./node/video_container_staging_data
       index: 4
 - kind: Message
-  name: WritingToFileState
-  fields:
-    - name: version
-      type: number
-      index: 1
-- kind: Message
-  name: SyncingState
+  name: CommittingState
   fields:
     - name: version
       type: number
@@ -135,12 +92,9 @@
 - kind: Message
   name: MasterPlaylistState
   fields:
-    - name: writingToFile
-      type: WritingToFileState
+    - name: comitting
+      type: CommittingState
       index: 1
-    - name: syncing
-      type: SyncingState
-      index: 2
     - name: synced
       type: SyncedState
       index: 3

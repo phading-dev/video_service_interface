@@ -1,12 +1,16 @@
 - kind: Enum
   name: ProcessingFailureReason
   values:
-    - name: VIDEO_CODEC_REQUIRES_H264
+    - name: MEDIA_FORMAT_INVALID
       value: 1
-    - name: AUDIO_CODEC_REQUIRES_AAC
+    - name: MEDIA_FORMAT_FAILURE # General failure. No insights. May be due to format issues or file corruption.
       value: 2
-    - name: SUBTITLE_ZIP_FORMAT_INVALID
+    - name: VIDEO_CODEC_REQUIRES_H264
       value: 3
+    - name: AUDIO_CODEC_REQUIRES_AAC
+      value: 4
+    - name: SUBTITLE_ZIP_FORMAT_INVALID
+      value: 5
 - kind: Message
   name: LastProcessingFailure
   fields:

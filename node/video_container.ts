@@ -1,4 +1,6 @@
 import { PrimitiveType, MessageDescriptor } from '@selfage/message/descriptor';
+import { VideoTrackStagingData, VIDEO_TRACK_STAGING_DATA, AudioTrackStagingData, AUDIO_TRACK_STAGING_DATA, SubtitleTrackStagingData, SUBTITLE_TRACK_STAGING_DATA } from './video_container_staging_data';
+import { AudioTrackMutableData, AUDIO_TRACK_MUTABLE_DATA, SubtitleTrackMutableData, SUBTITLE_TRACK_MUTABLE_DATA } from './track_mutable_data';
 import { LastProcessingFailure, LAST_PROCESSING_FAILURE } from './last_processing_failure';
 
 export interface ResumableUploadingState {
@@ -50,24 +52,6 @@ export let ONE_OF_PROCESSING_STATE: MessageDescriptor<OneOfProcessingState> = {
   }],
 };
 
-export interface VideoTrackStagingData {
-  toAdd?: boolean,
-  toDelete?: boolean,
-}
-
-export let VIDEO_TRACK_STAGING_DATA: MessageDescriptor<VideoTrackStagingData> = {
-  name: 'VideoTrackStagingData',
-  fields: [{
-    name: 'toAdd',
-    index: 1,
-    primitiveType: PrimitiveType.BOOLEAN,
-  }, {
-    name: 'toDelete',
-    index: 2,
-    primitiveType: PrimitiveType.BOOLEAN,
-  }],
-};
-
 export interface VideoTrack {
   r2TrackDirname?: string,
   durationSec?: number,
@@ -106,46 +90,10 @@ export let VIDEO_TRACK: MessageDescriptor<VideoTrack> = {
   }],
 };
 
-export interface AudioTrackData {
-  name?: string,
-  isDefault?: boolean,
-}
-
-export let AUDIO_TRACK_DATA: MessageDescriptor<AudioTrackData> = {
-  name: 'AudioTrackData',
-  fields: [{
-    name: 'name',
-    index: 1,
-    primitiveType: PrimitiveType.STRING,
-  }, {
-    name: 'isDefault',
-    index: 2,
-    primitiveType: PrimitiveType.BOOLEAN,
-  }],
-};
-
-export interface AudioTrackStagingData {
-  toAdd?: AudioTrackData,
-  toDelete?: boolean,
-}
-
-export let AUDIO_TRACK_STAGING_DATA: MessageDescriptor<AudioTrackStagingData> = {
-  name: 'AudioTrackStagingData',
-  fields: [{
-    name: 'toAdd',
-    index: 1,
-    messageType: AUDIO_TRACK_DATA,
-  }, {
-    name: 'toDelete',
-    index: 2,
-    primitiveType: PrimitiveType.BOOLEAN,
-  }],
-};
-
 export interface AudioTrack {
   r2TrackDirname?: string,
   totalBytes?: number,
-  committed?: AudioTrackData,
+  committed?: AudioTrackMutableData,
   staging?: AudioTrackStagingData,
 }
 
@@ -162,7 +110,7 @@ export let AUDIO_TRACK: MessageDescriptor<AudioTrack> = {
   }, {
     name: 'committed',
     index: 3,
-    messageType: AUDIO_TRACK_DATA,
+    messageType: AUDIO_TRACK_MUTABLE_DATA,
   }, {
     name: 'staging',
     index: 4,
@@ -170,41 +118,10 @@ export let AUDIO_TRACK: MessageDescriptor<AudioTrack> = {
   }],
 };
 
-export interface SubtitleTrackData {
-  name?: string,
-}
-
-export let SUBTITLE_TRACK_DATA: MessageDescriptor<SubtitleTrackData> = {
-  name: 'SubtitleTrackData',
-  fields: [{
-    name: 'name',
-    index: 1,
-    primitiveType: PrimitiveType.STRING,
-  }],
-};
-
-export interface SubtitleTrackStagingData {
-  toAdd?: SubtitleTrackData,
-  toDelete?: boolean,
-}
-
-export let SUBTITLE_TRACK_STAGING_DATA: MessageDescriptor<SubtitleTrackStagingData> = {
-  name: 'SubtitleTrackStagingData',
-  fields: [{
-    name: 'toAdd',
-    index: 1,
-    messageType: SUBTITLE_TRACK_DATA,
-  }, {
-    name: 'toDelete',
-    index: 2,
-    primitiveType: PrimitiveType.BOOLEAN,
-  }],
-};
-
 export interface SubtitleTrack {
   r2TrackDirname?: string,
   totalBytes?: number,
-  committed?: SubtitleTrackData,
+  committed?: SubtitleTrackMutableData,
   staging?: SubtitleTrackStagingData,
 }
 
@@ -221,7 +138,7 @@ export let SUBTITLE_TRACK: MessageDescriptor<SubtitleTrack> = {
   }, {
     name: 'committed',
     index: 3,
-    messageType: SUBTITLE_TRACK_DATA,
+    messageType: SUBTITLE_TRACK_MUTABLE_DATA,
   }, {
     name: 'staging',
     index: 4,
@@ -229,25 +146,12 @@ export let SUBTITLE_TRACK: MessageDescriptor<SubtitleTrack> = {
   }],
 };
 
-export interface WritingToFileState {
+export interface CommittingState {
   version?: number,
 }
 
-export let WRITING_TO_FILE_STATE: MessageDescriptor<WritingToFileState> = {
-  name: 'WritingToFileState',
-  fields: [{
-    name: 'version',
-    index: 1,
-    primitiveType: PrimitiveType.NUMBER,
-  }],
-};
-
-export interface SyncingState {
-  version?: number,
-}
-
-export let SYNCING_STATE: MessageDescriptor<SyncingState> = {
-  name: 'SyncingState',
+export let COMMITTING_STATE: MessageDescriptor<CommittingState> = {
+  name: 'CommittingState',
   fields: [{
     name: 'version',
     index: 1,
@@ -269,21 +173,16 @@ export let SYNCED_STATE: MessageDescriptor<SyncedState> = {
 };
 
 export interface MasterPlaylistState {
-  writingToFile?: WritingToFileState,
-  syncing?: SyncingState,
+  comitting?: CommittingState,
   synced?: SyncedState,
 }
 
 export let MASTER_PLAYLIST_STATE: MessageDescriptor<MasterPlaylistState> = {
   name: 'MasterPlaylistState',
   fields: [{
-    name: 'writingToFile',
+    name: 'comitting',
     index: 1,
-    messageType: WRITING_TO_FILE_STATE,
-  }, {
-    name: 'syncing',
-    index: 2,
-    messageType: SYNCING_STATE,
+    messageType: COMMITTING_STATE,
   }, {
     name: 'synced',
     index: 3,

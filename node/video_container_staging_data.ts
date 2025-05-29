@@ -1,5 +1,59 @@
 import { PrimitiveType, MessageDescriptor } from '@selfage/message/descriptor';
-import { VideoTrackStagingData, VIDEO_TRACK_STAGING_DATA, AudioTrackStagingData, AUDIO_TRACK_STAGING_DATA, SubtitleTrackStagingData, SUBTITLE_TRACK_STAGING_DATA } from './video_container';
+import { AudioTrackMutableData, AUDIO_TRACK_MUTABLE_DATA, SubtitleTrackMutableData, SUBTITLE_TRACK_MUTABLE_DATA } from './track_mutable_data';
+
+export interface VideoTrackStagingData {
+  toAdd?: boolean,
+  toDelete?: boolean,
+}
+
+export let VIDEO_TRACK_STAGING_DATA: MessageDescriptor<VideoTrackStagingData> = {
+  name: 'VideoTrackStagingData',
+  fields: [{
+    name: 'toAdd',
+    index: 1,
+    primitiveType: PrimitiveType.BOOLEAN,
+  }, {
+    name: 'toDelete',
+    index: 2,
+    primitiveType: PrimitiveType.BOOLEAN,
+  }],
+};
+
+export interface AudioTrackStagingData {
+  toAdd?: AudioTrackMutableData,
+  toDelete?: boolean,
+}
+
+export let AUDIO_TRACK_STAGING_DATA: MessageDescriptor<AudioTrackStagingData> = {
+  name: 'AudioTrackStagingData',
+  fields: [{
+    name: 'toAdd',
+    index: 1,
+    messageType: AUDIO_TRACK_MUTABLE_DATA,
+  }, {
+    name: 'toDelete',
+    index: 2,
+    primitiveType: PrimitiveType.BOOLEAN,
+  }],
+};
+
+export interface SubtitleTrackStagingData {
+  toAdd?: SubtitleTrackMutableData,
+  toDelete?: boolean,
+}
+
+export let SUBTITLE_TRACK_STAGING_DATA: MessageDescriptor<SubtitleTrackStagingData> = {
+  name: 'SubtitleTrackStagingData',
+  fields: [{
+    name: 'toAdd',
+    index: 1,
+    messageType: SUBTITLE_TRACK_MUTABLE_DATA,
+  }, {
+    name: 'toDelete',
+    index: 2,
+    primitiveType: PrimitiveType.BOOLEAN,
+  }],
+};
 
 export interface VideoTrack {
   r2TrackDirname?: string,
