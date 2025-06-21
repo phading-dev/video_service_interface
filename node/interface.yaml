@@ -156,7 +156,7 @@
 - kind: Message
   name: ProcessUploadedRecordingTaskRequestBody
   fields:
-    - name: gcsFilename
+    - name: gcsKey
       type: string
       index: 1
     - name: accountId
@@ -194,6 +194,26 @@
   fields:
     - name: tasks
       type: ProcessMediaFormattingTaskRequestBody
+      isArray: true
+      index: 1
+- kind: Message
+  name: ProcessMediaUploadingTaskRequestBody
+  fields:
+    - name: containerId
+      type: string
+      index: 1
+    - name: gcsDirname
+      type: string
+      index: 2
+- kind: Message
+  name: ProcessMediaUploadingTaskResponse
+- kind: Message
+  name: ListMediaUploadingTasksRequestBody
+- kind: Message
+  name: ListMediaUploadingTasksResponse
+  fields:
+    - name: tasks
+      type: ProcessMediaUploadingTaskRequestBody
       isArray: true
       index: 1
 - kind: Message
@@ -282,7 +302,7 @@
       isArray: true
       index: 1
 - kind: Message
-  name: ProcessGcsFileDeletingTaskRequestBody
+  name: ProcessGcsUploadFileDeletingTaskRequestBody
   fields:
     - name: gcsFilename
       type: string
@@ -291,14 +311,31 @@
       type: string
       index: 2
 - kind: Message
-  name: ProcessGcsFileDeletingTaskResponse
+  name: ProcessGcsUploadFileDeletingTaskResponse
 - kind: Message
-  name: ListGcsFileDeletingTasksRequestBody
+  name: ListGcsUploadFileDeletingTasksRequestBody
 - kind: Message
-  name: ListGcsFileDeletingTasksResponse
+  name: ListGcsUploadFileDeletingTasksResponse
   fields:
     - name: tasks
-      type: ProcessGcsFileDeletingTaskRequestBody
+      type: ProcessGcsUploadFileDeletingTaskRequestBody
+      isArray: true
+      index: 1
+- kind: Message
+  name: ProcessGcsKeyDeletingTaskRequestBody
+  fields:
+    - name: key
+      type: string
+      index: 1
+- kind: Message
+  name: ProcessGcsKeyDeletingTaskResponse
+- kind: Message
+  name: ListGcsKeyDeletingTasksRequestBody
+- kind: Message
+  name: ListGcsKeyDeletingTasksResponse
+  fields:
+    - name: tasks
+      type: ProcessGcsKeyDeletingTaskRequestBody
       isArray: true
       index: 1
 - kind: Message
@@ -387,6 +424,14 @@
       path: /ListMediaFormattingTasks
       body: ListMediaFormattingTasksRequestBody
       response: ListMediaFormattingTasksResponse
+    - name: ProcessMediaUploadingTask
+      path: /ProcessMediaUploadingTask
+      body: ProcessMediaUploadingTaskRequestBody
+      response: ProcessMediaUploadingTaskResponse
+    - name: ListMediaUploadingTasks
+      path: /ListMediaUploadingTasks
+      body: ListMediaUploadingTasksRequestBody
+      response: ListMediaUploadingTasksResponse
     - name: CancelMediaFormatting
       path: /CancelMediaFormatting
       body: CancelMediaFormattingRequestBody
@@ -419,14 +464,22 @@
       path: /ListStorageEndRecordingTasks
       body: ListStorageEndRecordingTasksRequestBody
       response: ListStorageEndRecordingTasksResponse
-    - name: ProcessGcsFileDeletingTask
-      path: /ProcessGcsFileDeletingTask
-      body: ProcessGcsFileDeletingTaskRequestBody
-      response: ProcessGcsFileDeletingTaskResponse
-    - name: ListGcsFileDeletingTasks
-      path: /ListGcsFileDeletingTasks
-      body: ListGcsFileDeletingTasksRequestBody
-      response: ListGcsFileDeletingTasksResponse
+    - name: ProcessGcsUploadFileDeletingTask
+      path: /ProcessGcsUploadFileDeletingTask
+      body: ProcessGcsUploadFileDeletingTaskRequestBody
+      response: ProcessGcsUploadFileDeletingTaskResponse
+    - name: ListGcsUploadFileDeletingTasks
+      path: /ListGcsUploadFileDeletingTasks
+      body: ListGcsUploadFileDeletingTasksRequestBody
+      response: ListGcsUploadFileDeletingTasksResponse
+    - name: ProcessGcsKeyDeletingTask
+      path: /ProcessGcsKeyDeletingTask
+      body: ProcessGcsKeyDeletingTaskRequestBody
+      response: ProcessGcsKeyDeletingTaskResponse
+    - name: ListGcsKeyDeletingTasks
+      path: /ListGcsKeyDeletingTasks
+      body: ListGcsKeyDeletingTasksRequestBody
+      response: ListGcsKeyDeletingTasksResponse
     - name: ProcessR2KeyDeletingTask
       path: /ProcessR2KeyDeletingTask
       body: ProcessR2KeyDeletingTaskRequestBody

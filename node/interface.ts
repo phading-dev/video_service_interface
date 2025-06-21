@@ -340,7 +340,7 @@ export let CANCEL_UPLOADING_RESPONSE: MessageDescriptor<CancelUploadingResponse>
 };
 
 export interface ProcessUploadedRecordingTaskRequestBody {
-  gcsFilename?: string,
+  gcsKey?: string,
   accountId?: string,
   totalBytes?: number,
 }
@@ -348,7 +348,7 @@ export interface ProcessUploadedRecordingTaskRequestBody {
 export let PROCESS_UPLOADED_RECORDING_TASK_REQUEST_BODY: MessageDescriptor<ProcessUploadedRecordingTaskRequestBody> = {
   name: 'ProcessUploadedRecordingTaskRequestBody',
   fields: [{
-    name: 'gcsFilename',
+    name: 'gcsKey',
     index: 1,
     primitiveType: PrimitiveType.STRING,
   }, {
@@ -436,6 +436,54 @@ export let LIST_MEDIA_FORMATTING_TASKS_RESPONSE: MessageDescriptor<ListMediaForm
     name: 'tasks',
     index: 1,
     messageType: PROCESS_MEDIA_FORMATTING_TASK_REQUEST_BODY,
+    isArray: true,
+  }],
+};
+
+export interface ProcessMediaUploadingTaskRequestBody {
+  containerId?: string,
+  gcsDirname?: string,
+}
+
+export let PROCESS_MEDIA_UPLOADING_TASK_REQUEST_BODY: MessageDescriptor<ProcessMediaUploadingTaskRequestBody> = {
+  name: 'ProcessMediaUploadingTaskRequestBody',
+  fields: [{
+    name: 'containerId',
+    index: 1,
+    primitiveType: PrimitiveType.STRING,
+  }, {
+    name: 'gcsDirname',
+    index: 2,
+    primitiveType: PrimitiveType.STRING,
+  }],
+};
+
+export interface ProcessMediaUploadingTaskResponse {
+}
+
+export let PROCESS_MEDIA_UPLOADING_TASK_RESPONSE: MessageDescriptor<ProcessMediaUploadingTaskResponse> = {
+  name: 'ProcessMediaUploadingTaskResponse',
+  fields: [],
+};
+
+export interface ListMediaUploadingTasksRequestBody {
+}
+
+export let LIST_MEDIA_UPLOADING_TASKS_REQUEST_BODY: MessageDescriptor<ListMediaUploadingTasksRequestBody> = {
+  name: 'ListMediaUploadingTasksRequestBody',
+  fields: [],
+};
+
+export interface ListMediaUploadingTasksResponse {
+  tasks?: Array<ProcessMediaUploadingTaskRequestBody>,
+}
+
+export let LIST_MEDIA_UPLOADING_TASKS_RESPONSE: MessageDescriptor<ListMediaUploadingTasksResponse> = {
+  name: 'ListMediaUploadingTasksResponse',
+  fields: [{
+    name: 'tasks',
+    index: 1,
+    messageType: PROCESS_MEDIA_UPLOADING_TASK_REQUEST_BODY,
     isArray: true,
   }],
 };
@@ -641,13 +689,13 @@ export let LIST_STORAGE_END_RECORDING_TASKS_RESPONSE: MessageDescriptor<ListStor
   }],
 };
 
-export interface ProcessGcsFileDeletingTaskRequestBody {
+export interface ProcessGcsUploadFileDeletingTaskRequestBody {
   gcsFilename?: string,
   uploadSessionUrl?: string,
 }
 
-export let PROCESS_GCS_FILE_DELETING_TASK_REQUEST_BODY: MessageDescriptor<ProcessGcsFileDeletingTaskRequestBody> = {
-  name: 'ProcessGcsFileDeletingTaskRequestBody',
+export let PROCESS_GCS_UPLOAD_FILE_DELETING_TASK_REQUEST_BODY: MessageDescriptor<ProcessGcsUploadFileDeletingTaskRequestBody> = {
+  name: 'ProcessGcsUploadFileDeletingTaskRequestBody',
   fields: [{
     name: 'gcsFilename',
     index: 1,
@@ -659,32 +707,75 @@ export let PROCESS_GCS_FILE_DELETING_TASK_REQUEST_BODY: MessageDescriptor<Proces
   }],
 };
 
-export interface ProcessGcsFileDeletingTaskResponse {
+export interface ProcessGcsUploadFileDeletingTaskResponse {
 }
 
-export let PROCESS_GCS_FILE_DELETING_TASK_RESPONSE: MessageDescriptor<ProcessGcsFileDeletingTaskResponse> = {
-  name: 'ProcessGcsFileDeletingTaskResponse',
+export let PROCESS_GCS_UPLOAD_FILE_DELETING_TASK_RESPONSE: MessageDescriptor<ProcessGcsUploadFileDeletingTaskResponse> = {
+  name: 'ProcessGcsUploadFileDeletingTaskResponse',
   fields: [],
 };
 
-export interface ListGcsFileDeletingTasksRequestBody {
+export interface ListGcsUploadFileDeletingTasksRequestBody {
 }
 
-export let LIST_GCS_FILE_DELETING_TASKS_REQUEST_BODY: MessageDescriptor<ListGcsFileDeletingTasksRequestBody> = {
-  name: 'ListGcsFileDeletingTasksRequestBody',
+export let LIST_GCS_UPLOAD_FILE_DELETING_TASKS_REQUEST_BODY: MessageDescriptor<ListGcsUploadFileDeletingTasksRequestBody> = {
+  name: 'ListGcsUploadFileDeletingTasksRequestBody',
   fields: [],
 };
 
-export interface ListGcsFileDeletingTasksResponse {
-  tasks?: Array<ProcessGcsFileDeletingTaskRequestBody>,
+export interface ListGcsUploadFileDeletingTasksResponse {
+  tasks?: Array<ProcessGcsUploadFileDeletingTaskRequestBody>,
 }
 
-export let LIST_GCS_FILE_DELETING_TASKS_RESPONSE: MessageDescriptor<ListGcsFileDeletingTasksResponse> = {
-  name: 'ListGcsFileDeletingTasksResponse',
+export let LIST_GCS_UPLOAD_FILE_DELETING_TASKS_RESPONSE: MessageDescriptor<ListGcsUploadFileDeletingTasksResponse> = {
+  name: 'ListGcsUploadFileDeletingTasksResponse',
   fields: [{
     name: 'tasks',
     index: 1,
-    messageType: PROCESS_GCS_FILE_DELETING_TASK_REQUEST_BODY,
+    messageType: PROCESS_GCS_UPLOAD_FILE_DELETING_TASK_REQUEST_BODY,
+    isArray: true,
+  }],
+};
+
+export interface ProcessGcsKeyDeletingTaskRequestBody {
+  key?: string,
+}
+
+export let PROCESS_GCS_KEY_DELETING_TASK_REQUEST_BODY: MessageDescriptor<ProcessGcsKeyDeletingTaskRequestBody> = {
+  name: 'ProcessGcsKeyDeletingTaskRequestBody',
+  fields: [{
+    name: 'key',
+    index: 1,
+    primitiveType: PrimitiveType.STRING,
+  }],
+};
+
+export interface ProcessGcsKeyDeletingTaskResponse {
+}
+
+export let PROCESS_GCS_KEY_DELETING_TASK_RESPONSE: MessageDescriptor<ProcessGcsKeyDeletingTaskResponse> = {
+  name: 'ProcessGcsKeyDeletingTaskResponse',
+  fields: [],
+};
+
+export interface ListGcsKeyDeletingTasksRequestBody {
+}
+
+export let LIST_GCS_KEY_DELETING_TASKS_REQUEST_BODY: MessageDescriptor<ListGcsKeyDeletingTasksRequestBody> = {
+  name: 'ListGcsKeyDeletingTasksRequestBody',
+  fields: [],
+};
+
+export interface ListGcsKeyDeletingTasksResponse {
+  tasks?: Array<ProcessGcsKeyDeletingTaskRequestBody>,
+}
+
+export let LIST_GCS_KEY_DELETING_TASKS_RESPONSE: MessageDescriptor<ListGcsKeyDeletingTasksResponse> = {
+  name: 'ListGcsKeyDeletingTasksResponse',
+  fields: [{
+    name: 'tasks',
+    index: 1,
+    messageType: PROCESS_GCS_KEY_DELETING_TASK_REQUEST_BODY,
     isArray: true,
   }],
 };
@@ -924,6 +1015,30 @@ export let LIST_MEDIA_FORMATTING_TASKS: RemoteCallDescriptor = {
   },
 }
 
+export let PROCESS_MEDIA_UPLOADING_TASK: RemoteCallDescriptor = {
+  name: "ProcessMediaUploadingTask",
+  service: VIDEO_NODE_SERVICE,
+  path: "/ProcessMediaUploadingTask",
+  body: {
+    messageType: PROCESS_MEDIA_UPLOADING_TASK_REQUEST_BODY,
+  },
+  response: {
+    messageType: PROCESS_MEDIA_UPLOADING_TASK_RESPONSE,
+  },
+}
+
+export let LIST_MEDIA_UPLOADING_TASKS: RemoteCallDescriptor = {
+  name: "ListMediaUploadingTasks",
+  service: VIDEO_NODE_SERVICE,
+  path: "/ListMediaUploadingTasks",
+  body: {
+    messageType: LIST_MEDIA_UPLOADING_TASKS_REQUEST_BODY,
+  },
+  response: {
+    messageType: LIST_MEDIA_UPLOADING_TASKS_RESPONSE,
+  },
+}
+
 export let CANCEL_MEDIA_FORMATTING: RemoteCallDescriptor = {
   name: "CancelMediaFormatting",
   service: VIDEO_NODE_SERVICE,
@@ -1020,27 +1135,51 @@ export let LIST_STORAGE_END_RECORDING_TASKS: RemoteCallDescriptor = {
   },
 }
 
-export let PROCESS_GCS_FILE_DELETING_TASK: RemoteCallDescriptor = {
-  name: "ProcessGcsFileDeletingTask",
+export let PROCESS_GCS_UPLOAD_FILE_DELETING_TASK: RemoteCallDescriptor = {
+  name: "ProcessGcsUploadFileDeletingTask",
   service: VIDEO_NODE_SERVICE,
-  path: "/ProcessGcsFileDeletingTask",
+  path: "/ProcessGcsUploadFileDeletingTask",
   body: {
-    messageType: PROCESS_GCS_FILE_DELETING_TASK_REQUEST_BODY,
+    messageType: PROCESS_GCS_UPLOAD_FILE_DELETING_TASK_REQUEST_BODY,
   },
   response: {
-    messageType: PROCESS_GCS_FILE_DELETING_TASK_RESPONSE,
+    messageType: PROCESS_GCS_UPLOAD_FILE_DELETING_TASK_RESPONSE,
   },
 }
 
-export let LIST_GCS_FILE_DELETING_TASKS: RemoteCallDescriptor = {
-  name: "ListGcsFileDeletingTasks",
+export let LIST_GCS_UPLOAD_FILE_DELETING_TASKS: RemoteCallDescriptor = {
+  name: "ListGcsUploadFileDeletingTasks",
   service: VIDEO_NODE_SERVICE,
-  path: "/ListGcsFileDeletingTasks",
+  path: "/ListGcsUploadFileDeletingTasks",
   body: {
-    messageType: LIST_GCS_FILE_DELETING_TASKS_REQUEST_BODY,
+    messageType: LIST_GCS_UPLOAD_FILE_DELETING_TASKS_REQUEST_BODY,
   },
   response: {
-    messageType: LIST_GCS_FILE_DELETING_TASKS_RESPONSE,
+    messageType: LIST_GCS_UPLOAD_FILE_DELETING_TASKS_RESPONSE,
+  },
+}
+
+export let PROCESS_GCS_KEY_DELETING_TASK: RemoteCallDescriptor = {
+  name: "ProcessGcsKeyDeletingTask",
+  service: VIDEO_NODE_SERVICE,
+  path: "/ProcessGcsKeyDeletingTask",
+  body: {
+    messageType: PROCESS_GCS_KEY_DELETING_TASK_REQUEST_BODY,
+  },
+  response: {
+    messageType: PROCESS_GCS_KEY_DELETING_TASK_RESPONSE,
+  },
+}
+
+export let LIST_GCS_KEY_DELETING_TASKS: RemoteCallDescriptor = {
+  name: "ListGcsKeyDeletingTasks",
+  service: VIDEO_NODE_SERVICE,
+  path: "/ListGcsKeyDeletingTasks",
+  body: {
+    messageType: LIST_GCS_KEY_DELETING_TASKS_REQUEST_BODY,
+  },
+  response: {
+    messageType: LIST_GCS_KEY_DELETING_TASKS_RESPONSE,
   },
 }
 
