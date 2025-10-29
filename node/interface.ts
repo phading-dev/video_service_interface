@@ -7,8 +7,7 @@ import { RemoteCallDescriptor } from '@selfage/service_descriptor';
 
 export interface CreateVideoContainerRequestBody {
   videoContainerId?: string,
-  seasonId?: string,
-  episodeId?: string,
+  videoProductId?: string,
   accountId?: string,
 }
 
@@ -19,16 +18,12 @@ export let CREATE_VIDEO_CONTAINER_REQUEST_BODY: MessageDescriptor<CreateVideoCon
     index: 1,
     primitiveType: PrimitiveType.STRING,
   }, {
-    name: 'seasonId',
+    name: 'videoProductId',
     index: 2,
     primitiveType: PrimitiveType.STRING,
   }, {
-    name: 'episodeId',
-    index: 3,
-    primitiveType: PrimitiveType.STRING,
-  }, {
     name: 'accountId',
-    index: 4,
+    index: 3,
     primitiveType: PrimitiveType.STRING,
   }],
 };

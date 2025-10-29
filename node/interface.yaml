@@ -4,15 +4,12 @@
     - name: videoContainerId
       type: string
       index: 1
-    - name: seasonId
+    - name: videoProductId
       type: string
       index: 2
-    - name: episodeId
-      type: string
-      index: 3
     - name: accountId
       type: string
-      index: 4
+      index: 3
 - kind: Message
   name: CreateVideoContainerResponse
 - kind: Message
